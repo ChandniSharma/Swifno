@@ -95,11 +95,11 @@ export default class Dashboard extends Component {
 
                     <View style={{ flexDirection: 'row', marginBottom:'2%' , flex:0.1,  justifyContent:'space-between'}}>
                         <TouchableOpacity onPress={()=>this.getCurrentActivity()} style={styles.buttonSegment}>
-                            <Text >Current Activity</Text>
+                            <Text style={styles.textTopBtn}>Current Activity</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={()=>this.getNotification()} style={styles.buttonSegment}>
-                            <Text>Notifications</Text>
+                            <Text style={styles.textTopBtn}>Notifications</Text>
                         </TouchableOpacity>
                     </View>
 

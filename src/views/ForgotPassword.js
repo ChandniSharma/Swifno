@@ -32,9 +32,9 @@ export default class ForgotPasswordComponent extends Component {
         
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                
+                                <HeaderLoginModule viewName={'Forgot Password'} navigation = {this.props.navigation} />
+
                 <KeyboardAwareScrollView style={{flex:1}}>
-                <HeaderLoginModule viewName={'Forgot Password'} navigation = {this.props.navigation} />
                     {/* here is the key image */}
                     <View style={styles.viewMain}>
                     <Image style={styles.image} source={require('../assets/Images/key.png')} />
@@ -43,7 +43,7 @@ export default class ForgotPasswordComponent extends Component {
                     <View style={{flexDirection:'row', marginBottom:'10%'}}>
                         <IconMaterialCommunity name="email" color={'gray'} style={styles.icon} />
                     <Input
-                             label={'email'}
+                             label={'Enter Your Email ID'}
                                 style={styles.inputStyle}
                                 placeholder={'Email'}
                                 onChangeText={(text) => this.setState({ email: text })}
@@ -52,7 +52,7 @@ export default class ForgotPasswordComponent extends Component {
                             />
                     </View>
                     
-                    <View style={{flexDirection:'row', justifyContent:'space-evenly'}} onPress={()=> this.props.navigation.navigate('Login')} onPress={()=> this.props.navigation.navigate('Login')}>
+                    <View style={{flexDirection:'row', justifyContent:'space-evenly'}}  onPress={()=> this.props.navigation.navigate('Login')}>
                        <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonNotSelected]}>
                             <Text style={styles.textNotSelected}>Previous</Text>
                         </TouchableOpacity>

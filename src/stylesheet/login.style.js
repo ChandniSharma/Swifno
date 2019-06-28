@@ -13,7 +13,7 @@ export default {
         fontSize: 22, marginLeft: '5%', marginRight: '-5%', marginTop: '5%'
     },
     iconCheckBox: {
-        fontSize: 22
+        fontSize: 28
     },
     leftView: {
         alignSelf: 'flex-end',
@@ -25,7 +25,7 @@ export default {
         color: 'gray',
         fontFamily: 'Montserrat-Regular',
         // fontWeight:'200',
-        fontSize: 14,
+        fontSize: 18,
         alignSelf: 'center',
         marginBottom: '5%'
     },
@@ -39,27 +39,7 @@ export default {
         width: 50,
         height: 40
     },
-    textDontHaveAccount: {
-        color: 'gray',
-        fontFamily: 'Montserrat-Regular',
-        // fontWeight:'200',
-        fontSize: 12,
-        marginRight: '2%',
-    },
-    textDull: {
-        color: 'rgba(255,255,255,0.72)',
-        fontFamily: 'Montserrat-Regular',
-        // fontWeight:'200',
-        fontSize: 12,
-    },
-    getStarted: {
-        color: 'white',
-        fontFamily: 'Montserrat-Regular',
-        //fontWeight:'200',
-        fontSize: 14,
-        marginRight: '5%',
-        alignSelf: 'flex-end',
-    },
+   
     logo: {
         marginTop: '10%',
         marginBottom: '10%',
@@ -84,7 +64,7 @@ export default {
         borderRadius: 8,
         fontFamily: 'Montserrat-Regular',
         fontWeight: '300',
-        fontSize: 16,
+        fontSize: 18,
         color: '#262626',
         paddingTop: 21,
         paddingBottom: 20,
@@ -107,10 +87,10 @@ export default {
 
     },
     tickMarkView: {
-       marginTop:'1%',
-        height: 20,
+      
+        height: 40,
         flex:0.1,
-       // marginRight: '3%',
+        marginRight: '-3%',
         borderColor: 'gray',
         borderWidth: .2,
         shadowColor: 'rgba(0,0,0,1)',
@@ -131,7 +111,7 @@ export default {
           marginLeft:'5%'
     },
     rememberText: {
-
+     fontSize:18
     },
     forgotPwdBtnView: {
         flex: 0.5,
@@ -145,15 +125,17 @@ export default {
         alignSelf: 'center',
         height: 20,
         color: 'gray',
+        fontSize:18
     },
     fbText: {
         color: 'white',
+        fontSize:18
     },
     signupButton: {
 
     },
     signupText: {
-        fontSize: 16,
+        fontSize: 14,
         color: 'red',
         fontWeight: '500',
     },
@@ -194,7 +176,6 @@ export default {
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'rgb(93, 121, 177)',
-        marginRight: '2%',
         alignSelf: 'center'
     },
     viewCenterButton: {
@@ -202,7 +183,7 @@ export default {
     },
     textSelected: {
         color: 'white',
-        fontSize: 13,
+        fontSize: 18,
     },
     buttonCenter: {
         borderRadius: 22,
@@ -239,7 +220,7 @@ export default {
         marginLeft: '2%'
     },
     textButtonTitle: {
-        fontSize: 16,
+        fontSize: 18,
         color: 'white',
         fontWeight: '500',
 
@@ -257,26 +238,7 @@ export default {
     textColorTemp: {
         // color: 'white',
     },
-    textBottomMark: {
-        marginTop: 20,
-        marginBottom: 20,
-        fontSize: 14,
-        color: 'white',
-        marginLeft: '5%',
-        flex: 0.6,
-    },
-    shareButtons: {
-        width: 15,
-        height: 15,
-
-    },
-    viewBottom: {
-        backgroundColor: 'black',
-        //alignItems: 'space-between',
-        justifyContent: 'center',
-        bottom: 1,
-        flex: 1,
-        flexDirection: 'row'
-    }
+  
+   
 
 }

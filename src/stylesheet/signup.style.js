@@ -18,14 +18,7 @@ export default {
         flex: 0.4,
         // backgroundColor:'red'
     },
-    orText: {
-        color: 'gray',
-        fontFamily: 'Montserrat-Regular',
-        // fontWeight:'200',
-        fontSize: 14,
-        alignSelf: 'center',
-        marginBottom: '5%'
-    },
+    
     imgSideTitle: {
         color: 'white',
         // fontSize: 21,
@@ -43,20 +36,7 @@ export default {
         fontSize: 12,
         marginRight: '1%',
     },
-    textDull: {
-        color: 'rgba(255,255,255,0.72)',
-        fontFamily: 'Montserrat-Regular',
-        // fontWeight:'200',
-        fontSize: 12,
-    },
-    getStarted: {
-        color: 'white',
-        fontFamily: 'Montserrat-Regular',
-        //fontWeight:'200',
-        fontSize: 14,
-        marginRight: '5%',
-        alignSelf: 'flex-end',
-    },
+   
     loginText: {
         marginTop: '10%',
         marginBottom: '10%',
@@ -83,7 +63,7 @@ export default {
         borderRadius: 8,
         fontFamily: 'Montserrat-Regular',
         fontWeight: '300',
-        fontSize: 16,
+        fontSize: 18,
         color: '#262626',
         paddingTop: 21,
         paddingBottom: 20,
@@ -215,7 +195,7 @@ export default {
     },
     textSelected: {
         color: 'white',
-        fontSize: 13,
+        fontSize: 18,
     },
     buttonCenter: {
         borderRadius: 22,

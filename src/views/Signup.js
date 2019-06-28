@@ -43,9 +43,10 @@ export default class Signup extends Component {
     render() {
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                <KeyboardAwareScrollView >
+                    <HeaderLoginModule viewName={'Sign Up'} navigation = {this.props.navigation} />
+
+                <KeyboardAwareScrollView style={styles.container}>
                     <View style={{ flex: 1 }}>
-                        <HeaderLoginModule viewName={'Sign Up'} navigation = {this.props.navigation} />
 
                         <Image source = {require('../assets/Images/logo_login.png')} style={{flex:0.5, alignSelf:'center',marginTop:'10%', marginBottom:'10%'}} />
 

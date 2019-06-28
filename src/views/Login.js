@@ -35,14 +35,18 @@ export default class Login extends Component {
     onClickRememberMe() {
         this.setState({ isRemember: !this.state.isRemember });
     }
+    onPressFacebookButton(){
+        alert('Coming Soon ...')
+    }
     render() {
         const { data, errors, handleChange, login, onSubmit, fetching } = this.props;
         console.log("errors====", errors, "isRequesting===", login, "Fetching ----",fetching);
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
+              <HeaderLoginModule viewName={'Login'} navigation = {this.props.navigation}  />
+
                 <KeyboardAwareScrollView style={styles.container}>
                     <View style={{ flex: 1, }}>
-                        <HeaderLoginModule viewName={'Login'} navigation = {this.props.navigation}  />
                         <View style={{ backgroundColor: 'white', flex: 1 }}>
 
                          <Image source = {require('../assets/Images/logo_login.png')} style={{flex:0.5, alignSelf:'center',marginTop:'10%', marginBottom:'10%'}} />
@@ -107,14 +111,12 @@ export default class Login extends Component {
 
 
                             <Text style={styles.orText}> Or</Text>
-                            <View style={{ marginBottom: '5%' }}>
-                                <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn}>
+                            <View style={{ marginBottom: '5%', alignItems:'center' }}>
+                                <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn} onPress={()=> this.onPressFacebookButton()}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'center', marginLeft: '2%', marginRight: '2%' }}>
-                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '12%', color: 'white' }} />
-                                        <Text style={styles.fbText}>Login with facebook</Text>
+                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '5%', color: 'white' }} />
+                                        <Text style={styles.fbText}>Login with Facebook</Text>
                                     </View>
-
-
                                 </TouchableOpacity>
                             </View>
 
@@ -122,7 +124,7 @@ export default class Login extends Component {
                             <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
                                 <Text style={styles.textDontHaveAccount}>Don't have an account yet? </Text>
                                 <TouchableOpacity underlayColor="#25b6ad" style={[styles.signupButton]} onPress={() => this.props.navigation.navigate('Signup')}>
-                                    <Text style={styles.signupText}>signup</Text>
+                                    <Text style={styles.signupText}>Sign Up</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>

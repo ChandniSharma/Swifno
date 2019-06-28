@@ -105,7 +105,9 @@ export default {
        
         //fontSize: 13,
     },
-
+textTopBtn:{
+paddingTop: 10
+},
     buttonLeft: {
         borderRadius: 20,
         height: 55,

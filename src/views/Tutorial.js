@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, ActivityIndicator, SafeAreaView } from 'react-native';
 import styles from '../stylesheet/tutorial.style'
 
-
+console.disableYellowBox = true;
 export default class Tutorial extends Component {
 
     render() {

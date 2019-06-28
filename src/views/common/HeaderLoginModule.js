@@ -27,8 +27,9 @@ const styles = {
         backgroundColor: 'rgb(246, 205, 74)',
         flexDirection: 'row',
        
-        height:64,
-        justifyContent:'center'
+        height:100,
+        justifyContent:'center',
+        marginTop:'-12%'
     },
     backButton: {
         //alignSelf: 'flex-start',
