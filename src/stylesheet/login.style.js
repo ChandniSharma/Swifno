@@ -123,7 +123,7 @@ export default {
     },
     forgotPwdText: {
         alignSelf: 'center',
-        height: 20,
+        height: 25,
         color: 'gray',
         fontSize:18
     },

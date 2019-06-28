@@ -32,7 +32,7 @@ const MainNavigator = createStackNavigator({
   Dashboard:{screen:Dashboard},
   Signup: {screen: Signup},
 },{
-  initialRouteName: 'Login',
+  initialRouteName: 'Tutorial',
   gesturesEnabled: false,
   headerMode: 'none',
 }
