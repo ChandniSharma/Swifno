@@ -32,16 +32,16 @@ export default class ForgotPasswordComponent extends Component {
         
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                <KeyboardAwareScrollView>
-
-                <HeaderLoginModule viewName={'Forgot Password'} />
-
+                
+                <KeyboardAwareScrollView style={{flex:1}}>
+                <HeaderLoginModule viewName={'Forgot Password'} navigation = {this.props.navigation} />
                     {/* here is the key image */}
-                    <Image></Image>
-                    <Text> We just need your registered Email id to send you password reset instruction.</Text>
+                    <View style={styles.viewMain}>
+                    <Image style={styles.image} source={require('../assets/Images/key.png')} />
+                    <Text style={styles.textDescription}> We just need your registered Email id to send you password reset instruction.</Text>
 
-                    <View style={{flexDirection:'row'}}>
-                        <IconMaterialCommunity color={'gray'} style={{fontSize:14}} />
+                    <View style={{flexDirection:'row', marginBottom:'10%'}}>
+                        <IconMaterialCommunity name="email" color={'gray'} style={styles.icon} />
                     <Input
                              label={'email'}
                                 style={styles.inputStyle}
@@ -52,16 +52,15 @@ export default class ForgotPasswordComponent extends Component {
                             />
                     </View>
                     
-                       <View style={{flexDirection:'row', flex:1, justifyContent:'space-evenly'}}>
-
-                       <TouchableOpacity underlayColor="#25b6ad" style={[styles.loginButton]} onPress={()=> this.props.navigation.goBack()}>
-                            <Text style={styles.textButtonTitle}>Cancel</Text>
+                    <View style={{flexDirection:'row', justifyContent:'space-evenly'}} onPress={()=> this.props.navigation.navigate('Login')} onPress={()=> this.props.navigation.navigate('Login')}>
+                       <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonNotSelected]}>
+                            <Text style={styles.textNotSelected}>Previous</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity underlayColor="#25b6ad" style={[styles.loginButton]} onPress={()=> this.props.navigation.goBack()}>
-                            <Text style={styles.textButtonTitle}>Submit</Text>
+                        <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonSelected]} onPress={()=> this.props.navigation.navigate('Login')}>
+                            <Text style={styles.textSelected}>Next</Text>
                         </TouchableOpacity>
-
+</View>
                        </View>
                 </KeyboardAwareScrollView>
             </SafeAreaView>

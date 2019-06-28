@@ -1,95 +1,115 @@
 export default {
-container:{
-    flex: 1,
-  },
-buttonSegment:{
-flex:0.5
-} ,
-viewSingleLineLeft:{
-    backgroundColor:'yellow',
-    flex:0.5,
-    alignSelf: 'flex-start',
-},
-viewSingleLineRight:{
-    backgroundColor:'yellow',
-    flex:0.5,
-    alignSelf: 'flex-end',
-},
-
-optionButton:{
-  
-},
-    flatList:{
-      flex: 1,
-       marginTop: '2%',
-      // backgroundColor: '#ffffff',
+    container: {
+        flex: 1,
     },
-    viewInner:{
+    buttonSegment: {
+        flex: 0.5,
+        height:'100%',
+        // backgroundColor:'green',
+        alignItems: 'center',
+        justifyContent:'center'
+    },
+    textSegmentButton:{
+        color: 'black',
+       
+        fontSize: 18,
+       // fontWeight: 'bold',
+       
+    },
+    viewSingleLine:{
+        //marginTop:'1%',
+    width:'100%',
+    height:'0.3%',
+    backgroundColor:'lightgray',
+    marginBottom:'1%'
+   
+    },
+    viewSingleLineLeft: {
+        backgroundColor: 'rgb(246, 205, 74)',
+        flex: 0.5,
+        alignSelf: 'flex-start',
+        height:'100%',
+        width:'50%',
+    },
+    viewSingleLineEmpty:{
+        backgroundColor: 'transparant',
+        flex: 0.5,
+        alignSelf: 'flex-start',
+        height:'100%',
+        width:'50%',
+    },
+    viewSingleLineRight: {
+        backgroundColor: 'rgb(246, 205, 74)',
+        flex: 0.5,
+      alignSelf: 'flex-end',
+        height:'100%',
+       width:'50%',
+       right:'1%'
+
+    },
+    optionButton: {
+
+    },
+    scrollView: {
+        width: '100%',
+        height: 64,
+        backgroundColor:'red',
+
+    },
+    flatList: {
+        flex: 1,
+        marginTop: '2%',
+        // backgroundColor: '#ffffff',
+    },
+    viewInner: {
         padding: 15,
         backgroundColor: 'white',
-        borderBottomColor : 'gray',
+        borderBottomColor: 'gray',
         borderWidth: 0.8,
         // borderLeftWidth: 0.5,
         shadowColor: 'black',
-        shadowOffset: {width:1.0,height:2},
+        shadowOffset: { width: 1.0, height: 2 },
         shadowOpacity: 0.5,
         shadowRadius: 1.5,
         elevation: 3,
-       
+
     },
-    viewOuter:{
-      
-       padding: 10,
+    viewOuter: {
+
+        padding: 10,
     },
     viewContainNumber: {
-      right: 20,
-      top:20,
-      position:'absolute',
+        right: 20,
+        top: 20,
+        position: 'absolute',
     },
-    
 
-    titleBookConfirmation:{
+    titleBookConfirmation: {
         color: 'black',
-         alignItems: 'center',
-         justifyContent: 'center',
-         fontSize: 18,
-         fontWeight: 'bold',
-         marginTop: 30
-       },
-       textTitle:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 30
+    },
+    textTitle: {
         color: '#000000',
         fontSize: 16,
-       },
-       textTimeAndDate:{
-        color: '#656565',
-        fontSize: 13,
-       },
-       textDetail:{
-        paddingTop:2,   
-        color: '#656565',
-        fontSize: 13,
-       },
-
-       buttonLeft: {
-        borderRadius: 22,
-        height: 55,
-       // flex: 0.5,
-        alignItems: 'center',
-        justifyContent: 'center',
-        shadowColor: 'rgba(0,0,0,0.12)',
-        shadowOffset: {
-            width: .4,
-            height: .11
-        },
-        shadowOpacity: 0.5,
-        shadowRadius: 1,
-        backgroundColor: 'white',
-        marginRight:'2%'
     },
-     buttonCenter: {
-        borderRadius: 22,
+    textTimeAndDate: {
+        color: '#656565',
+        fontSize: 13,
+    },
+    textButton: {
+        paddingBottom: 10,
+       
+        //fontSize: 13,
+    },
+
+    buttonLeft: {
+        borderRadius: 20,
         height: 55,
-        width:200,
+         width: 150,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
@@ -100,13 +120,35 @@ optionButton:{
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
-        alignSelf:'center',
-       
+       // alignSelf: 'center',
+         //alignSelf:'flex-start'
+         marginTop:'1%',marginBottom:'1%',
+         borderColor:'black',
+         borderWidth:1,
+    },
+    buttonCenter: {
+        borderRadius: 20,
+        height: 55,
+         width: 150,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
+        shadowOffset: {
+            width: .4,
+            height: .11
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        backgroundColor: 'white',
+       // alignSelf: 'center',
+       marginTop:'1%',marginBottom:'1%',
+       borderColor:'lightgray',
+         borderWidth:1,
     },
     buttonRight: {
-        borderRadius: 22,
+        borderRadius: 20,
         height: 55,
-       // flex: 0.5,
+         width: 150,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
@@ -117,6 +159,13 @@ optionButton:{
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
-        marginLeft:'2%'
+        marginTop:'1%',marginBottom:'1%',
+        borderColor:'lightgray',
+         borderWidth:1,
+
+       // alignSelf: 'center',
+
+        // marginLeft: '2%',
+        //alignSelf:'flex-end',
     },
 }

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput } from 'react-native';
+import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput , ActivityIndicator} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../stylesheet/login.style'
 import * as Animatable from 'react-native-animatable';
 import Input from './common/Input';
 import Logo from './common/Logo';
 import HeaderLoginModule from './common/HeaderLoginModule'
+import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconSimpleLine from 'react-native-vector-icons/SimpleLineIcons';
-import IconMaterialIcons  from 'react-native-vector-icons/MaterialIcons';
+import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default class Login extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ export default class Login extends Component {
         this.state = {
             userName: '',
             password: '',
+            isRemember: false,
         }
     }
 
@@ -27,77 +29,104 @@ export default class Login extends Component {
 
     moveTextUp2 = () => this.refs.viewTxtInputSubCat.fadeInUp(2000).then(endState => endState.finished ? "finish " : console.log('finish not'));
 
-moveToForgotPasswordView = () =>{
-this.props.navigation.navigate('ForgotPasswordComponent');
-}
+    moveToForgotPasswordView = () => {
+        this.props.navigation.navigate('ForgotPasswordComponent');
+    }
+    onClickRememberMe() {
+        this.setState({ isRemember: !this.state.isRemember });
+    }
     render() {
+        const { data, errors, handleChange, login, onSubmit, fetching } = this.props;
+        console.log("errors====", errors, "isRequesting===", login, "Fetching ----",fetching);
         return (
-            <SafeAreaView>
-                <KeyboardAwareScrollView >
-                    <View style={{flex:1,backgroundColor:'rgb(245,245,245)'}}>
-                <HeaderLoginModule viewName={'Login'} />
-                    <View style={{ backgroundColor: 'white' }}>
-                       
-                        <Text style={styles.loginText}> Swifno</Text>
-                        
-                       <View style={{flexDirection:'row', justifyContent: 'center',}}>
-                           <IconSimpleLine name= "user" style={{fontSize:22, marginLeft:'5%', marginTop:'5%'}} />
-                           <Input
-                             label={'User Name'}
-                                style={styles.inputStyle}
-                                placeholder={'User Name'}
-                                onChangeText={(text) => this.setState({ userName: text })}
-                                value={this.state.userName}
-                                charLimit={30}
-                            />
-                       </View>
-                            
-                       <View style={{flexDirection:'row'}}>
-                           <IconMaterialIcons name= "lock-open" style={{fontSize:22, marginLeft:'5%', marginTop:'5%'}} />
-                            <Input
-                             label={'Password'}
-                                style={styles.inputStyle}
-                                placeholder={'Password'}
-                                secureTextEntry={true}
-                                onChangeText={(text) => this.setState({ password: text })}
-                                value={this.state.password}
-                            />
+            <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
+                <KeyboardAwareScrollView style={styles.container}>
+                    <View style={{ flex: 1, }}>
+                        <HeaderLoginModule viewName={'Login'} navigation = {this.props.navigation}  />
+                        <View style={{ backgroundColor: 'white', flex: 1 }}>
 
-</View>
+                         <Image source = {require('../assets/Images/logo_login.png')} style={{flex:0.5, alignSelf:'center',marginTop:'10%', marginBottom:'10%'}} />
+                            <View style={{ flex: 0.5 }}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: '2%' }}>
+                                    <IconSimpleLine name="user" style={styles.icon} />
 
-                        </View>
-                        <View style={styles.rememberView}>
-                        
-                            <TouchableOpacity style={styles.tickMarkView}>
-                                <Image />
+                                    <Input
+                                        label={'User Name'}
+                                        style={styles.inputStyle}
+                                        placeholder={'User Name'}
+                                        onChangeText={(text) => this.setState({ userName: text })}
+                                        value={data.mobile}
+                                        onChangeText={val => handleChange('mobile', val)}
+                                        charLimit={30}
+                                    />
+
+                                </View>
+                                {errors.mobile ? <Animatable.Text animation="fadeIn" style={styles.errorText}> {errors.mobile}</Animatable.Text> : null}
+
+                                <View style={{ flexDirection: 'row' }}>
+                                    <IconMaterialIcons name="lock-open" style={styles.icon} />
+                                    <Input
+                                        label={'Password'}
+                                        style={styles.inputStyle}
+                                        placeholder={'Password'}
+                                        secureTextEntry={true}
+                                        onChangeText={val => handleChange('password', val)}
+                                        value={data.password}
+                                    />
+                                </View>
+                                {errors.password ? <Animatable.Text animation="fadeIn" style={styles.errorText}> {errors.password}</Animatable.Text> : null}
+
+                            </View>
+                            <View style={styles.rememberView}>
+
+                                <TouchableOpacity style={styles.tickMarkView} onPress={() => this.onClickRememberMe()}>
+
+                                    {this.state.isRemember ? <IconMaterialIcons name="check-box" color="gray" style={styles.iconCheckBox} /> : <IconMaterialIcons name="check-box-outline-blank" color="gray" style={styles.iconCheckBox} />}
+
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.rememberBtn} onPress={() => this.onClickRememberMe()}>
+                                    <Text style={styles.rememberText}> Remember me</Text>
+                                </TouchableOpacity>
+                            </View>
+
+                            <TouchableOpacity underlayColor="#25b6ad" onPress={onSubmit} style={[styles.buttonSelected]}>
+                                {(login.loading && fetching) ? <ActivityIndicator size="large" color="white" /> : <Text style={styles.textSelected} >Log In</Text>}
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.rememberBtn}  >
-                                <Text style={styles.rememberText}> Remember me</Text>
-                            </TouchableOpacity>
-                        </View>
+                            {/* 
+                            <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonSelected]}>
+                                <Text style={styles.textSelected}>Login</Text>
+                            </TouchableOpacity> */}
 
-                        <TouchableOpacity underlayColor="#25b6ad" style={[styles.loginButton]}>
-                            <Text style={styles.textButtonTitle}>Login</Text>
-                        </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.forgotPwdBtn} onPress={()=> this.props.navigation.navigate('ForgotPasswordComponent')}>
-                                <Text style={styles.forgotPwdText}> Forgot Password?</Text>
-                            </TouchableOpacity>
+
+                            <View style={styles.forgotPwdBtnView}>
+                                <TouchableOpacity style={styles.forgotPwdBtn} onPress={() => this.props.navigation.navigate('ForgotPasswordComponent')}>
+                                    <Text style={styles.forgotPwdText}> Forgot Password?</Text>
+                                </TouchableOpacity>
+                            </View>
+
 
                             <Text style={styles.orText}> Or</Text>
-                            <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn}>
-                               
-                               <Text>Facebook login</Text>
-                           </TouchableOpacity>
-                       
-                   <View style={{flexDirection:'row', alignSelf:'center'}}>
-    <Text>Don't have an account </Text>
-    <TouchableOpacity underlayColor="#25b6ad" style={[styles.signupButton]}>
-                            <Text style={styles.signupText}>signup</Text>
-                        </TouchableOpacity>
-                   </View>
-                    
-            </View>
+                            <View style={{ marginBottom: '5%' }}>
+                                <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn}>
+                                    <View style={{ flexDirection: 'row', justifyContent: 'center', marginLeft: '2%', marginRight: '2%' }}>
+                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '12%', color: 'white' }} />
+                                        <Text style={styles.fbText}>Login with facebook</Text>
+                                    </View>
+
+
+                                </TouchableOpacity>
+                            </View>
+
+
+                            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+                                <Text style={styles.textDontHaveAccount}>Don't have an account yet? </Text>
+                                <TouchableOpacity underlayColor="#25b6ad" style={[styles.signupButton]} onPress={() => this.props.navigation.navigate('Signup')}>
+                                    <Text style={styles.signupText}>signup</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
                 </KeyboardAwareScrollView>
             </SafeAreaView>
         )

@@ -21,10 +21,11 @@ const Input = ({label,value, onChangeText, placeholder, secureTextEntry,keyboard
                 inputContainerStyle={textInputStyle}
                 secureTextEntry={secureTextEntry}
                 onChangeText={onChangeText}
-                disabledLineWidth={0}
+                // disabledLineWidth={0}
                 affixTextStyle={affixTextStyle}
-                lineWidth={0}
+                // lineWidth={0}
                  labelHeight={15}
+                 tintColor='rgb(246, 205, 74)'
             /> 
         // <View style={viewContainerStyle}> 
         //     <Text style={labelStyle}>{label}</Text>

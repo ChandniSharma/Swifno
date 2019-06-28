@@ -7,31 +7,48 @@
  */
 
 import React, {Component} from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import rootReducer from './src/reducers';
+
+
 import {Platform, StyleSheet, Text, View, AsyncStorage,Alert} from 'react-native';
 //import {createStackNavigator ,createSwitchNavigator, SafeAreaView} from 'react-navigation';
 import WelcomeScreen from './src/welcome/WelcomeScreen';
-import Login from "./src/views/Login";
+import LoginContainer from "./src/containers/Login";
+//import Login from "./src/views/Login";
 import ForgotPasswordComponent from './src/views/ForgotPassword';
+import Tutorial from './src/views/Tutorial';
+import Dashboard from './src/views/Dashboard';
+import Signup from './src/views/Signup';
+
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const MainNavigator = createStackNavigator({
-  Login: {screen: Login},
+  Tutorial:{screen: Tutorial},
+  Login: {screen: LoginContainer},
   ForgotPasswordComponent: {screen: ForgotPasswordComponent},
+  Dashboard:{screen:Dashboard},
+  Signup: {screen: Signup},
 },{
-  initialRouteName: 'Login',
-//  initialRouteName: 'PlayAudioClass',
+  initialRouteName: 'Tutorial',
   gesturesEnabled: false,
   headerMode: 'none',
 }
 );
 
 const RootNavigator = createAppContainer(MainNavigator)
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
 //export default RootNavigator
 
 export default class App extends Component {
   render() {
     return (
-     <RootNavigator />
+      <Provider store={store}>
+        <RootNavigator />
+     </Provider>
     );
   }
 }

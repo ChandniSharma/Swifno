@@ -1,25 +1,7 @@
-import { Dimensions, Platform } from "react-native";
-
-const { height, width } = Dimensions.get('window');
-const deviceHeight = height;
-let deviceWidth = width;
-let top;
-const statusBarHeight = Platform.OS === 'ios' ? 0 : 0;
-
 export default {
-
     container: {
         flex: 1,
     },
-    viewMain:{
-        flex:1
-    },
-    image: {
-        alignSelf: 'center',
-        marginTop: '5%',
-        marginBottom:'5%'
-    },
-   
     buttonSelected: {
         borderRadius: 10,
         height: 55,
@@ -59,27 +41,21 @@ export default {
       color:'white',
       fontSize: 13,
     },
-    icon:{
-        fontSize:22, marginLeft:'5%', marginTop:'5%'
-     },
+
     textNotSelected:{
       color:'black',
       fontSize: 13,
     },
 
-    textDescription:{
-        color:'black',
-        fontSize: 13,
-         margin:'5%',
-        
-        lineHeight: 20,
-        
-    }, 
-    errorText: {
-        margin: '2%',
-        color: 'red',
-        alignSelf: 'center',
-    },
+textDescription:{
+    color:'black',
+    fontSize: 13,
+     marginLeft:'5%',
+     marginRight: '5%',
+    lineHeight: 20
+}, 
+image:{
+   alignSelf:'center'
+}
 
-   
 }

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, ActivityIndicator, SafeAreaView } from 'react-native';
+import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, ActivityIndicator,ScrollView, FlatList } from 'react-native';
 import styles from '../stylesheet/dashboard.style'
-import HeaderLoginModule from './common/HeaderLoginModule';
+import HeaderMenuAndBell from './common/HeaderMenuAndBell';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import Input from './common/Input';
 import { SafeAreaView } from 'react-navigation';
 import * as Animatable from 'react-native-animatable';
 import * as CONST from '../constants/Constant';
+
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -19,9 +20,9 @@ export default class Dashboard extends Component {
 
             { "TokenID": "#123896", "Date": "12th October 2018", "PersonCount": "1 Persons", "address": "45/1, Baikunth Nagar", "City": "Bhopal", "time": "9:00pm-10:00pm" },
 
-            { "TokenID": "#127656", "Date": "12th September 2018", "PersonCount": "5 Persons", "address": "45/1, Baikunth Nagar", "City": "Bhopal", "time": "4:00pm-5:00pm" },
+            // { "TokenID": "#127656", "Date": "12th September 2018", "PersonCount": "5 Persons", "address": "45/1, Baikunth Nagar", "City": "Bhopal", "time": "4:00pm-5:00pm" },
 
-            { "TokenID": "#123456", "Date": "12th September 2018", "PersonCount": "2 Persons", "address": "45/1, Baikunth Nagar", "City": "Bhopal", "time": "6:00pm-7:00pm" }
+            // { "TokenID": "#123456", "Date": "12th September 2018", "PersonCount": "2 Persons", "address": "45/1, Baikunth Nagar", "City": "Bhopal", "time": "6:00pm-7:00pm" }
 
             ],
 
@@ -31,11 +32,11 @@ export default class Dashboard extends Component {
             isRefundRequests: false,
         }
     }
-    getCurrentActivity() {
-        this.setState({ isCurrentActivitySelected: true });
+    getCurrentActivity =()=> {
+         this.setState({ isCurrentActivitySelected: true });
     }
-    getNotification() {
-        this.setState({ isCurrentActivitySelected: false });
+    getNotification =()=> {
+         this.setState({ isCurrentActivitySelected: false });
 
     }
 
@@ -74,9 +75,9 @@ export default class Dashboard extends Component {
                         </Text>
                     </View>
                     <View style={styles.viewContainNumber}>
-                        <Text>
+                        {/* <Text>
                             {item.item.PersonCount}
-                        </Text>
+                        </Text> */}
                     </View>
                 </View>
             </View>);
@@ -86,45 +87,53 @@ export default class Dashboard extends Component {
     render() {
         return (
 
-            <SafeAreaView>
+            <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
 
                 <View style={{ flex: 1 }}>
-                    <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity onPress={this.getCurrentActivity()} style={styles.buttonSegment}>
-                            <Text>Current Activity</Text>
+
+                    <HeaderMenuAndBell viewName={'Dashboard'} navigation={this.props.navigation}/>
+
+                    <View style={{ flexDirection: 'row', marginBottom:'2%' , flex:0.1,  justifyContent:'space-between'}}>
+                        <TouchableOpacity onPress={()=>this.getCurrentActivity()} style={styles.buttonSegment}>
+                            <Text >Current Activity</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={this.getNotification()} style={styles.buttonSegment}>
+                        <TouchableOpacity onPress={()=>this.getNotification()} style={styles.buttonSegment}>
                             <Text>Notifications</Text>
                         </TouchableOpacity>
                     </View>
 
-                    <View style={{ flexDirection: 'row' }}>
-                        {this.state.isCurrentActivitySelected ? <Animatable.View style={styles.viewSingleLineLeft} />
-                            : <Animatable.View style={styles.viewSingleLineRight} />}
+
+                    <View style={{ flexDirection: 'row',width:'100%', height:'0.5%'}}>
+                    {this.state.isCurrentActivitySelected ? <Animatable.View style={styles.viewSingleLineLeft} />:<View style={styles.viewSingleLineEmpty}/>}
+                  {!this.state.isCurrentActivitySelected ? <Animatable.View style={styles.viewSingleLineRight} /> :null}
+                        {/* {this.state.isCurrentActivitySelected ? <Animatable.View style={styles.viewSingleLineLeft} />
+                            : <Animatable.View style={styles.viewSingleLineRight} />} */}
                     </View>
-
-                    <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity onPress={this.getOptionValue(CONST.DELIVERIES)} style={styles.buttonLeft}>
-                            <Text>Deliveries</Text>
+                    <View style={styles.viewSingleLine} />
+                  {/* <ScrollView horizontal={true} style={[styles.scrollView]}> */}
+                    <View style={{ flexDirection: 'row', marginTop:'2%', marginBottom:'2%',  width:'120%',justifyContent: 'space-evenly' }}>
+                        <TouchableOpacity onPress={()=> this.getOptionValue(CONST.DELIVERIES)} style={styles.buttonLeft}>
+                            <Text style={styles.textButton}>Deliveries</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={this.getOptionValue(CONST.PENDING_REVIEWS)} style={styles.buttonCenter}>
-                            <Text>Pending Reviews</Text>
+                        <TouchableOpacity onPress={()=>this.getOptionValue(CONST.PENDING_REVIEWS)} style={styles.buttonCenter}>
+                            <Text style={styles.textButton}>Pending Reviews</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={this.getOptionValue(CONST.REFUND_REQUESTS)} style={styles.buttonRight}>
-                            <Text>Refund Requests</Text>
+                        <TouchableOpacity onPress={()=>this.getOptionValue(CONST.REFUND_REQUESTS)} style={styles.buttonRight}>
+                            <Text style={styles.textButton}>Refund Requests</Text>
                         </TouchableOpacity>
 
                     </View>
-                    <FlatList style={styles.flatList}
+                    {/* </ScrollView> */}
+                    <FlatList style={[styles.flatList, {flex:0.7}]}
                         data={this.state.arrayList}
                         renderItem={this.renderItem}
                         keyExtractor={(item, index) => index.toString()}
                     />
 
-                  <IconAntDesign name="pluscircle" style={{fontSize:25}} />
+                  <IconAntDesign name="pluscircle" style={{fontSize:55, alignSelf:'flex-end', right:'2%', flex:0.15}} />
 
                 </View>
             </SafeAreaView>

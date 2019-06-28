@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import LinearGradient from 'react-native-linear-gradient';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import Logo from './logo';
+//import LinearGradient from 'react-native-linear-gradient';
+//import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+//import Logo from './logo';
 import IconEvilIcons from "react-native-vector-icons/EvilIcons";
 import IconEntypo from 'react-native-vector-icons/Entypo';
 //import Hamburger from 'react-native-hamburger';
 import Icon from "react-native-vector-icons/AntDesign";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+// import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
 
 
-class HeaderMenuAndBell extends Component {
+export default  class HeaderMenuAndBell extends Component {
 
     constructor(props) {
         super(props);
@@ -33,43 +33,35 @@ class HeaderMenuAndBell extends Component {
     }
 
     render() {
-        const { colors, onPressPopup, onPressBell, isNotificationShow, notificationCount, isBackButtonShow } = this.props;
+        const { colors, onPressPopup, onPressBell, isNotificationShow, notificationCount, isBackButtonShow, viewName } = this.props;
         return (
-            <LinearGradient start={[0.0, 0.5]} end={[1.0, 0.5]} locations={[0.0, 1.0]} colors={colors} style={{ flexDirection: 'row', height: 100, width: '100%', alignItems: 'space-between', justifyContent: 'center' }}>
-               {isBackButtonShow?  <BackButton style={{ fontSize: 30, marginTop: '10%', marginLeft: '4%' }} onPress={() => this.props.navigation.goBack(null)} /> : <TouchableOpacity style={{ color: 'white', marginTop: '14%', flex: 0.1, marginLeft: '4%' }} onPress={onPressPopup}>
-                    {/* <Hamburger color="white" active={false} type="spinCross" onPress={onPressPopup} /> */}
-                    <IconEntypo color="white"  style={{fontSize:14}}/>
-                </TouchableOpacity>} 
-               
+            <View style={styles.mainView}>
+              <IconEntypo name="menu"  style={{ fontSize: 30, marginTop: '10%', marginLeft: '2%' }} />
+               <Text style={styles.titleStyle}> {viewName}</Text>
 
-                <Logo color={'#ffffff'} style={{ flex: 0.7, marginLeft: '25%' }} width="130px" height="44px" />
-
-                <View style={{ flex: 0.3 }} />
-                <TouchableOpacity style={[styles.searchView, { flex: 0.2, alignSelf: 'flex-end', marginRight: '5%' }]} onPress={onPressBell}>
+                <TouchableOpacity style={[styles.searchView, { flex: 0.17, alignSelf: 'flex-end'}]} onPress={onPressBell}>
                     <View style={{flexDirection:'row'}}>
-                        <IconEvilIcons name="search" color="white" style={{ marginLeft: '5%', marginTop: '2%', fontSize: 40, tintColor: 'white' }} />
+                        <IconEvilIcons name="search" color="black" style={{ marginLeft: '5%', marginTop: '2%', fontSize: 40, tintColor: 'white' }} />
                     </View> 
                 </TouchableOpacity>
-            </LinearGradient>
+            </View>
         )
     }
 }
 
-// eslint-disable-next-line
-const mapStateToProps = state => {
-    return {
-        notificationCount:state.notificationCount
-    };
-  };
-  
+
   // eslint-disable-next-line
  
-  export default connect(
-      mapStateToProps,
-      null
-    )(HeaderMenuAndBell);
+//   export default connect(
+//       mapStateToProps,
+//       null
+//     )(HeaderMenuAndBell);
 
 const styles = {
+    mainView:{
+        flexDirection: 'row', height: 84, width: '100%', alignItems: 'space-between', justifyContent: 'center',
+        backgroundColor: 'rgb(246, 205, 74)', 
+    },
     imgSideTitle: {
         color: 'white',
         // fontSize: 21,
@@ -80,28 +72,19 @@ const styles = {
         width: 50,
         height: 40
     },
-    redDot: {
-        width: 14,
-        height: 14,
-        backgroundColor: '#ff277b',
-        borderRadius: 7,
-        marginLeft:'-45%',
-        marginBottom:'-25%',
-    },
-    textDull: {
-        color: 'rgba(255,255,255,0.72)',
+    titleStyle: {
+        color: 'black',
         fontFamily: 'Montserrat-Regular',
         // fontWeight:'200',
-        fontSize: 12,
+        fontSize: 20,
+        alignSelf: 'center',
+        flex: 0.9,
+        textAlign: 'center',
+        justifyContent: 'center',
+         
+         marginTop:'10%'
     },
-    getStarted: {
-        color: 'white',
-        fontFamily: 'Montserrat-Regular',
-        //fontWeight:'200',
-        fontSize: 14,
-        marginRight: '5%',
-        alignSelf: 'flex-end',
-    },
+   
     bellButton: {
         width: 64,
         height: 64,

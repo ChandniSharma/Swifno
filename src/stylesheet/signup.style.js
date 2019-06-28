@@ -10,10 +10,7 @@ export default {
         flex: 1,
     },
     icon: {
-        fontSize: 22, marginLeft: '5%', marginRight: '-5%', marginTop: '5%'
-    },
-    iconCheckBox: {
-        fontSize: 22
+        fontSize: 22, marginLeft: '5%', marginRight: '-5%', marginTop: '4%'
     },
     leftView: {
         alignSelf: 'flex-end',
@@ -44,7 +41,7 @@ export default {
         fontFamily: 'Montserrat-Regular',
         // fontWeight:'200',
         fontSize: 12,
-        marginRight: '2%',
+        marginRight: '1%',
     },
     textDull: {
         color: 'rgba(255,255,255,0.72)',
@@ -60,12 +57,14 @@ export default {
         marginRight: '5%',
         alignSelf: 'flex-end',
     },
-    logo: {
+    loginText: {
         marginTop: '10%',
         marginBottom: '10%',
         alignSelf: 'center',
-
-
+        fontSize: 40,
+        color: 'black',
+        fontFamily: 'Montserrat-Regular',
+        // fontWeight:'100',
     },
 
     inputStyle: {
@@ -107,10 +106,10 @@ export default {
 
     },
     tickMarkView: {
-       marginTop:'1%',
+        width: 20,
         height: 20,
-        flex:0.1,
-       // marginRight: '3%',
+        flex: 0.05,
+        marginRight: '3%',
         borderColor: 'gray',
         borderWidth: .2,
         shadowColor: 'rgba(0,0,0,1)',
@@ -121,17 +120,21 @@ export default {
         shadowOpacity: 0.5,
         shadowRadius: 1,
         borderRadius: .2,
-       
     },
     rememberBtn: {
-       // flex: 0.45,
+        flex: 0.45,
         marginTop: '1%',
-        height: 20,
-          //backgroundColor:'green',
-          marginLeft:'5%'
+        height: 20
+        //  backgroundColor:'green',
     },
     rememberText: {
 
+    },
+    errorText: {
+        color: 'red',
+        alignSelf: 'center',
+        marginTop: '2%',
+        marginBottom: '2%'
     },
     forgotPwdBtnView: {
         flex: 0.5,
@@ -143,8 +146,7 @@ export default {
     },
     forgotPwdText: {
         alignSelf: 'center',
-        height: 20,
-        color: 'gray',
+        height: 20
     },
     fbText: {
         color: 'white',
@@ -152,10 +154,17 @@ export default {
     signupButton: {
 
     },
+    logo: {
+        marginTop: '10%',
+        marginBottom: '10%',
+        alignSelf: 'center',
+
+    },
     signupText: {
         fontSize: 16,
         color: 'red',
         fontWeight: '500',
+        marginTop: '-2%'
     },
     buttonSelected: {
         borderRadius: 10,
@@ -174,11 +183,15 @@ export default {
         alignSelf: 'center',
 
     },
-    errorText: {
-        color: 'red',
-        alignSelf: 'center',
-        marginTop: '2%',
-        marginBottom: '2%'
+    socialMediaLoginView: {
+        flexDirection: 'row',
+        marginTop: '20%',
+        marginBottom: '2%',
+        // backgroundColor:'yellow',
+        flex: 1,
+        height: 60,
+        marginLeft: '5%',
+        marginRight: '5%',
     },
     facebookBtn: {
         borderRadius: 10,

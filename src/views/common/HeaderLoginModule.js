@@ -3,44 +3,48 @@ import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, Dim
 import Icon from 'react-native-vector-icons/AntDesign';
 
 
-export default class HeaderLoginModule extends Component{
+export default class HeaderLoginModule extends Component {
 
-    onPressBack = () =>{
-       // this.props.navigation.navigate.goBack();
+    onPressBack = () => {
+      
+         this.props.navigation.goBack();
     }
-    render(){
+    render() {
 
-        return(
+        return (
             <View style={styles.headerView}>
-                <TouchableOpacity onPress={this.onPressBack()} style={styles.backButton}>
-                <Icon name="arrowleft" color="black" style={{fontSize:30}} />
+                <TouchableOpacity onPress={()=>this.onPressBack()} style={styles.backButton}>
+                    <Icon name="arrowleft" color="black" style={{ fontSize: 30 }} />
                 </TouchableOpacity>
-                 <Text style={styles.titleStyle}> {this.props.viewName}</Text>
+                <Text style={styles.titleStyle}> {this.props.viewName}</Text>
             </View>
         )
     }
 }
 
-const styles  = {
-headerView:{
-    backgroundColor:'yellow',
-    flexDirection: 'row',
-    flex:1, 
-},
-backButton:{
-    alignSelf: 'flex-start',
-    marginLeft: '2%',
-  //  flex:0.2
-},
-titleStyle:{
-    color:'black',
-    fontFamily:'Montserrat-Regular',
-   // fontWeight:'200',
-    fontSize:14,
-    alignSelf:'center',
-    flex:0.9,
-    textAlign:'center',
-    justifyContent:'center',
-   // backgroundColor:'red'
-   }
+const styles = {
+    headerView: {
+        backgroundColor: 'rgb(246, 205, 74)',
+        flexDirection: 'row',
+       
+        height:64,
+        justifyContent:'center'
+    },
+    backButton: {
+        //alignSelf: 'flex-start',
+        marginLeft: '2%',
+        justifyContent:'center',
+       
+    },
+    titleStyle: {
+        color: 'black',
+        fontFamily: 'Montserrat-Regular',
+        // fontWeight:'200',
+        fontSize: 20,
+        alignSelf: 'center',
+        flex: 0.9,
+        textAlign: 'center',
+        justifyContent: 'center',
+        // backgroundColor:'red'
+    }
 }

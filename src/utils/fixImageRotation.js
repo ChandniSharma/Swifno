@@ -1,18 +1,19 @@
-import loadImage from "blueimp-load-image";
+//import loadImage from "blueimp-load-image";
 import { isNull } from "lodash";
 
 const fixRotationOfFile = file => {
   return new Promise(resolve => {
+    resolve(null);
     if (isNull(file)) resolve(null);
-    loadImage(
-      file,
-      img => {
-        img.toBlob(blob => {
-          resolve(blob);
-        }, "image/jpeg");
-      },
-      { orientation: true }
-    );
+    // loadImage(
+    //   file,
+    //   img => {
+    //     img.toBlob(blob => {
+    //       resolve(blob);
+    //     }, "image/jpeg");
+    //   },
+    //   { orientation: true }
+    // );
   });
 };
 
