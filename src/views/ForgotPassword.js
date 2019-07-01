@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, ActivityIndicator, SafeAreaView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../stylesheet/forgotPassword.style'
+import commonStyles from '../stylesheet/common.style';
+
 import * as Animatable from 'react-native-animatable';
 import { isEmpty } from "lodash";
 import HeaderLoginModule from './common/HeaderLoginModule'; 
@@ -44,7 +46,7 @@ export default class ForgotPasswordComponent extends Component {
                         <IconMaterialCommunity name="email" color={'gray'} style={styles.icon} />
                     <Input
                              label={'Enter Your Email ID'}
-                                style={styles.inputStyle}
+                                style={commonStyles.inputStyle}
                                 placeholder={'Email'}
                                 onChangeText={(text) => this.setState({ email: text })}
                                 value={this.state.email}

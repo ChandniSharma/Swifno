@@ -22,6 +22,8 @@ import ForgotPasswordComponent from './src/views/ForgotPassword';
 import Tutorial from './src/views/Tutorial';
 import Dashboard from './src/views/Dashboard';
 import Signup from './src/views/Signup';
+import ChangePasswordContainer  from './src/containers/ChangePassword';
+import Route from './src/views/common/Route';
 
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
@@ -31,8 +33,11 @@ const MainNavigator = createStackNavigator({
   ForgotPasswordComponent: {screen: ForgotPasswordComponent},
   Dashboard:{screen:Dashboard},
   Signup: {screen: Signup},
+  ChangePasswordContainer: {screen: ChangePasswordContainer},
+  Route:{screen:Route},
 },{
-  initialRouteName: 'Tutorial',
+  //initialRouteName: 'Tutorial',
+  initialRouteName: 'ChangePasswordContainer',
   gesturesEnabled: false,
   headerMode: 'none',
 }
