@@ -33,7 +33,7 @@ const styles = {
     },
     backButton: {
         //alignSelf: 'flex-start',
-        marginLeft: '2%',
+       // marginLeft: '1%',
         justifyContent:'center',
        
     },

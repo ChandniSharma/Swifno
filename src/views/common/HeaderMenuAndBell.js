@@ -36,7 +36,7 @@ export default  class HeaderMenuAndBell extends Component {
         const { colors, onPressPopup, onPressBell, isNotificationShow, notificationCount, isBackButtonShow, viewName } = this.props;
         return (
             <View style={styles.mainView}>
-              <IconEntypo name="menu"  style={{ fontSize: 30, marginTop: '10%', marginLeft: '2%' }} />
+              <IconEntypo name="menu"  style={{ fontSize: 30, marginTop: '10%', marginLeft: '2%' }}  onPress = {()=>this.props.navigation.openDrawer()}/>
                <Text style={styles.titleStyle}> {viewName}</Text>
 
                 <TouchableOpacity style={[styles.searchView, { flex: 0.17, alignSelf: 'flex-end'}]} onPress={onPressBell}>

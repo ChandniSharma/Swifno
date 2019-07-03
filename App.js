@@ -25,25 +25,51 @@ import Signup from './src/views/Signup';
 import ChangePasswordContainer  from './src/containers/ChangePassword';
 import Route from './src/views/common/Route';
 
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {createStackNavigator, createAppContainer, createDrawerNavigator, DrawerItems,} from 'react-navigation';
 
-const MainNavigator = createStackNavigator({
+// const MainNavigator = createStackNavigator({
+//   Tutorial:{screen: Tutorial},
+//   Login: {screen: LoginContainer},
+//   ForgotPasswordComponent: {screen: ForgotPasswordComponent},
+//   Dashboard:{screen:Dashboard},
+//   Signup: {screen: Signup},
+//   ChangePasswordContainer: {screen: ChangePasswordContainer},
+//   Route:{screen:Route},
+// },{
+//   //initialRouteName: 'Tutorial',
+//   initialRouteName: 'ChangePasswordContainer',
+//   gesturesEnabled: false,
+//   headerMode: 'none',
+// }
+// );
+
+// const RootNavigator = createAppContainer(MainNavigator)
+
+const DrawerNavigator = new createDrawerNavigator ({
+  Dashboard:{screen:Dashboard},
+  // Route:{screen:Route},
+})
+
+const LoginNavigator = createStackNavigator({
   Tutorial:{screen: Tutorial},
   Login: {screen: LoginContainer},
   ForgotPasswordComponent: {screen: ForgotPasswordComponent},
-  Dashboard:{screen:Dashboard},
   Signup: {screen: Signup},
   ChangePasswordContainer: {screen: ChangePasswordContainer},
-  Route:{screen:Route},
+  DrawerNavigator:{screen:DrawerNavigator}
 },{
   //initialRouteName: 'Tutorial',
-  initialRouteName: 'ChangePasswordContainer',
+  initialRouteName: 'Tutorial',
   gesturesEnabled: false,
   headerMode: 'none',
 }
 );
 
-const RootNavigator = createAppContainer(MainNavigator)
+ const RootNavigator = createAppContainer(LoginNavigator)
+
+
+
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 //export default RootNavigator

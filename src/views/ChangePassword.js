@@ -85,7 +85,7 @@ export default class ChangePassword extends Component {
                             <Text style={commonStyles.textNotSelected}>Cancel</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonSelected]} onPress={()=> this.props.navigation.navigate('Login')}>
+                        <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonSelected]} onPress={()=> this.props.navigation.navigate('DrawerNavigator')}>
                             <Text style={commonStyles.textSelected}>Submit</Text>
                         </TouchableOpacity>
 </View>

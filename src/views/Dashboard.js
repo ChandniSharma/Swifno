@@ -93,7 +93,7 @@ export default class Dashboard extends Component {
 
                     <HeaderMenuAndBell viewName={'Dashboard'} navigation={this.props.navigation}/>
 
-                    <View style={{ flexDirection: 'row', marginBottom:'2%' , flex:0.1,  justifyContent:'space-between'}}>
+                    <View style={{ flexDirection: 'row', marginBottom:'2%' , flex:0.11,  justifyContent:'space-between'}}>
                         <TouchableOpacity onPress={()=>this.getCurrentActivity()} style={styles.buttonSegment}>
                             <Text style={styles.textTopBtn}>Current Activity</Text>
                         </TouchableOpacity>
@@ -104,15 +104,18 @@ export default class Dashboard extends Component {
                     </View>
 
 
-                    <View style={{ flexDirection: 'row',width:'100%', height:'0.5%'}}>
+                    <View style={{ flexDirection: 'row',width:'100%', height:'0.5%', flex:0.005}}>
                     {this.state.isCurrentActivitySelected ? <Animatable.View style={styles.viewSingleLineLeft} />:<View style={styles.viewSingleLineEmpty}/>}
                   {!this.state.isCurrentActivitySelected ? <Animatable.View style={styles.viewSingleLineRight} /> :null}
                         {/* {this.state.isCurrentActivitySelected ? <Animatable.View style={styles.viewSingleLineLeft} />
                             : <Animatable.View style={styles.viewSingleLineRight} />} */}
                     </View>
-                    <View style={styles.viewSingleLine} />
-                  {/* <ScrollView horizontal={true} style={[styles.scrollView]}> */}
-                    <View style={{ flexDirection: 'row', marginTop:'2%', marginBottom:'2%',  width:'120%',justifyContent: 'space-evenly' }}>
+                    <View style={[styles.viewSingleLine, {flex:0.005} ]} />
+
+                 {this.state.isCurrentActivitySelected? 
+                 <View style={{flex:0.2}}>
+                 <ScrollView horizontal={true} style={[styles.scrollView]}>
+                    <View style={{ flexDirection: 'row', marginTop:'2%',  width:'120%',justifyContent: 'space-evenly' }}>
                         <TouchableOpacity onPress={()=> this.getOptionValue(CONST.DELIVERIES)} style={styles.buttonLeft}>
                             <Text style={styles.textButton}>Deliveries</Text>
                         </TouchableOpacity>
@@ -126,8 +129,9 @@ export default class Dashboard extends Component {
                         </TouchableOpacity>
 
                     </View>
-                    {/* </ScrollView> */}
-                    <FlatList style={[styles.flatList, {flex:0.7}]}
+                    </ScrollView>
+                    </View>  :null}
+                    <FlatList style={[styles.flatList, {flex:0.75}]}
                         data={this.state.arrayList}
                         renderItem={this.renderItem}
                         keyExtractor={(item, index) => index.toString()}

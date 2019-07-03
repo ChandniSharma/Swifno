@@ -52,8 +52,8 @@ export default {
     },
     scrollView: {
         width: '100%',
-        height: 64,
-        backgroundColor:'red',
+        //height: 64,
+        
 
     },
     flatList: {
