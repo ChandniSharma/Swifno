@@ -14,9 +14,27 @@ export default{
         color: '#000000',
         fontSize: 16,
     },
+    textTitleDashboard: {
+        color: '#000000',
+        fontSize: 13,
+    },
+    textPriceDashboard: {
+        color: '#000000',
+        fontSize: 13,
+        fontWeight:700
+    },
+    textDescriptionDashboard: {
+        color: '#262626',
+        fontSize: 13,
+    },
     textNotSelected:{
         color:'black',
         fontSize: 18,
+      },
+      textTimeDashboard:{
+        color: '#000000',
+        fontSize: 13,
+        
       },
     buttonSelected: {
         borderRadius: 10,

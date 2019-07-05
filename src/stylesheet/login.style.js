@@ -13,7 +13,7 @@ export default {
         fontSize: 22, marginLeft: '5%', marginRight: '-5%', marginTop: '5%'
     },
     iconCheckBox: {
-        fontSize: 20
+        fontSize: 30
     },
     leftView: {
         alignSelf: 'flex-end',
@@ -64,7 +64,7 @@ export default {
         borderRadius: 8,
         fontFamily: 'Montserrat-Regular',
         fontWeight: '300',
-        fontSize: 18,
+        fontSize: 12,
         color: '#262626',
         paddingTop: 21,
         paddingBottom: 20,
@@ -83,17 +83,28 @@ export default {
         marginLeft: '5%',
         marginRight: '5%',
         height: 30,
-        // backgroundColor:'pink'
+         backgroundColor:'pink',
 
     },
+    ViewTickmark:{
+       // marginRight: '-3%',
+       alignItems: 'center',
+       justifyContent:'center',
+       backgroundColor:'red',
+       height:'100%',
+       marginTop:'5%'
+    },
+    viewRememberText:{
+        marginTop: '1%',
+        marginLeft:'5%'
+    },
     tickMarkView: {
-      
+
         height: 40,
         flex:0.1,
-        marginRight: '-3%',
         borderColor: 'gray',
         borderWidth: .2,
-        shadowColor: 'rgba(0,0,0,1)',
+        shadowColor: 'rgba(0,0,0,0.5)',
         shadowOffset: {
             width: .5,
             height: .5
@@ -101,17 +112,14 @@ export default {
         shadowOpacity: 0.5,
         shadowRadius: 1,
         borderRadius: .2,
-       
     },
     rememberBtn: {
        // flex: 0.45,
-        marginTop: '1%',
         height: 20,
           //backgroundColor:'green',
-          marginLeft:'5%'
     },
     rememberText: {
-     fontSize:18
+     fontSize:16
     },
     forgotPwdBtnView: {
         flex: 0.5,

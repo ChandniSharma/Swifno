@@ -69,7 +69,7 @@ export default class Signup extends Component {
                                 <View style={{flexDirection:'row', marginBottom:'2%'}}>
                         <IconMaterialCommunity name="email" style={styles.icon} />
                     <Input
-                             label={'email'}
+                                label={'email'}
                                 style={styles.inputStyle}
                                 placeholder={'Email'}
                                 onChangeText={(text) => this.setState({ email: text })}

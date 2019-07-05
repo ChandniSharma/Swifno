@@ -58,8 +58,8 @@ const LoginNavigator = createStackNavigator({
   ChangePasswordContainer: {screen: ChangePasswordContainer},
   DrawerNavigator:{screen:DrawerNavigator}
 },{
-  //initialRouteName: 'Tutorial',
-  initialRouteName: 'DrawerNavigator',
+  initialRouteName: 'Login',
+ // initialRouteName: 'DrawerNavigator',
   gesturesEnabled: false,
   headerMode: 'none',
 }
