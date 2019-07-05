@@ -81,8 +81,8 @@ console.log("validate====",validate)
     this.setState(
       {
         data
-      },
-      () => this._isValid(name)
+      }
+      //() => this._isValid(name)
     );
   };
 

@@ -23,7 +23,7 @@ export default {
     },
     orText: {
         color: 'gray',
-        fontFamily: 'Montserrat-Regular',
+        // fontFamily: 'Montserrat-Regular',
         // fontWeight:'200',
         fontSize: 18,
         alignSelf: 'center',
@@ -48,29 +48,14 @@ export default {
 
     },
 
-    inputStyle: {
-        marginLeft: '5%',
-        marginRight: '5%',
-        height: 55,
-        backgroundColor: 'white',
-        marginTop: '5%',
-        shadowColor: 'rgba(0,0,0,0.7)',
-        shadowOffset: {
-            width: 2,
-            height: 4
-        },
-        shadowOpacity: 0.5,
-        shadowRadius: 1,
-        borderRadius: 8,
-        fontFamily: 'Montserrat-Regular',
-        fontWeight: '300',
-        fontSize: 12,
-        color: '#262626',
-        paddingTop: 21,
-        paddingBottom: 20,
-        paddingLeft: 30,
-        paddingRight: 30,
-    },
+    viewSingleLineError:{
+        marginLeft: '10%',
+        marginRight: '15%',
+        backgroundColor:'red', 
+        height:'1%',
+        alignSelf:'center',
+        marginTop:'-1%'
+    }, 
     viewForgotPwd: {
 
     },
@@ -83,7 +68,7 @@ export default {
         marginLeft: '5%',
         marginRight: '5%',
         height: 30,
-         backgroundColor:'pink',
+       //  backgroundColor:'pink',
 
     },
     ViewTickmark:{
@@ -102,24 +87,27 @@ export default {
 
         height: 40,
         flex:0.1,
-        borderColor: 'gray',
-        borderWidth: .2,
-        shadowColor: 'rgba(0,0,0,0.5)',
-        shadowOffset: {
-            width: .5,
-            height: .5
-        },
-        shadowOpacity: 0.5,
-        shadowRadius: 1,
-        borderRadius: .2,
+        // borderColor: 'gray',
+        // borderWidth: .2,
+        // shadowColor: 'rgba(0,0,0,0.5)',
+        // shadowOffset: {
+        //     width: .5,
+        //     height: .5
+        // },
+        // shadowOpacity: 0.5,
+       // shadowRadius: 1,
+        //borderRadius: .2,
     },
     rememberBtn: {
        // flex: 0.45,
         height: 20,
+        justifyContent:'center'
           //backgroundColor:'green',
     },
     rememberText: {
-     fontSize:16
+        marginLeft:'2%',
+     fontSize:16,
+
     },
     forgotPwdBtnView: {
         flex: 0.5,

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput , ActivityIndicator} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../stylesheet/login.style'
+import commonStyles from '../stylesheet/common.style';
 import * as Animatable from 'react-native-animatable';
 import Input from './common/Input';
 import Logo from './common/Logo';
@@ -56,7 +57,7 @@ export default class Login extends Component {
 
                                     <Input
                                         label={'User Name'}
-                                        style={styles.inputStyle}
+                                        style={commonStyles.inputStyle}
                                         placeholder={'User Name'}
                                         onChangeText={(text) => this.setState({ userName: text })}
                                         value={data.mobile}
@@ -65,20 +66,24 @@ export default class Login extends Component {
                                     />
 
                                 </View>
-                                {errors.mobile ? <Animatable.Text animation="fadeIn" style={styles.errorText}> {errors.mobile}</Animatable.Text> : null}
+                                <View style={styles.viewSingleLineError}/>
+                                {errors.mobile && !data.mobile ? <Animatable.Text animation="fadeIn" style={styles.errorText}> Enter your mobile number, please</Animatable.Text> : null}
 
-                                <View style={{ flexDirection: 'row' }}>
+                                <View style={{ flexDirection: 'row', marginTop:'2%' }}>
                                     <IconMaterialIcons name="lock-open" style={styles.icon} />
                                     <Input
                                         label={'Password'}
-                                        style={styles.inputStyle}
+                                        style={commonStyles.inputStyle}
                                         placeholder={'Password'}
                                         secureTextEntry={true}
                                         onChangeText={val => handleChange('password', val)}
                                         value={data.password}
                                     />
                                 </View>
-                                {errors.password ? <Animatable.Text animation="fadeIn" style={styles.errorText}> {errors.password}</Animatable.Text> : null}
+                                <View style={styles.viewSingleLineError}/>
+                                <View />
+                                <View />
+                                {errors.password && !data.password? <Animatable.Text animation="fadeIn" style={styles.errorText}> Password is required</Animatable.Text> : null}
 
                             </View>
                             <View style={styles.rememberView}>
@@ -110,7 +115,7 @@ export default class Login extends Component {
                             </View>
 
 
-                            <Text style={styles.orText}> Or</Text>
+                            <Text style={styles.orText}>OR</Text>
                             <View style={{ marginBottom: '5%', alignItems:'center' }}>
                                 <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn} onPress={()=> this.onPressFacebookButton()}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'center', marginLeft: '2%', marginRight: '2%' }}>

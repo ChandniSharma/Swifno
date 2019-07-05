@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../stylesheet/signup.style'
+import commonStyles from '../stylesheet/common.style';
 import * as Animatable from 'react-native-animatable';
 import Input from './common/Input';
 import Logo from './common/Logo';
@@ -59,7 +60,7 @@ export default class Signup extends Component {
                                     <IconSimpleLine name="user" style={styles.icon} />
                                     <Input
                                         label={'User Name'}
-                                        style={styles.inputStyle}
+                                        style={commonStyles.inputStyle}
                                         placeholder={'User Name'}
                                         onChangeText={(text) => this.setState({ userName: text })}
                                         value={this.state.userName}
@@ -70,7 +71,7 @@ export default class Signup extends Component {
                         <IconMaterialCommunity name="email" style={styles.icon} />
                     <Input
                                 label={'email'}
-                                style={styles.inputStyle}
+                                style={commonStyles.inputStyle}
                                 placeholder={'Email'}
                                 onChangeText={(text) => this.setState({ email: text })}
                                 value={this.state.email}
@@ -82,7 +83,7 @@ export default class Signup extends Component {
                                     <IconSimpleLine name="user" style={styles.icon} />
                                     <Input
                                         label={'Phone Number'}
-                                        style={styles.inputStyle}
+                                        style={commonStyles.inputStyle}
                                         placeholder={'Phone Number'}
                                         //keyboardType= 'number-pad'
                                         onChangeText={(text) => this.setState({ phoneNumber: text })}
@@ -95,7 +96,7 @@ export default class Signup extends Component {
                                     <IconMaterialIcons name="lock-open" style={styles.icon} />
                                     <Input
                                         label={'Password'}
-                                        style={styles.inputStyle}
+                                        style={commonStyles.inputStyle}
                                         placeholder={'Password'}
                                         secureTextEntry={true}
                                         onChangeText={(text) => this.setState({ password: text })}
@@ -107,7 +108,7 @@ export default class Signup extends Component {
                                     <IconMaterialIcons name="lock-open" style={styles.icon} />
                                     <Input
                                         label={'Confirm Password'}
-                                        style={styles.inputStyle}
+                                        style={commonStyles.inputStyle}
                                         placeholder={'Confirm Password'}
                                         secureTextEntry={true}
                                         onChangeText={(text) => this.setState({ confirmPwd: text })}
@@ -124,8 +125,8 @@ export default class Signup extends Component {
                             </TouchableOpacity>
 
                             </View>
-                            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-                                <Text style={styles.textDontHaveAccount}>Already have an account? </Text>
+                            <View style={{ flexDirection: 'row', alignSelf: 'center', justifyContent: 'center' }}>
+                                <Text style={styles.textDontHaveAccount}>Already Registered?</Text>
                                 <TouchableOpacity underlayColor="#25b6ad" style={[styles.signupButton]} onPress={()=> this.props.navigation.navigate('Login')}>
                                     <Text style={styles.signupText}>Sign In</Text>
                                 </TouchableOpacity>

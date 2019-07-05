@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableHighlight, Image, TextInput, TouchableOpacity, Dimensions, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 
@@ -27,9 +27,9 @@ const styles = {
         backgroundColor: 'rgb(246, 205, 74)',
         flexDirection: 'row',
        
-        height:100,
+        height:64,
         justifyContent:'center',
-        marginTop:'-12%'
+        marginTop:Platform.OS === 'ios'?'-12%':'0%'
     },
     backButton: {
         //alignSelf: 'flex-start',
@@ -39,7 +39,7 @@ const styles = {
     },
     titleStyle: {
         color: 'black',
-        fontFamily: 'Montserrat-Regular',
+        // fontFamily: 'Montserrat-Regular',
         // fontWeight:'200',
         fontSize: 20,
         alignSelf: 'center',
