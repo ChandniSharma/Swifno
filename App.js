@@ -59,7 +59,7 @@ const LoginNavigator = createStackNavigator({
   DrawerNavigator:{screen:DrawerNavigator}
 },{
   //initialRouteName: 'Tutorial',
-  initialRouteName: 'Tutorial',
+  initialRouteName: 'DrawerNavigator',
   gesturesEnabled: false,
   headerMode: 'none',
 }

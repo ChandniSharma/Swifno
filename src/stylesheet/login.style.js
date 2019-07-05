@@ -13,7 +13,7 @@ export default {
         fontSize: 22, marginLeft: '5%', marginRight: '-5%', marginTop: '5%'
     },
     iconCheckBox: {
-        fontSize: 28
+        fontSize: 20
     },
     leftView: {
         alignSelf: 'flex-end',

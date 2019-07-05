@@ -53,8 +53,7 @@ export default {
     scrollView: {
         width: '100%',
         //height: 64,
-        
-
+       
     },
     flatList: {
         flex: 1,
@@ -124,7 +123,8 @@ paddingTop: 10
         backgroundColor: 'white',
        // alignSelf: 'center',
          //alignSelf:'flex-start'
-         marginTop:'1%',marginBottom:'1%',
+         marginTop:'1%',
+         marginBottom:'1%',
          borderColor:'black',
          borderWidth:1,
     },
@@ -166,8 +166,54 @@ paddingTop: 10
          borderWidth:1,
 
        // alignSelf: 'center',
-
         // marginLeft: '2%',
         //alignSelf:'flex-end',
     },
+
+    buttonNotSelected:{
+        borderRadius: 20,
+        height: 55,
+         width: 150,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
+        shadowOffset: {
+            width: .4,
+            height: .11
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        backgroundColor: 'white',
+         marginTop:'1%',marginBottom:'1%',
+         marginLeft:10, 
+         marginRight:10,
+        borderColor:'lightgray',
+         borderWidth:1,
+
+       // alignSelf: 'center',
+        // marginLeft: '2%',
+        //alignSelf:'flex-end',
+    },
+    buttonSelected:{
+        borderRadius: 20,
+        height: 55,
+         width: 150,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
+        shadowOffset: {
+            width: .4,
+            height: .11
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        backgroundColor: 'white',
+       // alignSelf: 'center',
+         //alignSelf:'flex-start'
+         marginTop:'1%',
+         marginBottom:'1%',
+         borderColor:'black',
+         borderWidth:1,
+    },
+   
 }
