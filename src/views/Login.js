@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput , ActivityIndicator} from 'react-native';
+import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput, ActivityIndicator } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../stylesheet/login.style'
 import commonStyles from '../stylesheet/common.style';
@@ -36,21 +36,21 @@ export default class Login extends Component {
     onClickRememberMe() {
         this.setState({ isRemember: !this.state.isRemember });
     }
-    onPressFacebookButton(){
+    onPressFacebookButton() {
         alert('Coming Soon ...')
     }
     render() {
         const { data, errors, handleChange, login, onSubmit, fetching } = this.props;
-        console.log("errors====", errors, "isRequesting===", login, "Fetching ----",fetching);
+        console.log("errors====", errors, "isRequesting===", login, "Fetching ----", fetching);
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-              <HeaderLoginModule viewName={'Login'} navigation = {this.props.navigation}  />
+                <HeaderLoginModule viewName={'Login'} navigation={this.props.navigation} />
 
                 <KeyboardAwareScrollView style={styles.container}>
                     <View style={{ flex: 1, }}>
                         <View style={{ backgroundColor: 'white', flex: 1 }}>
 
-                         <Image source = {require('../assets/Images/logo_login.png')} style={{flex:0.5, alignSelf:'center',marginTop:'10%', marginBottom:'10%'}} />
+                            <Image source={require('../assets/Images/logo_login.png')} style={{ flex: 0.5, alignSelf: 'center', marginTop: '10%', marginBottom: '10%' }} />
                             <View style={{ flex: 0.5 }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: '2%' }}>
                                     <IconSimpleLine name="user" style={styles.icon} />
@@ -66,10 +66,10 @@ export default class Login extends Component {
                                     />
 
                                 </View>
-                                <View style={styles.viewSingleLineError}/>
+                                {/* <View style={styles.viewSingleLineError} /> */}
                                 {errors.mobile && !data.mobile ? <Animatable.Text animation="fadeIn" style={styles.errorText}> Enter your mobile number, please</Animatable.Text> : null}
 
-                                <View style={{ flexDirection: 'row', marginTop:'2%' }}>
+                                <View style={{ flexDirection: 'row', marginBottom: '2%', justifyContent: 'center' }}>
                                     <IconMaterialIcons name="lock-open" style={styles.icon} />
                                     <Input
                                         label={'Password'}
@@ -80,10 +80,9 @@ export default class Login extends Component {
                                         value={data.password}
                                     />
                                 </View>
-                                <View style={styles.viewSingleLineError}/>
-                                <View />
-                                <View />
-                                {errors.password && !data.password? <Animatable.Text animation="fadeIn" style={styles.errorText}> Password is required</Animatable.Text> : null}
+                                {/* <View style={styles.viewSingleLineError} /> */}
+                               
+                                {errors.password && !data.password ? <Animatable.Text animation="fadeIn" style={styles.errorText}> Password is required</Animatable.Text> : null}
 
                             </View>
                             <View style={styles.rememberView}>
@@ -93,14 +92,19 @@ export default class Login extends Component {
                                     {this.state.isRemember ? <IconMaterialIcons name="check-box" color="gray" style={styles.iconCheckBox} /> : <IconMaterialIcons name="check-box-outline-blank" color="gray" style={styles.iconCheckBox} />}
 
                                 </TouchableOpacity>
+                                <View style={{flex: 0.8, marginTop:'1.5%'}}>
                                 <TouchableOpacity style={styles.rememberBtn} onPress={() => this.onClickRememberMe()}>
                                     <Text style={styles.rememberText}> Remember me</Text>
                                 </TouchableOpacity>
+                                </View>
+                                
+                            </View>
+                            <View style={{ marginTop: '2%', justifyContent: 'center', }}>
+                                <TouchableOpacity underlayColor="#25b6ad" onPress={onSubmit} style={[styles.buttonSelected]}>
+                                    {(login.loading && fetching) ? <ActivityIndicator size="large" color="white" /> : <Text style={styles.textSelected} >Log In</Text>}
+                                </TouchableOpacity>
                             </View>
 
-                            <TouchableOpacity underlayColor="#25b6ad" onPress={onSubmit} style={[styles.buttonSelected]}>
-                                {(login.loading && fetching) ? <ActivityIndicator size="large" color="white" /> : <Text style={styles.textSelected} >Log In</Text>}
-                            </TouchableOpacity>
                             {/* 
                             <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonSelected]}>
                                 <Text style={styles.textSelected}>Login</Text>
@@ -113,13 +117,12 @@ export default class Login extends Component {
                                     <Text style={styles.forgotPwdText}> Forgot Password?</Text>
                                 </TouchableOpacity>
                             </View>
-
-
                             <Text style={styles.orText}>OR</Text>
-                            <View style={{ marginBottom: '5%', alignItems:'center' }}>
-                                <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn} onPress={()=> this.onPressFacebookButton()}>
+
+                            <View style={{ marginBottom: '5%', alignItems: 'center' }}>
+                                <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn} onPress={() => this.onPressFacebookButton()}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'center', marginLeft: '2%', marginRight: '2%' }}>
-                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '5%', color: 'white' }} />
+                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '5%', color: 'white', marginLeft: '5%' }} />
                                         <Text style={styles.fbText}>Login with Facebook</Text>
                                     </View>
                                 </TouchableOpacity>

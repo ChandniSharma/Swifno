@@ -17,12 +17,12 @@ export default class Signup extends Component {
         super(props);
         this.state = {
             userName: '',
-            email:'',
-            phoneNumber:'',
+            email: '',
+            phoneNumber: '',
             password: '',
             confirmPwd: ''
-            
-            
+
+
         }
     }
 
@@ -38,22 +38,22 @@ export default class Signup extends Component {
     moveToForgotPasswordView = () => {
         this.props.navigation.navigate('ForgotPasswordComponent');
     }
-    onClickRememberMe(){
-        this.setState({isRemember:!this.state.isRemember});
+    onClickRememberMe() {
+        this.setState({ isRemember: !this.state.isRemember });
     }
     render() {
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                    <HeaderLoginModule viewName={'Sign Up'} navigation = {this.props.navigation} />
+                <HeaderLoginModule viewName={'Sign Up'} navigation={this.props.navigation} />
 
                 <KeyboardAwareScrollView style={styles.container}>
                     <View style={{ flex: 1 }}>
 
-                        <Image source = {require('../assets/Images/logo_login.png')} style={{flex:0.5, alignSelf:'center',marginTop:'10%', marginBottom:'10%'}} />
+                        <Image source={require('../assets/Images/logo_login.png')} style={{ flex: 0.5, alignSelf: 'center', marginTop: '10%', marginBottom: '10%' }} />
 
                         <View style={{ backgroundColor: 'white', flex: 1 }}>
 
-                        {/* <Image source={require('../assets/Images/logo_login')} style={[styles.logo, { flex: 0.5 }]} />  */}
+                            {/* <Image source={require('../assets/Images/logo_login')} style={[styles.logo, { flex: 0.5 }]} />  */}
 
                             <View style={{ flex: 0.5 }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: '2%' }}>
@@ -67,17 +67,17 @@ export default class Signup extends Component {
                                         charLimit={30}
                                     />
                                 </View>
-                                <View style={{flexDirection:'row', marginBottom:'2%'}}>
-                        <IconMaterialCommunity name="email" style={styles.icon} />
-                    <Input
-                                label={'email'}
-                                style={commonStyles.inputStyle}
-                                placeholder={'Email'}
-                                onChangeText={(text) => this.setState({ email: text })}
-                                value={this.state.email}
-                                charLimit={30}
-                            />
-                    </View>
+                                <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: '2%' }}>
+                                    <IconMaterialCommunity name="email" style={styles.icon} />
+                                    <Input
+                                        label={'email'}
+                                        style={commonStyles.inputStyle}
+                                        placeholder={'Email'}
+                                        onChangeText={(text) => this.setState({ email: text })}
+                                        value={this.state.email}
+                                        charLimit={30}
+                                    />
+                                </View>
 
                                 <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: '2%' }}>
                                     <IconSimpleLine name="user" style={styles.icon} />
@@ -92,7 +92,7 @@ export default class Signup extends Component {
                                     />
                                 </View>
 
-                                <View style={{ flexDirection: 'row' }}>
+                                <View style={{ flexDirection: 'row',justifyContent: 'center', marginBottom: '2%'  }}>
                                     <IconMaterialIcons name="lock-open" style={styles.icon} />
                                     <Input
                                         label={'Password'}
@@ -104,7 +104,7 @@ export default class Signup extends Component {
                                     />
                                 </View>
 
-                                <View style={{ flexDirection: 'row' }}>
+                                <View style={{ flexDirection: 'row',justifyContent: 'center', marginBottom: '2%' }}>
                                     <IconMaterialIcons name="lock-open" style={styles.icon} />
                                     <Input
                                         label={'Confirm Password'}
@@ -117,17 +117,16 @@ export default class Signup extends Component {
                                 </View>
 
                             </View>
-<View style={{marginTop:'10%',marginBottom:'10%'}}>
+                            <View style={{ marginTop: '10%', marginBottom: '10%' }}>
 
-
-                            <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonSelected]}>
-                                <Text style={styles.textSelected}>Submit</Text>
-                            </TouchableOpacity>
+                                <TouchableOpacity underlayColor="#25b6ad" style={[styles.buttonSelected]}>
+                                    <Text style={styles.textSelected}>Submit</Text>
+                                </TouchableOpacity>
 
                             </View>
                             <View style={{ flexDirection: 'row', alignSelf: 'center', justifyContent: 'center' }}>
                                 <Text style={styles.textDontHaveAccount}>Already Registered?</Text>
-                                <TouchableOpacity underlayColor="#25b6ad" style={[styles.signupButton]} onPress={()=> this.props.navigation.navigate('Login')}>
+                                <TouchableOpacity underlayColor="#25b6ad" style={[styles.signupButton]} onPress={() => this.props.navigation.navigate('Login')}>
                                     <Text style={styles.signupText}>Sign In</Text>
                                 </TouchableOpacity>
                             </View>

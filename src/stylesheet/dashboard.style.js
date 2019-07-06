@@ -14,8 +14,8 @@ export default {
     textSegmentButton: {
         color: 'black',
 
-        fontSize: 18,
-        // fontWeight: 'bold',
+        fontSize: 16,
+       
 
     },
     viewSingleLine: {
@@ -72,7 +72,10 @@ export default {
         borderWidth: 0.4,
         // borderLeftWidth: 0.5,
         shadowColor: 'lightGray',
-        shadowOffset: { width: 1.0, height: 2 },
+        // shadowOffset:
+        //  { width: 1.0, 
+        //     height: 2 },
+         
         shadowOpacity: 0.4,
         shadowRadius: 1.5,
         elevation: 3,
@@ -92,8 +95,7 @@ export default {
         color: 'black',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: 18,
-        fontWeight: 'bold',
+        fontSize: 16,
         marginTop: 30
     },
    
@@ -117,10 +119,10 @@ export default {
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
-        shadowOffset: {
-            width: .4,
-            height: .11
-        },
+        // shadowOffset: {
+        //     width: .4,
+        //     height: .11
+        // },
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
@@ -138,10 +140,10 @@ export default {
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
-        shadowOffset: {
-            width: .4,
-            height: .11
-        },
+        // shadowOffset: {
+        //     width: .4,
+        //     height: .11
+        // },
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
@@ -157,10 +159,10 @@ export default {
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
-        shadowOffset: {
-            width: .4,
-            height: .11
-        },
+        // shadowOffset: {
+        //     width: .4,
+        //     height: .11
+        // },
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
@@ -175,15 +177,15 @@ export default {
 
     buttonNotSelected: {
         borderRadius: 20,
-        height: verticalScale(40),
-        width: scale(100),
+        height: 40,
+        width: 100,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
-        shadowOffset: {
-            width: .4,
-            height: .11
-        },
+        // shadowOffset: {
+        //     width: .4,
+        //     height: .11
+        // },
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
@@ -199,15 +201,15 @@ export default {
     },
     buttonSelected: {
         borderRadius: 20,
-        height: verticalScale(40),
-        width: scale(100),
+        height: 40,
+        width: 100,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
-        shadowOffset: {
-            width: .4,
-            height: .11
-        },
+        // shadowOffset: {
+        //     width: .4,
+        //     height: .11
+        // },
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',

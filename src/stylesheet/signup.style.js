@@ -35,7 +35,7 @@ export default {
         // fontWeight:'200',
         fontSize: 12,
         marginRight: '1%',
-        marginTop:'2%'
+        marginTop:'1%'
     },
    
     loginText: {
@@ -134,7 +134,7 @@ export default {
     },
     signupButton: {
 // justifyContent:'center'
-backgroundColor:'red'
+//backgroundColor:'red'
     },
     logo: {
         marginTop: '10%',

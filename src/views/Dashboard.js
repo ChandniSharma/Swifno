@@ -104,8 +104,6 @@ export default class Dashboard extends Component {
         return (
             <DashboardCell item={item} index={index} />
         );
-
-
     }
     render() {
 

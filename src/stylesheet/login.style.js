@@ -44,17 +44,16 @@ export default {
         marginTop: '10%',
         marginBottom: '10%',
         alignSelf: 'center',
-
-
     },
 
     viewSingleLineError:{
-        marginLeft: '10%',
-        marginRight: '15%',
+        // marginLeft: '10%',
+        // marginRight: '15%',
         backgroundColor:'red', 
-        height:'1%',
+        height:20,
         alignSelf:'center',
-        marginTop:'-1%'
+        marginTop:'1%',
+        marginBottom:'1%'
     }, 
     viewForgotPwd: {
 
@@ -84,7 +83,7 @@ export default {
         marginLeft:'5%'
     },
     tickMarkView: {
-
+        // backgroundColor:'blue',
         height: 40,
         flex:0.1,
         // borderColor: 'gray',
@@ -99,14 +98,15 @@ export default {
         //borderRadius: .2,
     },
     rememberBtn: {
-       // flex: 0.45,
-        height: 20,
-        justifyContent:'center'
-          //backgroundColor:'green',
+        // flex: 0.8,
+        // height: 20,
+        justifyContent:'center',
+        // backgroundColor:'green',
     },
     rememberText: {
-        marginLeft:'2%',
+   // marginLeft:'2%',
      fontSize:16,
+   //  marginTop:'2%'
 
     },
     forgotPwdBtnView: {
@@ -125,7 +125,8 @@ export default {
     },
     fbText: {
         color: 'white',
-        fontSize:18
+        fontSize:18,
+        marginRight:'5%'
     },
     signupButton: {
 

@@ -16,7 +16,7 @@ export default {
     },
     image: {
         alignSelf: 'center',
-        marginTop: '5%',
+        marginTop: '10%',
         marginBottom:'5%'
     },
    
