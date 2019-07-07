@@ -36,7 +36,7 @@ export default class HeaderMenuAndBell extends Component {
         const { colors, onPressPopup, onPressBell, isNotificationShow, notificationCount, isBackButtonShow, viewName } = this.props;
         return (
             <View style={styles.mainView}>
-                <TouchableOpacity style={styles.imageLeft} onPress={() => this.onPressBack()}>
+                <TouchableOpacity style={styles.imageLeft} >
                     <IconEntypo name="menu" style={styles.icon} onPress={() => this.props.navigation.openDrawer()} />
                 </TouchableOpacity>
 
@@ -63,7 +63,7 @@ const styles = {
         flexDirection: 'row',
         height: 64,
         width: '100%',
-        alignItems: 'space-between',
+        alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgb(246, 205, 74)',
     },
@@ -71,21 +71,15 @@ const styles = {
         flex: 0.15,
         height: '100%',
         justifyContent: 'center',
-        backgroundColor: 'pink'
+
     },
 
     titleStyle: {
         color: 'black',
-        // fontFamily: 'Montserrat-Regular',
-        // fontWeight:'200',
         fontSize: 20,
-        alignSelf: 'center',
-        flex: 0.7,
-        //alignItems: 'center',
         textAlign:'center',
-        justifyContent: 'center',
-        height: '100%',
-        backgroundColor: 'red'
+        flex: 0.7,
+
     },
     imageRight: {
 

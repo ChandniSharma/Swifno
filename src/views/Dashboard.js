@@ -151,10 +151,10 @@ export default class Dashboard extends Component {
                     <View style={[styles.viewSingleLine, { flex: 0.003 }]} />
 
                     {this.state.isCurrentActivitySelected ?
-                        <View style={{ flex: 0.2, justifyContent: 'center' }}>
+                        <View style={{ justifyContent: 'center' }}>
 
                             <ScrollView horizontal={true} style={[styles.scrollView]}>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                                <View style={{ flexDirection: 'row' }}>
 
                                     <View style={this.state.isActiveBids ? styles.buttonSelected : styles.buttonNotSelected}>
                                         <TouchableOpacity  onPress={() => this.getOptionValue(CONST.ACTIVE_BIDS)} >

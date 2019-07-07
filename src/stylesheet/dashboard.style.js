@@ -23,7 +23,7 @@ export default {
         width: '100%',
         height: '0.3%',
         backgroundColor: 'lightgray',
-        marginBottom: '1%'
+        marginBottom: '2%'
 
     },
     viewSingleLineLeft: {
@@ -56,7 +56,6 @@ export default {
 
     },
     scrollView: {
-        marginLeft:5,
         width: '100%',
         //height: 64,
         backgroundColor: 'transparant',
@@ -229,9 +228,11 @@ export default {
         borderColor: 'black',
         borderWidth: 1,
     },
+
   textSelected:{
-  color: 'black',
-  }, 
+    color: 'black',
+  },
+
   textNotSelected:{
       color:'lightgray'
   }
