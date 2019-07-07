@@ -23,7 +23,7 @@ export default {
         width: '100%',
         height: '0.3%',
         backgroundColor: 'lightgray',
-        marginBottom: '2%'
+        marginBottom: '3%'
 
     },
     viewSingleLineLeft: {
@@ -57,9 +57,14 @@ export default {
     },
     scrollView: {
         width: '100%',
+        paddingLeft:10,
+       
+      
+
         //height: 64,
         backgroundColor: 'transparant',
-        justifyContent: 'center',
+        // justifyContent: 'center',
+        // alignSelf:'center'
     },
     flatListCurrentActivity: {
         flex: 0.75,
