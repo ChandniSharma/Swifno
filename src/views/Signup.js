@@ -47,7 +47,7 @@ export default class Signup extends Component {
                 <HeaderLoginModule viewName={'Sign Up'} navigation={this.props.navigation} />
 
                 <KeyboardAwareScrollView style={styles.container}>
-                    <View style={{ flex: 1 }}>
+                    <View style={{ flex: 1,marginBottom:'2%' }}>
 
                         <Image source={require('../assets/Images/logo_login.png')} style={{ flex: 0.5, alignSelf: 'center', marginTop: '10%', marginBottom: '10%' }} />
 

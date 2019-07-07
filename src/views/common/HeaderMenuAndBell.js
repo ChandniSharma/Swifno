@@ -12,7 +12,7 @@ import Icon from "react-native-vector-icons/AntDesign";
 // import { bindActionCreators } from "redux";
 
 
-export default  class HeaderMenuAndBell extends Component {
+export default class HeaderMenuAndBell extends Component {
 
     constructor(props) {
         super(props);
@@ -36,13 +36,14 @@ export default  class HeaderMenuAndBell extends Component {
         const { colors, onPressPopup, onPressBell, isNotificationShow, notificationCount, isBackButtonShow, viewName } = this.props;
         return (
             <View style={styles.mainView}>
-              <IconEntypo name="menu"  style={{ fontSize: 30, marginTop: '10%', marginLeft: '2%' }}  onPress = {()=>this.props.navigation.openDrawer()}/>
-               <Text style={styles.titleStyle}> {viewName}</Text>
+                <TouchableOpacity style={styles.imageLeft} onPress={() => this.onPressBack()}>
+                    <IconEntypo name="menu" style={styles.icon} onPress={() => this.props.navigation.openDrawer()} />
+                </TouchableOpacity>
 
-                <TouchableOpacity style={[styles.searchView, { flex: 0.17, alignSelf: 'flex-end'}]} onPress={onPressBell}>
-                    <View style={{flexDirection:'row'}}>
-                        <IconEvilIcons name="search" color="black" style={{ marginLeft: '5%', marginTop: '2%', fontSize: 40, tintColor: 'white' }} />
-                    </View> 
+                <Text style={styles.titleStyle}> {viewName}</Text>
+
+                <TouchableOpacity style={styles.imageRight} onPress={onPressBell}>
+                    <IconEvilIcons name="search" color="black" style={styles.icon} />
                 </TouchableOpacity>
             </View>
         )
@@ -50,51 +51,48 @@ export default  class HeaderMenuAndBell extends Component {
 }
 
 
-  // eslint-disable-next-line
- 
+// eslint-disable-next-line
+
 //   export default connect(
 //       mapStateToProps,
 //       null
 //     )(HeaderMenuAndBell);
 
 const styles = {
-    mainView:{
-        flexDirection: 'row', height: 84, width: '100%', alignItems: 'space-between', justifyContent: 'center',
-        backgroundColor: 'rgb(246, 205, 74)', 
+    mainView: {
+        flexDirection: 'row',
+        height: 64,
+        width: '100%',
+        alignItems: 'space-between',
+        justifyContent: 'center',
+        backgroundColor: 'rgb(246, 205, 74)',
     },
-    imgSideTitle: {
-        color: 'white',
-        // fontSize: 21,
-        margin: '2%',
-        alignSelf: 'flex-start',
-        //  fontFamily: 'Montserrat-Bold',
-        flex: 0.3,
-        width: 50,
-        height: 40
+    imageLeft: {
+        flex: 0.15,
+        height: '100%',
+        justifyContent: 'center',
+        backgroundColor: 'pink'
     },
+
     titleStyle: {
         color: 'black',
-        fontFamily: 'Montserrat-Regular',
+        // fontFamily: 'Montserrat-Regular',
         // fontWeight:'200',
         fontSize: 20,
         alignSelf: 'center',
-        flex: 0.9,
-        textAlign: 'center',
+        flex: 0.7,
+        alignItems: 'center',
         justifyContent: 'center',
-         
-         marginTop:'10%'
+        height: '100%',
+        backgroundColor: 'red'
     },
-   
-    bellButton: {
-        width: 64,
-        height: 64,
-        right: '5%',
-        alignSelf: 'flex-end',
-        marginTop: '5%',
+    imageRight: {
 
+        flex: 0.15,
+        height: '100%',
+        justifyContent: 'center'
     },
-    bellIcon: {
-        width: 64,
-        height: 64,
+    icon:{
+        fontSize: 30, alignSelf:'center'
     }
 }

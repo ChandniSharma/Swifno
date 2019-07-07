@@ -47,7 +47,7 @@ export default class Login extends Component {
                 <HeaderLoginModule viewName={'Login'} navigation={this.props.navigation} />
 
                 <KeyboardAwareScrollView style={styles.container}>
-                    <View style={{ flex: 1, }}>
+                    <View style={{ flex: 1,marginBottom:'2%' }}>
                         <View style={{ backgroundColor: 'white', flex: 1 }}>
 
                             <Image source={require('../assets/Images/logo_login.png')} style={{ flex: 0.5, alignSelf: 'center', marginTop: '10%', marginBottom: '10%' }} />
@@ -67,7 +67,7 @@ export default class Login extends Component {
 
                                 </View>
                                 {/* <View style={styles.viewSingleLineError} /> */}
-                                {errors.mobile && !data.mobile ? <Animatable.Text animation="fadeIn" style={styles.errorText}> Enter your mobile number, please</Animatable.Text> : null}
+                                {/* {errors.mobile && !data.mobile ? <Animatable.Text animation="fadeIn" style={styles.errorText}> Enter your mobile number, please</Animatable.Text> : null} */}
 
                                 <View style={{ flexDirection: 'row', marginBottom: '2%', justifyContent: 'center' }}>
                                     <IconMaterialIcons name="lock-open" style={styles.icon} />
@@ -82,7 +82,7 @@ export default class Login extends Component {
                                 </View>
                                 {/* <View style={styles.viewSingleLineError} /> */}
                                
-                                {errors.password && !data.password ? <Animatable.Text animation="fadeIn" style={styles.errorText}> Password is required</Animatable.Text> : null}
+                                {/* {errors.password && !data.password ? <Animatable.Text animation="fadeIn" style={styles.errorText}> Password is required</Animatable.Text> : null} */}
 
                             </View>
                             <View style={styles.rememberView}>
@@ -100,7 +100,7 @@ export default class Login extends Component {
                                 
                             </View>
                             <View style={{ marginTop: '2%', justifyContent: 'center', }}>
-                                <TouchableOpacity underlayColor="#25b6ad" onPress={onSubmit} style={[styles.buttonSelected]}>
+                                <TouchableOpacity underlayColor="#25b6ad" onPress={()=>this.props.navigation.navigate("DrawerNavigator")} style={[styles.buttonSelected]}>
                                     {(login.loading && fetching) ? <ActivityIndicator size="large" color="white" /> : <Text style={styles.textSelected} >Log In</Text>}
                                 </TouchableOpacity>
                             </View>
@@ -122,7 +122,7 @@ export default class Login extends Component {
                             <View style={{ marginBottom: '5%', alignItems: 'center' }}>
                                 <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn} onPress={() => this.onPressFacebookButton()}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'center', marginLeft: '2%', marginRight: '2%' }}>
-                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '5%', color: 'white', marginLeft: '5%' }} />
+                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '2%', color: 'white', marginLeft: '2%' }} />
                                         <Text style={styles.fbText}>Login with Facebook</Text>
                                     </View>
                                 </TouchableOpacity>

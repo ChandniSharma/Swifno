@@ -121,6 +121,7 @@ export default class Dashboard extends Component {
         }else{
             arrayListData = this.arrayNotifications;
         }
+       
 
         return (
 
@@ -130,7 +131,7 @@ export default class Dashboard extends Component {
 
                     <HeaderMenuAndBell viewName={'Dashboard'} navigation={this.props.navigation} />
 
-                    <View style={{ flexDirection: 'row', marginBottom: '2%', flex: 0.11, justifyContent: 'space-between' }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', height:44 }}>
                         <TouchableOpacity onPress={() => this.getCurrentActivity()} style={styles.buttonSegment}>
                             <Text style={styles.textTopBtn}>Current Activity</Text>
                         </TouchableOpacity>
@@ -153,38 +154,38 @@ export default class Dashboard extends Component {
                         <View style={{ flex: 0.2, justifyContent: 'center' }}>
 
                             <ScrollView horizontal={true} style={[styles.scrollView]}>
-                                <View style={{ flexDirection: 'row', marginTop: '2%', justifyContent: 'space-evenly' }}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
 
                                     <View style={this.state.isActiveBids ? styles.buttonSelected : styles.buttonNotSelected}>
-                                        <TouchableOpacity onPress={() => this.getOptionValue(CONST.ACTIVE_BIDS)} >
-                                            <Text style={styles.textButton}>Active Bids</Text>
+                                        <TouchableOpacity  onPress={() => this.getOptionValue(CONST.ACTIVE_BIDS)} >
+                                            <Text style={this.state.isActiveBids ?styles.textSelected:styles.textNotSelected}>Active Bids</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={this.state.isDeliveries ? styles.buttonSelected : styles.buttonNotSelected}>
-                                        <TouchableOpacity onPress={() => this.getOptionValue(CONST.DELIVERIES)} >
-                                            <Text style={styles.textButton}>Deliveries</Text>
+                                        <TouchableOpacity  onPress={() => this.getOptionValue(CONST.DELIVERIES)} >
+                                            <Text style={this.state.isDeliveries ?styles.textSelected:styles.textNotSelected}>Deliveries</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={this.state.isPendingReviews ? styles.buttonSelected : styles.buttonNotSelected}>
                                         <TouchableOpacity onPress={() => this.getOptionValue(CONST.PENDING_REVIEWS)} >
-                                            <Text style={styles.textButton}>Pending Reviews</Text>
+                                            <Text  style={this.state.isPendingReviews ?styles.textSelected:styles.textNotSelected}>Pending Reviews</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={this.state.isRefundRequests ? styles.buttonSelected : styles.buttonNotSelected}>
                                         <TouchableOpacity onPress={() => this.getOptionValue(CONST.REFUND_REQUESTS)} >
-                                            <Text style={styles.textButton}>Refund Requests</Text>
+                                            <Text style={this.state.isRefundRequests ?styles.textSelected:styles.textNotSelected}>Refund Requests</Text>
                                         </TouchableOpacity>
                                     </View>
 
 
                                 </View>
                             </ScrollView>
-                        </View> : null}
+                        </View> : <View  />}
 
-                    <FlatList style={[styles.flatList, { flex: 0.75 }]}
+                    <FlatList style={this.state.isCurrentActivitySelected ? styles.flatListCurrentActivity:styles.flatlistNotification}
                         data={arrayListData}
                         renderItem={this.renderItem}
                         keyExtractor={(item, index) => index.toString()}
