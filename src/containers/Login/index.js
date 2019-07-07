@@ -113,7 +113,7 @@ console.log("validate====",validate)
         
         if (isSuccess(this.props.login)) {
          if(this.props.login.data.RESPONSECODE>0){
-          this.props.navigation.navigate("DrawerNavigator");
+        //  this.props.navigation.navigate("DrawerNavigator");
           this.setState({ fetching: false });
          }else{
           alert('Try Again ')

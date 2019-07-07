@@ -121,7 +121,6 @@ export default class Dashboard extends Component {
         }else{
             arrayListData = this.arrayNotifications;
         }
-       
 
         return (
 
