@@ -47,7 +47,7 @@ export default class Login extends Component {
                 <HeaderLoginModule viewName={'Login'} navigation={this.props.navigation} />
 
                 <KeyboardAwareScrollView style={styles.container}>
-                    <View style={{ flex: 1, }}>
+                    <View style={{ flex: 1,marginBottom:'2%' }}>
                         <View style={{ backgroundColor: 'white', flex: 1 }}>
 
                             <Image source={require('../assets/Images/logo_login.png')} style={{ flex: 0.5, alignSelf: 'center', marginTop: '10%', marginBottom: '10%' }} />
@@ -122,7 +122,7 @@ export default class Login extends Component {
                             <View style={{ marginBottom: '5%', alignItems: 'center' }}>
                                 <TouchableOpacity underlayColor="#25b6ad" style={styles.facebookBtn} onPress={() => this.onPressFacebookButton()}>
                                     <View style={{ flexDirection: 'row', justifyContent: 'center', marginLeft: '2%', marginRight: '2%' }}>
-                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '5%', color: 'white', marginLeft: '5%' }} />
+                                        <IconAntDesign name="facebook-square" style={{ fontSize: 22, marginRight: '2%', color: 'white', marginLeft: '2%' }} />
                                         <Text style={styles.fbText}>Login with Facebook</Text>
                                     </View>
                                 </TouchableOpacity>

@@ -8,6 +8,7 @@ let top;
 export default {
     container: {
         flex: 1,
+
     },
     icon: {
         fontSize: 22, marginLeft: '5%', marginRight: '-5%', marginTop: '4%'
@@ -32,7 +33,7 @@ export default {
     textDontHaveAccount: {
         color: 'gray',
         fontFamily: 'Montserrat-Regular',
-        // fontWeight:'200',
+         fontWeight:'200',
         fontSize: 12,
         marginRight: '1%',
         marginTop:'1%'
@@ -45,7 +46,7 @@ export default {
         fontSize: 40,
         color: 'black',
         fontFamily: 'Montserrat-Regular',
-        // fontWeight:'100',
+         fontWeight:'100',
     },
 
     inputStyle: {

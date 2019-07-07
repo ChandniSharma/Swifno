@@ -8,6 +8,7 @@ let top;
 export default {
     container: {
         flex: 1,
+
     },
     icon: {
         fontSize: 22, marginLeft: '5%', marginRight: '-5%', marginTop: '5%'
@@ -125,8 +126,8 @@ export default {
     },
     fbText: {
         color: 'white',
-        fontSize:18,
-        marginRight:'5%'
+        fontSize:13,
+        //marginRight:'5%'
     },
     signupButton: {
 
@@ -134,7 +135,7 @@ export default {
     signupText: {
         fontSize: 14,
         color: 'red',
-        fontWeight: '500',
+        fontWeight: 'bold',
     },
     buttonSelected: {
         borderRadius: 10,
@@ -219,7 +220,7 @@ export default {
     textButtonTitle: {
         fontSize: 18,
         color: 'white',
-        fontWeight: '500',
+        fontWeight: 'bold',
 
     },
     viewShareButtons: {

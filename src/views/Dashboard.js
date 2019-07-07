@@ -157,26 +157,26 @@ export default class Dashboard extends Component {
                                 <View style={{ flexDirection: 'row', marginTop: '2%', justifyContent: 'space-evenly' }}>
 
                                     <View style={this.state.isActiveBids ? styles.buttonSelected : styles.buttonNotSelected}>
-                                        <TouchableOpacity onPress={() => this.getOptionValue(CONST.ACTIVE_BIDS)} >
-                                            <Text style={styles.textButton}>Active Bids</Text>
+                                        <TouchableOpacity  onPress={() => this.getOptionValue(CONST.ACTIVE_BIDS)} >
+                                            <Text >Active Bids</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={this.state.isDeliveries ? styles.buttonSelected : styles.buttonNotSelected}>
-                                        <TouchableOpacity onPress={() => this.getOptionValue(CONST.DELIVERIES)} >
-                                            <Text style={styles.textButton}>Deliveries</Text>
+                                        <TouchableOpacity  onPress={() => this.getOptionValue(CONST.DELIVERIES)} >
+                                            <Text >Deliveries</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={this.state.isPendingReviews ? styles.buttonSelected : styles.buttonNotSelected}>
                                         <TouchableOpacity onPress={() => this.getOptionValue(CONST.PENDING_REVIEWS)} >
-                                            <Text style={styles.textButton}>Pending Reviews</Text>
+                                            <Text >Pending Reviews</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                     <View style={this.state.isRefundRequests ? styles.buttonSelected : styles.buttonNotSelected}>
                                         <TouchableOpacity onPress={() => this.getOptionValue(CONST.REFUND_REQUESTS)} >
-                                            <Text style={styles.textButton}>Refund Requests</Text>
+                                            <Text >Refund Requests</Text>
                                         </TouchableOpacity>
                                     </View>
 

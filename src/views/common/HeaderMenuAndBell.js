@@ -36,13 +36,11 @@ export default  class HeaderMenuAndBell extends Component {
         const { colors, onPressPopup, onPressBell, isNotificationShow, notificationCount, isBackButtonShow, viewName } = this.props;
         return (
             <View style={styles.mainView}>
-              <IconEntypo name="menu"  style={{ fontSize: 30, marginTop: '10%', marginLeft: '2%' }}  onPress = {()=>this.props.navigation.openDrawer()}/>
+              <IconEntypo name="menu"  style={{ fontSize: 30, padding: '2%' }}  onPress = {()=>this.props.navigation.openDrawer()}/>
                <Text style={styles.titleStyle}> {viewName}</Text>
 
-                <TouchableOpacity style={[styles.searchView, { flex: 0.17, alignSelf: 'flex-end'}]} onPress={onPressBell}>
-                    <View style={{flexDirection:'row'}}>
-                        <IconEvilIcons name="search" color="black" style={{ marginLeft: '5%', marginTop: '2%', fontSize: 40, tintColor: 'white' }} />
-                    </View> 
+                <TouchableOpacity style={ {marginBottom:'3%', alignSelf: 'flex-end'}} onPress={onPressBell}>
+                    <IconEvilIcons name="search" color="black" style={{ fontSize: 30, tintColor: 'white' }} />
                 </TouchableOpacity>
             </View>
         )
@@ -59,13 +57,13 @@ export default  class HeaderMenuAndBell extends Component {
 
 const styles = {
     mainView:{
-        flexDirection: 'row', height: 84, width: '100%', alignItems: 'space-between', justifyContent: 'center',
+        flexDirection: 'row', height: 48, width: '100%', alignItems: 'space-between', justifyContent: 'center',
         backgroundColor: 'rgb(246, 205, 74)', 
     },
     imgSideTitle: {
         color: 'white',
         // fontSize: 21,
-        margin: '2%',
+
         alignSelf: 'flex-start',
         //  fontFamily: 'Montserrat-Bold',
         flex: 0.3,
@@ -81,8 +79,8 @@ const styles = {
         flex: 0.9,
         textAlign: 'center',
         justifyContent: 'center',
-         
-         marginTop:'10%'
+
+
     },
    
     bellButton: {
@@ -90,7 +88,7 @@ const styles = {
         height: 64,
         right: '5%',
         alignSelf: 'flex-end',
-        marginTop: '5%',
+
 
     },
     bellIcon: {

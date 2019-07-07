@@ -13,9 +13,7 @@ export default class HeaderLoginModule extends Component {
 
         return (
             <View style={styles.headerView}>
-                <TouchableOpacity onPress={()=>this.onPressBack()} style={styles.backButton}>
-                    <Icon name="arrowleft" color="black" style={{ fontSize: 30 }} />
-                </TouchableOpacity>
+
                 <Text style={styles.titleStyle}> {this.props.viewName}</Text>
             </View>
         )
@@ -26,7 +24,6 @@ const styles = {
     headerView: {
         backgroundColor: 'rgb(246, 205, 74)',
         flexDirection: 'row',
-       
         height:64,
         justifyContent:'center',
         marginTop:Platform.OS === 'ios'?'-12%':'0%'
@@ -43,7 +40,6 @@ const styles = {
         // fontWeight:'200',
         fontSize: 20,
         alignSelf: 'center',
-        flex: 0.9,
         textAlign: 'center',
         justifyContent: 'center',
         // backgroundColor:'red'

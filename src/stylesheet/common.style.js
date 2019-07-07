@@ -21,7 +21,7 @@ export default{
     textPriceDashboard: {
         color: '#000000',
         fontSize: 13,
-        fontWeight:700
+        fontWeight:'700'
     },
     textDescriptionDashboard: {
         color: '#262626',
@@ -68,7 +68,7 @@ export default{
         shadowRadius: 1,
         borderRadius: 8,
         fontFamily: 'Montserrat-Regular',
-        fontWeight: '300',
+        fontWeight: 300,
         fontSize: 12,
         color: '#262626',
         paddingTop: 21,

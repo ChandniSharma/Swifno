@@ -56,6 +56,7 @@ export default {
 
     },
     scrollView: {
+        marginLeft:5,
         width: '100%',
         //height: 64,
         backgroundColor: 'transparant'
@@ -105,7 +106,8 @@ export default {
         fontSize: 13,
     },
     textButton: {
-        paddingBottom: 10,
+
+        padding: 10,
 
         //fontSize: 13,
     },
@@ -115,7 +117,7 @@ export default {
     buttonLeft: {
         borderRadius: 20,
         height: 55,
-        width: 150,
+        width: 155,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
@@ -178,7 +180,7 @@ export default {
     buttonNotSelected: {
         borderRadius: 20,
         height: 40,
-        width: 100,
+        width: "auto",
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
@@ -189,12 +191,12 @@ export default {
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
-        marginTop: '1%', marginBottom: '1%',
-        marginLeft: 10,
-        marginRight: 10,
+
+        paddingLeft: 10,
+        paddingRight: 10,
         borderColor: 'lightgray',
         borderWidth: 1,
-
+        marginRight:10,
         // alignSelf: 'center',
         // marginLeft: '2%',
         //alignSelf:'flex-end',
@@ -202,7 +204,7 @@ export default {
     buttonSelected: {
         borderRadius: 20,
         height: 40,
-        width: 100,
+        width: 'auto',
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
@@ -212,13 +214,13 @@ export default {
         // },
         shadowOpacity: 0.5,
         shadowRadius: 1,
+        marginRight:10,
         backgroundColor: 'white',
         // alignSelf: 'center',
         //alignSelf:'flex-start'
-        marginTop: '1%',
-        marginBottom: '1%',
-        marginLeft: 10,
-        marginRight: 10,
+
+        paddingLeft: 10,
+        paddingRight: 10,
         borderColor: 'black',
         borderWidth: 1,
     },
