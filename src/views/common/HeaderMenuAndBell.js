@@ -81,7 +81,8 @@ const styles = {
         fontSize: 20,
         alignSelf: 'center',
         flex: 0.7,
-        alignItems: 'center',
+        //alignItems: 'center',
+        textAlign:'center',
         justifyContent: 'center',
         height: '100%',
         backgroundColor: 'red'
