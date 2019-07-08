@@ -99,8 +99,8 @@ export default class Login extends Component {
                                 
                             </View>
                             <View style={{ marginTop: '2%', justifyContent: 'center', }}>
-                                {/* <TouchableOpacity underlayColor="#25b6ad" onPress={onSubmit} style={[styles.buttonSelected]}> */}
                                 <TouchableOpacity underlayColor="#25b6ad" onPress={onSubmit} style={[styles.buttonSelected]}>
+                                {/* <TouchableOpacity underlayColor="#25b6ad" onPress={()=>this.props.navigation.navigate('DrawerNavigator')} style={[styles.buttonSelected]}> */}
 
                                     {(login.loading && fetching) ? <ActivityIndicator size="large" color="white" /> : <Text style={styles.textSelected} >Log In</Text>}
                                 </TouchableOpacity>

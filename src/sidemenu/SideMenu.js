@@ -56,6 +56,10 @@ console.log(" in side menu ");
             <View style={styles.container}>
  {/* <ScrollView> */}
                     <View style={styles.header}>
+                      
+                        <IconAntDesign name="close" style={styles.close} onPress={this.navigateToScreen('')}/>
+
+                       
                         <View style={{flexDirection:'row'}}>
                         <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
                        
