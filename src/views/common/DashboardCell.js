@@ -34,6 +34,7 @@ export default class DashboardCell extends Component {
                         </Text>
                         {item.item.BidAmount ? <View style={{ flexDirection: 'row' }}>
                             <Text style={commonStyles.textDescriptionDashboard}>Bid Amount:</Text>
+                            <Text style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid',color:"black",fontSize: 13}}> N</Text>
                             <Text style={commonStyles.textPriceDashboard}>
                                 {item.item.BidAmount}
                             </Text>

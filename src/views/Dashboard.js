@@ -179,8 +179,6 @@ export default class Dashboard extends Component {
                                             <Text style={this.state.isRefundRequests ?styles.textSelected:styles.textNotSelected}>Refund Requests</Text>
                                         </TouchableOpacity>
                                     </View>
-
-
                                 </View>
                             </ScrollView>
                         </View> : <View  />}

@@ -105,18 +105,38 @@ console.log("validate====",validate)
     console.log("call login", this.state.data)
     const valid = this._isValid();
     console.log("valid===", valid);
-    if (valid) {
+
+    const { data } = this.state;
+    let strMobile = data.mobile.trim();
+    let strPwd = data.password.trim();
+
+    if(strMobile.length === 0 && strPwd.length === 0){
+      alert('Please enter username and password.');
+      
+    }else if(strMobile.length === 0){
+        alert('Please enter username.')
+        
+    }else if(strPwd.length === 0){
+      alert('Please enter password.')
+     
+    } else if(strPwd.length < 6){
+      alert('Please enter 6 digit password.')
+     
+    }
+    else{
+      if (valid) {
       this.setState({ fetching: true });
       const { data } = this.state;
+      
       return this.props.getLogin(data).then(() => {
         console.log("this.props.login===",this.props.login.data.RESPONSECODE);
         
         if (isSuccess(this.props.login)) {
          if(this.props.login.data.RESPONSECODE>0){
-        //  this.props.navigation.navigate("DrawerNavigator");
+          this.props.navigation.navigate("DrawerNavigator");
           this.setState({ fetching: false });
          }else{
-          alert('Try Again ')
+          alert('Please check your username and password')
        }
 
         //  this.saveCredentials();
@@ -127,6 +147,7 @@ console.log("validate====",validate)
         }
       });
     }
+   }
   };
 
   /**

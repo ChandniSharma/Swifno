@@ -88,10 +88,9 @@ export default class Login extends Component {
                             <View style={styles.rememberView}>
 
                                 <TouchableOpacity style={styles.tickMarkView} onPress={() => this.onClickRememberMe()}>
-
                                     {this.state.isRemember ? <IconMaterialIcons name="check-box" color="gray" style={styles.iconCheckBox} /> : <IconMaterialIcons name="check-box-outline-blank" color="gray" style={styles.iconCheckBox} />}
-
                                 </TouchableOpacity>
+                                
                                 <View style={{flex: 0.8, marginTop:'1.5%'}}>
                                 <TouchableOpacity style={styles.rememberBtn} onPress={() => this.onClickRememberMe()}>
                                     <Text style={styles.rememberText}> Remember me</Text>
@@ -100,7 +99,7 @@ export default class Login extends Component {
                                 
                             </View>
                             <View style={{ marginTop: '2%', justifyContent: 'center', }}>
-                                <TouchableOpacity underlayColor="#25b6ad" onPress={()=>this.props.navigation.navigate("DrawerNavigator")} style={[styles.buttonSelected]}>
+                                <TouchableOpacity underlayColor="#25b6ad" onPress={onSubmit} style={[styles.buttonSelected]}>
                                     {(login.loading && fetching) ? <ActivityIndicator size="large" color="white" /> : <Text style={styles.textSelected} >Log In</Text>}
                                 </TouchableOpacity>
                             </View>
