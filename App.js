@@ -24,8 +24,10 @@ import Dashboard from './src/views/Dashboard';
 import Signup from './src/views/Signup';
 import ChangePasswordContainer  from './src/containers/ChangePassword';
 import Route from './src/views/common/Route';
+import SideMenu from './src/sidemenu/SideMenu';
 
 import {createStackNavigator, createAppContainer, createDrawerNavigator, DrawerItems,} from 'react-navigation';
+import { importDeclaration } from '@babel/types';
 
 // const MainNavigator = createStackNavigator({
 //   Tutorial:{screen: Tutorial},
@@ -45,10 +47,16 @@ import {createStackNavigator, createAppContainer, createDrawerNavigator, DrawerI
 
 // const RootNavigator = createAppContainer(MainNavigator)
 
-const DrawerNavigator = new createDrawerNavigator ({
-  Dashboard:{screen:Dashboard},
-  // Route:{screen:Route},
-})
+const DrawerNavigator = new createDrawerNavigator (
+  {
+  Dashboard:{screen:Dashboard, navigationOptions : {
+    header : null
+}},
+}, 
+{
+  contentComponent : SideMenu
+}
+)
 
 const LoginNavigator = createStackNavigator({
   Tutorial:{screen: Tutorial},

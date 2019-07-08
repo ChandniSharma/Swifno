@@ -10,11 +10,11 @@ import {
 } from "react-native";
 import {createDrawerNavigator,DrawerItems,createStackNavigator} from 'react-navigation';
 import styles from './drawer.style';
-import HomeScreen from '../home/HomeScreen';
-import SideMenu from '../sidemenu/SideMenu';
-import PrivacyPolicy from '../staticPages/PrivacyPolicy';
-import RefundPolicy from '../staticPages/RefundPolicy';
-import Terms from '../staticPages/Terms';
+// import HomeScreen from '../home/HomeScreen';
+// import SideMenu from '../sidemenu/SideMenu';
+// import PrivacyPolicy from '../staticPages/PrivacyPolicy';
+// import RefundPolicy from '../staticPages/RefundPolicy';
+// import Terms from '../staticPages/Terms';
 import Login from '../login/Login';
 import Register from '../register/Register';
 import DetailScreen from '../details/DetailScreen';
@@ -84,7 +84,8 @@ const customDrawerComponent = (props) => (
         </ScrollView>
     </SafeAreaView>
 )
-const DrawerNavigator = new createDrawerNavigator ({
+const DrawerNavigator = new createDrawerNavigator (
+    {
         HomeScreen : {screen : HomeScreen },
           PrivacyPolicy : {screen : PrivacyPolicy},
           RefundPolicy : {screen : RefundPolicy},
