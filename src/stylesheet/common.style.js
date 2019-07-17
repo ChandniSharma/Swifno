@@ -23,9 +23,18 @@ export default{
         fontSize: 13,
         fontWeight:'700'
     },
+    textPriceDashboard: {
+        color: 'white',
+        fontSize: 13,
+        fontWeight:'700'
+    },
     textDescriptionDashboard: {
         color: '#262626',
         fontSize: 13,
+    },
+    textRequestPickup:{
+        color:'black',
+        
     },
     textNotSelected:{
         color:'black',
@@ -77,27 +86,15 @@ export default{
         paddingRight: 30,
     },
    
-    // inputStyle: {
-    //     marginLeft: '5%',
-    //     marginRight: '5%',
-    //     height: 55,
-    //     backgroundColor: 'white',
-    //     marginTop: '5%',
-    //     shadowColor: 'rgba(0,0,0,0.7)',
-    //     shadowOffset: {
-    //         width: 2,
-    //         height: 4
-    //     },
-    //     shadowOpacity: 0.5,
-    //     shadowRadius: 1,
-    //     borderRadius: 8,
-    //     fontFamily: 'Montserrat-Regular',
-    //     fontWeight: '300',
-    //     fontSize: 18,
-    //     color: '#262626',
-    //     paddingTop: 21,
-    //     paddingBottom: 20,
-    //     paddingLeft: 30,
-    //     paddingRight: 30,
-    // },
+    //PackageDetail text 
+    locationName:{
+        fontSize:12,
+        color:'white',
+    },
+    textRecepientDetail:{
+        fontSize:12,
+        color:'black',
+    }
+    
+    
 }

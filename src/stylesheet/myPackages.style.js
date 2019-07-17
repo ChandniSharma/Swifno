@@ -1,3 +1,4 @@
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 export default {
     container: {
@@ -57,6 +58,9 @@ export default {
     scrollView: {
         width: '100%',
         paddingLeft:10,
+       
+      
+
         //height: 64,
         backgroundColor: 'transparant',
         // justifyContent: 'center',
@@ -183,16 +187,16 @@ export default {
     },
 
     buttonNotSelected: {
-        borderRadius: 20,
+        borderRadius: 10,
         height: 40,
         width: "auto",
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: 'rgba(0,0,0,0.12)',
-        // shadowOffset: {
-        //     width: .4,
-        //     height: .11
-        // },
+        shadowColor: 'rgba(0,0,0)',
+        shadowOffset: {
+            width: .4,
+            height: .11
+        },
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
@@ -207,7 +211,7 @@ export default {
         //alignSelf:'flex-end',
     },
     buttonSelected: {
-        borderRadius: 20,
+        borderRadius: 10,
         height: 40,
         width: 'auto',
         alignItems: 'center',
@@ -220,7 +224,7 @@ export default {
         shadowOpacity: 0.5,
         shadowRadius: 1,
         marginRight:10,
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         // alignSelf: 'center',
         //alignSelf:'flex-start'
 
@@ -231,10 +235,72 @@ export default {
     },
 
   textSelected:{
-    color: 'black',
+    color: 'white',
   },
 
   textNotSelected:{
-      color:'lightgray'
+      color:'black'
+  }, 
+  viewIconAndButton:{
+    flexDirection: 'row',
+
+  },
+  iconStyle:{
+    fontSize:20,
+  },
+  buttonMakePayment:{
+    borderRadius: 10,
+    height: 30,
+    width: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'green',
+    marginRight:'2%',
+    paddingLeft: 5,
+    paddingRight: 5,
+   
+  },
+  buttonRequestPickup:{
+    backgroundColor:'white',
+    borderRadius: 10,
+    height: 30,
+    width: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 5,
+    paddingRight: 5,
+    marginRight:'2%',
+  },
+  viewRow:{
+    flexDirection: 'row', 
+    marginRight:'2%', 
+    marginLeft:'2%',
+    marginTop:'1%'
+  },
+  buttonPaid:{
+    borderRadius: 10,
+    height: 30,
+    width: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'red',
+    marginRight:'2%',
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+  viewPaidButton:{
+    flexDirection:'row', 
+    flex:0.38, 
+    marginRight:'5%',
+  },
+  viewPackageDetail:{
+    flexDirection: 'row', 
+    marginTop:'1%'
+  },
+  viewBox:{
+      backgroundColor:'rgb(233, 232, 229)',
+      width: 30, 
+      height:30,
+      margin: '1%'
   }
 }
