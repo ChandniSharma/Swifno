@@ -1,7 +1,14 @@
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 export default {
     container: {
         flex: 1,
+    },
+    deliveryView: {
+        bakckgroundColor: 'rgb(0, 0, 0)',
+        flex: 0.3,
+        marginLeft: '5%',
+        marginRight: '5%',
     },
     buttonSegment: {
         flex: 0.5,
@@ -14,7 +21,7 @@ export default {
         color: 'black',
 
         fontSize: 16,
-       
+
 
     },
     viewSingleLine: {
@@ -56,19 +63,18 @@ export default {
     },
     scrollView: {
         width: '100%',
-        paddingLeft:10,
+        paddingLeft: 10,
         //height: 64,
-
-        backgroundColor: 'transparent',
-
-
+        backgroundColor: 'transparant',
+        // justifyContent: 'center',
+        // alignSelf:'center'
     },
     flatListCurrentActivity: {
         flex: 0.75,
         marginTop: '2%',
         // backgroundColor: '#ffffff',
     },
-    flatlistNotification:{
+    flatlistNotification: {
         marginTop: '2%',
         flex: 0.95,
     },
@@ -82,7 +88,7 @@ export default {
         // shadowOffset:
         //  { width: 1.0, 
         //     height: 2 },
-         
+
         shadowOpacity: 0.4,
         shadowRadius: 1.5,
         elevation: 3,
@@ -105,8 +111,6 @@ export default {
         fontSize: 16,
         marginTop: 30
     },
-   
-    
     textTimeAndDate: {
         color: '#656565',
         fontSize: 13,
@@ -118,7 +122,7 @@ export default {
         //fontSize: 13,
     },
     textTopBtn: {
-     //   paddingTop: 10
+        //   paddingTop: 10
     },
     buttonLeft: {
         borderRadius: 20,
@@ -202,7 +206,7 @@ export default {
         paddingRight: 10,
         borderColor: 'lightgray',
         borderWidth: 1,
-        marginRight:10,
+        marginRight: 10,
         // alignSelf: 'center',
         // marginLeft: '2%',
         //alignSelf:'flex-end',
@@ -220,7 +224,7 @@ export default {
         // },
         shadowOpacity: 0.5,
         shadowRadius: 1,
-        marginRight:10,
+        marginRight: 10,
         backgroundColor: 'white',
         // alignSelf: 'center',
         //alignSelf:'flex-start'
@@ -231,11 +235,11 @@ export default {
         borderWidth: 1,
     },
 
-  textSelected:{
-    color: 'black',
-  },
+    textSelected: {
+        color: 'black',
+    },
 
-  textNotSelected:{
-      color:'lightgray'
-  }
+    textNotSelected: {
+        color: 'lightgray'
+    }
 }

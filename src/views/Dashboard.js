@@ -152,10 +152,12 @@ export default class Dashboard extends Component {
 
 
                     {this.state.isCurrentActivitySelected ?
-                        <View style={{ justifyContent: 'center' }}>
+                        <View style={{ justifyContent: 'center'}}>
+
 
                             <ScrollView horizontal={true} style={styles.scrollView}>
                                 <View style={{ flexDirection: 'row' }}>
+
 
                                     <View style={this.state.isActiveBids ? styles.buttonSelected : styles.buttonNotSelected}>
                                         <TouchableOpacity  onPress={() => this.getOptionValue(CONST.ACTIVE_BIDS)} >
@@ -180,8 +182,6 @@ export default class Dashboard extends Component {
                                             <Text style={this.state.isRefundRequests ?styles.textSelected:styles.textNotSelected}>Refund Requests</Text>
                                         </TouchableOpacity>
                                     </View>
-
-
                                 </View>
                             </ScrollView>
                         </View> : <View  />}
@@ -194,7 +194,7 @@ export default class Dashboard extends Component {
                         keyExtractor={(item, index) => index.toString()}
                     />
 
-                    <IconAntDesign name="pluscircle" style={{ fontSize: 40, alignSelf: 'flex-end', right: '2%', flex: 0.15 }} />
+                    <IconAntDesign name="pluscircle" style={{ fontSize: 40, alignSelf: 'flex-end', right: '2%', flex: 0.1 }} />
 
                 </View>
             </SafeAreaView>

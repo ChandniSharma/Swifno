@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {NavigationActions,StackActions} from 'react-navigation';
 import {ScrollView, Text, View,Image,TouchableOpacity, Alert,AsyncStorage} from 'react-native';
 import styles from './sidemenu.style'
-import {Icon} from "native-base";
+//import {Icon} from "native-base";
 
 class SideMenu extends Component {
     navigateToScreen = (route) => () => {
@@ -20,14 +20,11 @@ class SideMenu extends Component {
             name:'Person name',
             email:''
         }
-
     }
 
     componentWillMount(){
 
         this._getNumberValue();
-
-
 
     }
 
@@ -37,7 +34,7 @@ class SideMenu extends Component {
         if(name == null){
 
         }else{
-            this.setState({
+            this.setState({ 
                 name:name
             });
         }

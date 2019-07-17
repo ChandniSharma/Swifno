@@ -14,7 +14,9 @@ export default class HeaderLoginModule extends Component {
         return (
             <View style={styles.headerView}>
                 <TouchableOpacity style={styles.backButton} onPress={()=>this.onPressBack()}>
-                    <Icon name="arrowleft" style={{fontSize:30,padding:10}}/>
+
+                    <Icon name="arrowleft" style={{fontSize:30,padding:10, color:'black'}}/>
+
                 </TouchableOpacity>
                 <Text style={styles.titleStyle}> {this.props.viewName}</Text>
                 <View style={{flex:0.2}}/>

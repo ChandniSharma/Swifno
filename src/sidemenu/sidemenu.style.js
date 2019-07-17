@@ -1,6 +1,11 @@
+import {Dimensions } from "react-native";
+
+let deviceWidth = Dimensions.get('window').width;
+let deviceHeight = Dimensions.get('window').height;
+
 export default {
     container: {
-        paddingTop: 20,
+        //paddingTop: 20,
         flex: 1
     },
     navItemStyle: {
@@ -11,35 +16,60 @@ export default {
         flexDirection:'row'
     },
     header:{
-        backgroundColor: "black",
+        backgroundColor: "rgb(246, 205, 74)",
         height:200,
     },
-    avatar: {
-        width:130,
-        height:130,
-        borderRadius: 63,
-        borderWidth: 4,
-        borderColor: "white",
-        marginBottom:10,
-        alignSelf:'center',
-        position: 'absolute',
-        marginTop:20
+    close:{
+        fontSize:25,right:5, 
+        top:5, 
+        position:'absolute', 
+        color:'#262626',
     },
-    name:{
+    avatar: {
+        width:90,
+        height:90,
+        borderRadius: 45,
+        borderWidth: 4,
+        borderColor: "lightGray",
+        borderStyle: 'dashed',
+       marginLeft:'5%',
+       marginRight:'2%',
+        // alignSelf:'center',
+        // position: 'absolute',
+        marginTop:'20%'
+    },
+    viewSingleLine:{
+        // marginLeft: '10%',
+        // marginRight: '15%',
+        backgroundColor:'rgb(211,211,211)', 
+        height:1,
+        width: deviceWidth-190,
         alignSelf:'center',
-        fontSize:16,
-        color:'white',
-        position: 'absolute',
-        bottom:"8%"
+        marginTop:'1%',
+        marginBottom:'1%',
+        alignSelf:'center'
+    }, 
+    name:{
+        //alignSelf:'center',
+        fontSize:14,
+        color:'black',
+       
+       // position: 'absolute',
+        // bottom:"8%"
+    },
+    emailText:{
+        fontSize:14,
+        color:'black',
     },
     icon: {
-        color:"#d4d4d4",
-        marginLeft: 0,
+        color:"#262626",
+        marginLeft: 5,
         marginRight: 0,
         fontSize: 20
     },
     text:{
-        paddingLeft:5
+        paddingLeft:5,
+       color:'#262626'
     },
 
     bodyContent: {

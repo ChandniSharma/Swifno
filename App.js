@@ -23,9 +23,16 @@ import Tutorial from './src/views/Tutorial';
 import Dashboard from './src/views/Dashboard';
 import Signup from './src/views/Signup';
 import ChangePasswordContainer  from './src/containers/ChangePassword';
-import Route from './src/views/common/Route';
+//import Route from './src/views/common/Route';
+import SideMenu from './src/sidemenu/SideMenu';
+import MyPackages from './src/views/MyPackages/MyPackages';
+import m from './src/views/MyPackages/MyPackageDetail';
 
 import {createStackNavigator, createAppContainer, createDrawerNavigator, DrawerItems,} from 'react-navigation';
+import MyPackageDetail from './src/views/MyPackages/MyPackageDetail';
+import MySettings from './src/views/MySettings';
+// import { importDeclaration } from '@babel/types';
+//import MapViewGoogle from './src/views/common/MapViewGoogle';
 
 // const MainNavigator = createStackNavigator({
 //   Tutorial:{screen: Tutorial},
@@ -45,10 +52,16 @@ import {createStackNavigator, createAppContainer, createDrawerNavigator, DrawerI
 
 // const RootNavigator = createAppContainer(MainNavigator)
 
-const DrawerNavigator = new createDrawerNavigator ({
-  Dashboard:{screen:Dashboard},
-  // Route:{screen:Route},
-})
+const DrawerNavigator = new createDrawerNavigator (
+  {
+  Dashboard:{screen:Dashboard, navigationOptions : {
+    header : null
+}},
+}, 
+{
+  contentComponent : SideMenu
+}
+)
 
 const LoginNavigator = createStackNavigator({
   Tutorial:{screen: Tutorial},
@@ -56,9 +69,14 @@ const LoginNavigator = createStackNavigator({
   ForgotPasswordComponent: {screen: ForgotPasswordComponent},
   Signup: {screen: Signup},
   ChangePasswordContainer: {screen: ChangePasswordContainer},
-  DrawerNavigator:{screen:DrawerNavigator}
+  DrawerNavigator:{screen:DrawerNavigator},
+  MyPackages :{screen:MyPackages},
+  MyPackageDetail:{screen:MyPackageDetail},
+  MySettings:{screen:MySettings},
+
+ // MapViewGoogle:{screen:MapViewGoogle}
 },{
-  initialRouteName: 'Tutorial',
+  initialRouteName: 'MySettings',
   //initialRouteName: 'DrawerNavigator',
   gesturesEnabled: false,
   headerMode: 'none',

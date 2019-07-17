@@ -88,6 +88,8 @@ const styles = {
         justifyContent: 'center'
     },
     icon:{
-        fontSize: 30, alignSelf:'center'
+        fontSize: 30,
+         alignSelf:'center',
+        tintColor:'black',
     }
 }
