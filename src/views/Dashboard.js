@@ -150,10 +150,11 @@ export default class Dashboard extends Component {
                     </View>
                     <View style={[styles.viewSingleLine, { flex: 0.003 }]} />
 
+
                     {this.state.isCurrentActivitySelected ?
                         <View style={{ justifyContent: 'center' }}>
 
-                            <ScrollView horizontal={true} style={[styles.scrollView]}>
+                            <ScrollView horizontal={true} style={styles.scrollView}>
                                 <View style={{ flexDirection: 'row' }}>
 
                                     <View style={this.state.isActiveBids ? styles.buttonSelected : styles.buttonNotSelected}>
@@ -184,6 +185,8 @@ export default class Dashboard extends Component {
                                 </View>
                             </ScrollView>
                         </View> : <View  />}
+
+
 
                     <FlatList style={this.state.isCurrentActivitySelected ? styles.flatListCurrentActivity:styles.flatlistNotification}
                         data={arrayListData}
