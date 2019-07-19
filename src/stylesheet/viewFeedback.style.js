@@ -79,6 +79,20 @@ export default {
         backgroundColor: 'black',
         alignSelf:'center'
     },
+    viewButtonSelectedCenter:{
+        borderRadius: 10,
+        height: 250,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        borderColor: 'black',
+        borderWidth: 1,
+        flex:1,
+        backgroundColor: 'black',
+        alignSelf:'center'
+    },
     viewBottomButtons:{
         flexDirection: 'row', 
         marginTop:'1%',

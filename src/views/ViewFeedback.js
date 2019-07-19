@@ -150,7 +150,7 @@ export default class ViewFeedback extends Component {
                             <Text style={commonStyle.textSelected}>Submit</Text>
                         </TouchableOpacity>
                     </View> : */}
-                        <View>
+                        <View style={styles.viewButtonSelectedCenter}>
                             <TouchableOpacity style={[styles.buttonSelectedCenter]} >
                                 <Text style={commonStyle.textSelected}>Back</Text>
                             </TouchableOpacity>
