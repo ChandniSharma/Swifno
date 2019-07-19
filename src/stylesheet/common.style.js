@@ -1,5 +1,5 @@
 
-export default{
+export default {
     errorText: {
         color: 'red',
         alignSelf: 'center',
@@ -18,42 +18,52 @@ export default{
         color: '#000000',
         fontSize: 13,
     },
+    textTitlePackageCell: {
+        color: '#000000',
+        fontSize: 13,
+    },
+
     textPriceDashboard: {
         color: '#000000',
         fontSize: 13,
-        fontWeight:'700'
+        fontWeight: '700'
     },
-    textPriceDashboard: {
+    textPriceDetail: {
         color: 'white',
         fontSize: 13,
-        fontWeight:'700'
+        fontWeight: '700'
     },
     textDescriptionDashboard: {
         color: '#262626',
         fontSize: 13,
     },
-textDecoration:{
-    textDecorationLine: 'line-through', textDecorationStyle: 'solid',color:"black",fontSize: 13
-},
-   textBold:{
 
-    color: 'black',
-    fontSize: 13,
-   },
-
-    textRequestPickup:{
-        color:'black',
-        
+    textDecoration: {
+        textDecorationLine: 'line-through',
+        textDecorationStyle: 'solid',
+        color: "black",
+        fontWeight: 'bold',
+        fontSize: 13
     },
-    textNotSelected:{
-        color:'black',
+    textBold: {
+        color: 'black',
+        fontSize: 13,
+        fontWeight: 'bold',
+    },
+
+    textRequestPickup: {
+        color: 'black',
+
+    },
+    textNotSelected: {
+        color: 'black',
         fontSize: 18,
-      },
-      textTimeDashboard:{
+    },
+    textTimeDashboard: {
         color: '#000000',
         fontSize: 13,
-        
-      },
+
+    },
     buttonSelected: {
         borderRadius: 10,
         height: 55,
@@ -94,16 +104,45 @@ textDecoration:{
         paddingLeft: 30,
         paddingRight: 30,
     },
-   
-    //PackageDetail text 
-    locationName:{
-        fontSize:12,
-        color:'white',
+
+    /* PackageDetail text  */
+    locationName: {
+        fontSize: 12,
+        color: 'white',
     },
-    textRecepientDetail:{
-        fontSize:12,
-        color:'black',
-    }
-    
-    
+    textTitleRecepientCell: {
+        color: '#000000',
+        fontSize: 13,
+    },
+    textRecepientDetail: {
+        color: '#262626',
+        fontSize: 13,
+    },
+    textDescriptionDetail: {
+        color: '#262626',
+        fontSize: 13,
+    },
+    textDecorationDetail: {
+        textDecorationLine: 'line-through',
+        textDecorationStyle: 'solid',
+        color: "black",
+        fontWeight: 'bold',
+        fontSize: 13
+    },
+    textDecorationOnTopView: {
+        textDecorationLine: 'line-through',
+        textDecorationStyle: 'solid',
+        color: "white",
+        fontWeight: 'bold',
+        fontSize: 13
+    },
+    textBoldDetail: {
+        color: 'black',
+        fontSize: 13,
+        fontWeight: 'bold',
+    },
+
+    statusTextInDetail: {
+        color: 'rgb(32, 179,9)'
+    },
 }

@@ -129,7 +129,7 @@ export default class Dashboard extends Component {
 
                 <View style={{ flex: 1 }}>
 
-                    <HeaderMenuAndBell viewName={'Dashboard'} navigation={this.props.navigation} />
+                    <HeaderMenuAndBell viewName={'Dashboard'} isShowLeftButton={true} isShowRightButton ={true} navigation={this.props.navigation} />
 
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', height:44 }}>
                         <TouchableOpacity onPress={() => this.getCurrentActivity()} style={styles.buttonSegment}>

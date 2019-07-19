@@ -33,30 +33,24 @@ export default class HeaderMenuAndBell extends Component {
     }
 
     render() {
-        const { colors, onPressPopup, onPressBell, isNotificationShow, notificationCount, isBackButtonShow, viewName } = this.props;
+
+        const { colors, onPressPopup, onPressBell, isShowLeftButton, notificationCount, isBackButtonShow, viewName, isShowRightButton } = this.props;
         return (
             <View style={styles.mainView}>
-                <TouchableOpacity style={styles.imageLeft} >
+                {isShowLeftButton ? <TouchableOpacity style={styles.backButton} onPress={() => this.props.navigation.goBack()}>
                     <IconEntypo name="menu" style={styles.icon} onPress={() => this.props.navigation.openDrawer()} />
-                </TouchableOpacity>
+                </TouchableOpacity> : <View style={{ flex: 0.2 }} />}
 
                 <Text style={styles.titleStyle}> {viewName}</Text>
 
-                <TouchableOpacity style={styles.imageRight} onPress={onPressBell}>
+                {isShowRightButton ? <TouchableOpacity style={styles.imageRight} onPress={onPressBell}>
                     <IconEvilIcons name="search" color="black" style={styles.icon} />
-                </TouchableOpacity>
+                </TouchableOpacity> : <View style={{ flex: 0.15, }} />}
             </View>
         )
+
     }
 }
-
-
-// eslint-disable-next-line
-
-//   export default connect(
-//       mapStateToProps,
-//       null
-//     )(HeaderMenuAndBell);
 
 const styles = {
     mainView: {
@@ -77,7 +71,7 @@ const styles = {
     titleStyle: {
         color: 'black',
         fontSize: 20,
-        textAlign:'center',
+        textAlign: 'center',
         flex: 0.7,
 
     },
@@ -87,9 +81,11 @@ const styles = {
         height: '100%',
         justifyContent: 'center'
     },
-    icon:{
+    icon: {
         fontSize: 30,
-         alignSelf:'center',
-        tintColor:'black',
+        alignSelf: 'center',
+        tintColor: 'black',
+
+        // fontSize:30,paddingTop:25, color:'black', paddingTop:30
     }
 }

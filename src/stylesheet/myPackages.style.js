@@ -13,10 +13,7 @@ export default {
     },
     textSegmentButton: {
         color: 'black',
-
         fontSize: 16,
-       
-
     },
     viewSingleLine: {
         //marginTop:'1%',
@@ -26,6 +23,14 @@ export default {
         marginBottom: '3%'
 
     },
+    viewSingleLineCell:{
+        marginTop:'2%',
+        width: '100%',
+        height: '0.2%',
+        backgroundColor: 'lightgray',
+        marginBottom: '2%'
+    },
+
     viewSingleLineLeft: {
         backgroundColor: 'rgb(246, 205, 74)',
         flex: 0.5,
@@ -54,7 +59,7 @@ export default {
     },
     viewSingleLineCell:{
         width: '100%',
-        height: '1%',
+        height: '0.5%',
         backgroundColor: 'lightgray',
         marginBottom: '2%',
         marginTop:'2%'
@@ -81,7 +86,7 @@ export default {
         flex: 0.95,
     },
     viewInner: {
-        padding: 15,
+       
         backgroundColor: 'white',
         borderBottomColor: 'gray',
         borderWidth: 0.4,
@@ -192,9 +197,8 @@ export default {
     },
 
     buttonNotSelected: {
-        borderRadius: 10,
-        height: 40,
-        width: "auto",
+        borderRadius: 5,
+        height: 50,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0)',
@@ -205,38 +209,57 @@ export default {
         shadowOpacity: 0.5,
         shadowRadius: 1,
         backgroundColor: 'white',
-
-        paddingLeft: 10,
-        paddingRight: 10,
         borderColor: 'lightgray',
         borderWidth: 1,
-        marginRight:10,
+        flex:0.3
+         // paddingLeft: 10,
+        // paddingRight: 10,
+        // width: "auto",
+        // marginRight:10,
         // alignSelf: 'center',
         // marginLeft: '2%',
         //alignSelf:'flex-end',
+       
     },
     buttonSelected: {
-        borderRadius: 10,
-        height: 40,
-        width: 'auto',
+        borderRadius: 5,
+        height: 50,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: 'rgba(0,0,0,0.12)',
-        // shadowOffset: {
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        borderColor: 'black',
+        borderWidth: 1,
+        flex:0.3,
+        backgroundColor: 'black',
+         // marginRight:10,
+        // alignSelf: 'center',
+        //alignSelf:'flex-start'
+        // width: 'auto',
+        // paddingLeft: 10,
+        // paddingRight: 10,
+         // shadowOffset: {
         //     width: .4,
         //     height: .11
         // },
+       
+    },
+
+    buttonBigSelected: {
+        borderRadius: 5,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
         shadowOpacity: 0.5,
         shadowRadius: 1,
-        marginRight:10,
-        backgroundColor: 'black',
-        // alignSelf: 'center',
-        //alignSelf:'flex-start'
-
-        paddingLeft: 10,
-        paddingRight: 10,
         borderColor: 'black',
         borderWidth: 1,
+        width:'60%',
+        backgroundColor: 'black',
+        alignSelf:'center',
+        marginTop:'5%'
     },
 
   textSelected:{
@@ -247,10 +270,13 @@ export default {
       color:'black'
   }, 
   viewIconAndText:{
- flexDirection:'row',
+     flexDirection:'row',
+     flex:1,
+     flexWrap: 'wrap'
   },
   iconStyle:{
-    fontSize:20,
+    fontSize:15,
+    paddingTop:2
   },
   buttonMakePayment:{
     borderRadius: 10,
@@ -258,7 +284,7 @@ export default {
     width: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'green',
+    backgroundColor: 'rgb(32, 179,9)',
     marginRight:'2%',
     paddingLeft: 5,
     paddingRight: 5,
@@ -301,10 +327,18 @@ export default {
     flexDirection: 'row', 
     marginTop:'1%'
   },
+  viewBottomButtons:{
+    flexDirection: 'row', 
+    marginTop:'1%',
+    alignSelf: 'center', 
+    justifyContent: 'space-between',
+     width:'90%' 
+  },
   viewBox:{
       backgroundColor:'rgb(233, 232, 229)',
       width: 30, 
       height:30,
       margin: '1%'
-  }
+  }, 
+  
 }

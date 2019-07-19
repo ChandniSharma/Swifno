@@ -14,7 +14,6 @@ export default class MyPackageCell extends Component {
         super(props);
 
     }
-
     render() {
         const { item, index } = this.props
         console.log(" Props is ==== ", this.props);
@@ -24,14 +23,14 @@ export default class MyPackageCell extends Component {
                 <View style={styles.viewInner}>
                     <View>
                         <View>
-                            <Text style={commonStyles.textDescriptionDashboard}>My Package</Text>
+                            <Text style={commonStyles.textTitlePackageCell}>My Package</Text>
                             <View style={{ flexDirection: 'row' }}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={commonStyles.textDescriptionDashboard}>From:</Text>
                                     <Text style={commonStyles.textDescriptionDashboard}>Location1</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row' }}>
-                                    <Text style={commonStyles.textDescriptionDashboard}>To</Text>
+                                    <Text style={commonStyles.textDescriptionDashboard}>  To:</Text>
                                     <Text style={commonStyles.textDescriptionDashboard}>Location2</Text>
                                 </View>
                             </View>
@@ -57,34 +56,28 @@ export default class MyPackageCell extends Component {
                         </View>
                     </View>
                     <View style={styles.viewSingleLineCell}/>
-                    <View style={{ flexDirection: 'row'}}>
+                    <View style={{ flexDirection: 'row'}} >
 
                         {/* icon and button  */}
                         <View >
-                            <TouchableOpacity>
                                 <View style={styles.viewIconAndText}>
                                     <IconAntDesign name="eye" style={styles.iconStyle} />
-                                    <Text>View Details </Text>
+                                    <Text> View Details  </Text>
                                 </View>
-                            </TouchableOpacity>
                         </View>
 
                         <View>
-                            <TouchableOpacity>
                                 <View style={styles.viewIconAndText}>
                                     <IconEntypo name="location-pin" style={styles.iconStyle} />
-                                    <Text>Track Package </Text>
+                                    <Text>Track Package  </Text>
                                 </View>
-                            </TouchableOpacity>
                         </View>
 
                         <View>
-                            <TouchableOpacity>
                                 <View style={styles.viewIconAndText}>
                                     <IconMaterialIcons name="message" style={styles.iconStyle} />
-                                    <Text>Give Feedback</Text>
+                                    <Text> Give Feedback</Text>
                                 </View>
-                            </TouchableOpacity>
                         </View>
 
                     </View>

@@ -26,11 +26,11 @@ import ChangePasswordContainer  from './src/containers/ChangePassword';
 //import Route from './src/views/common/Route';
 import SideMenu from './src/sidemenu/SideMenu';
 import MyPackages from './src/views/MyPackages/MyPackages';
-import m from './src/views/MyPackages/MyPackageDetail';
-
 import {createStackNavigator, createAppContainer, createDrawerNavigator, DrawerItems,} from 'react-navigation';
 import MyPackageDetail from './src/views/MyPackages/MyPackageDetail';
 import MySettings from './src/views/MySettings';
+import CourierDetail from './src/views/CourierDetails';
+
 // import { importDeclaration } from '@babel/types';
 //import MapViewGoogle from './src/views/common/MapViewGoogle';
 
@@ -73,10 +73,11 @@ const LoginNavigator = createStackNavigator({
   MyPackages :{screen:MyPackages},
   MyPackageDetail:{screen:MyPackageDetail},
   MySettings:{screen:MySettings},
+  CourierDetail:{screen:CourierDetail}
 
  // MapViewGoogle:{screen:MapViewGoogle}
 },{
-  initialRouteName: 'MyPackageDetail',
+  initialRouteName: 'CourierDetail',
   //initialRouteName: 'DrawerNavigator',
   gesturesEnabled: false,
   headerMode: 'none',
