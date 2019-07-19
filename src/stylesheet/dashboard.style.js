@@ -12,10 +12,7 @@ export default {
     },
     textSegmentButton: {
         color: 'black',
-
         fontSize: 16,
-       
-
     },
     viewSingleLine: {
         //marginTop:'1%',

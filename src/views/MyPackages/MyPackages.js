@@ -21,23 +21,7 @@ export default class MyPackages extends Component {
             isRefundRequests: false,
         }
 
-        this.arrayActiveBids = [[
-            {key: "From", value: "Location1"},
-            {key: "To", value: "Location2"},
-            {key: "Schdeuled Date:", value: "23 Nov 2006"},
-            {key: "Status:", value: "Awarded (4434.00)"},
-            {key: "Operator", value: "Operator 1"}
-            ],
-            [
-                {key: "From", value: "Location1"},
-                {key: "To", value: "Location2"},
-                {key: "Schdeuled Date:", value: "23 Nov 2006"},
-                {key: "Status:", value: "Awarded (4434.00)"},
-                {key: "Operator", value: "Operator 1"}
-                ]
-            ]
-            
-
+        this.arrayActiveBids = [{},{}];
     }
 
     getCurrentActivity = () => {
@@ -90,20 +74,21 @@ export default class MyPackages extends Component {
     render() {
 
         let arrayListData;
-        if(this.state.isCurrentActivitySelected){
-            if (this.state.isActiveBids) {
-                arrayListData = this.arrayActiveBids;
-            } else if (this.state.isRefundRequests) {
-                arrayListData = this.arrayRefundRequests;
-            } else if (this.state.isDeliveries) {
-                arrayListData = this.arrayDeliveries;
-            } else if (this.state.isPendingReviews) {
-                arrayListData = this.arrayPendingReviews;
-            }
-        }else{
-            arrayListData = this.arrayNotifications;
-        }
-       
+        // if (this.state.isCurrentActivitySelected) {
+        //     if (this.state.isActiveBids) {
+        //         arrayListData = this.arrayActiveBids;
+        //     } else if (this.state.isRefundRequests) {
+        //         arrayListData = this.arrayRefundRequests;
+        //     } else if (this.state.isDeliveries) {
+        //         arrayListData = this.arrayDeliveries;
+        //     } else if (this.state.isPendingReviews) {
+        //         arrayListData = this.arrayPendingReviews;
+        //     }
+        // } else {
+        //     arrayListData = this.arrayNotifications;
+        // }
+
+        arrayListData = this.arrayActiveBids;
 
         return (
 
@@ -113,13 +98,13 @@ export default class MyPackages extends Component {
 
                     <HeaderMenuAndBell viewName={'My Packages'} navigation={this.props.navigation} />
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', height:44 }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 44 }}>
                         <TouchableOpacity onPress={() => this.getCurrentActivity()} style={styles.buttonSegment}>
-                            <Text style={styles.textTopBtn}>Current Activity</Text>
+                            <Text style={styles.textTopBtn}>Active Packages</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => this.getNotification()} style={styles.buttonSegment}>
-                            <Text style={styles.textTopBtn}>Notifications</Text>
+                            <Text style={styles.textTopBtn}>Package History</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -132,16 +117,11 @@ export default class MyPackages extends Component {
                     </View>
                     <View style={[styles.viewSingleLine, { flex: 0.003 }]} />
 
-    
-
-                    <FlatList style={this.state.isCurrentActivitySelected ? styles.flatListCurrentActivity:styles.flatlistNotification}
+                    <FlatList style= {styles.flatListCurrentActivity}
                         data={arrayListData}
                         renderItem={this.renderItem}
                         keyExtractor={(item, index) => index.toString()}
                     />
-
-                    <IconAntDesign name="pluscircle" style={{ fontSize: 40, alignSelf: 'flex-end', right: '2%', flex: 0.1 }} />
-
                 </View>
             </SafeAreaView>
 

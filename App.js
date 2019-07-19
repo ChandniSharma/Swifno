@@ -76,7 +76,7 @@ const LoginNavigator = createStackNavigator({
 
  // MapViewGoogle:{screen:MapViewGoogle}
 },{
-  initialRouteName: 'MySettings',
+  initialRouteName: 'MyPackageDetail',
   //initialRouteName: 'DrawerNavigator',
   gesturesEnabled: false,
   headerMode: 'none',

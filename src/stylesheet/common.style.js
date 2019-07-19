@@ -32,6 +32,15 @@ export default{
         color: '#262626',
         fontSize: 13,
     },
+textDecoration:{
+    textDecorationLine: 'line-through', textDecorationStyle: 'solid',color:"black",fontSize: 13
+},
+   textBold:{
+
+    color: 'black',
+    fontSize: 13,
+   },
+
     textRequestPickup:{
         color:'black',
         

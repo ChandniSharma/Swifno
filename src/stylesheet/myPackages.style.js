@@ -52,15 +52,20 @@ export default {
         borderBottomLeftRadius: 5,
         borderTopLeftRadius: 5,
     },
+    viewSingleLineCell:{
+        width: '100%',
+        height: '1%',
+        backgroundColor: 'lightgray',
+        marginBottom: '2%',
+        marginTop:'2%'
+    },
+
     optionButton: {
 
     },
     scrollView: {
         width: '100%',
         paddingLeft:10,
-       
-      
-
         //height: 64,
         backgroundColor: 'transparant',
         // justifyContent: 'center',
@@ -241,9 +246,8 @@ export default {
   textNotSelected:{
       color:'black'
   }, 
-  viewIconAndButton:{
-    flexDirection: 'row',
-
+  viewIconAndText:{
+ flexDirection:'row',
   },
   iconStyle:{
     fontSize:20,
