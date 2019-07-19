@@ -145,4 +145,29 @@ export default {
     statusTextInDetail: {
         color: 'rgb(32, 179,9)'
     },
+
+    //Courier Detail View 
+
+    textName:{
+        color: 'white',
+        fontSize: 13,
+    },
+    textRatingCount: {
+        color: 'white',
+        fontSize: 13,
+        marginLeft:'5%', 
+        marginTop:'1%'
+    },
+
+    // Submit Review
+    textTitleSubmitReview:{
+        color: 'black',
+        fontSize: 14,
+        fontWeight: 700,
+    },
+    textSubtitleSubmitReview:{
+        color: '#262626',
+        fontSize: 13,
+    }, 
+
 }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Image, TextInput, SafeAreaView, TouchableOpacity, ActivityIndicator, ScrollView, FlatList } from 'react-native';
-import styles from '../stylesheet/courierDetail.style'
+import styles from '../stylesheet/submitReview.style'
 
 import commonStyle from '../stylesheet/common.style';
 import StarRating from 'react-native-star-rating';
 import HeaderLoginModule from './common/HeaderLoginModule'
 
 
-export default class CourierDetail extends Component {
+export default class SubmitReview extends Component {
     constructor(props) {
         super(props);
 
@@ -32,25 +32,25 @@ export default class CourierDetail extends Component {
                             }} />
                         </View>
 
-                        <View style={{ flex: 0.8, justifyContent: 'space-evenly'  }}>
+                        <View style={{ flex: 0.8, justifyContent: 'space-evenly' }}>
 
-                            <View style={{ flexDirection: 'row', width:'100%'}}>
+                            <View style={{ flexDirection: 'row', width: '100%' }}>
                                 <Text style={[commonStyle.textDescriptionDetail, { flex: 0.2 }]}>
                                     {item.item.name}
                                 </Text>
                                 <Text style={[commonStyle.textDescriptionDetail, { flex: 0.8, right: '2%' }]}>{item.item.date}</Text>
                             </View>
-                                <View style={{ width: 20, width: '30%' }}>
-                                    <StarRating
-                                        // style={{width:30, height:20}}
-                                        disabled={false}
-                                        maxStars={5}
-                                        rating={3}
-                                        starSize={20}
-                                        fullStarColor={'rgb(247, 205,74)'}
-                                    // selectedStar={(rating) => this.onStarRatingPress(rating)}
-                                    />
-                                </View>
+                            <View style={{ width: 20, width: '30%' }}>
+                                <StarRating
+                                    // style={{width:30, height:20}}
+                                    disabled={false}
+                                    maxStars={5}
+                                    rating={3}
+                                    starSize={20}
+                                    fullStarColor={'rgb(247, 205,74)'}
+                                // selectedStar={(rating) => this.onStarRatingPress(rating)}
+                                />
+                            </View>
                         </View>
 
                     </View>
@@ -63,10 +63,10 @@ export default class CourierDetail extends Component {
     render() {
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                <HeaderLoginModule viewName={'Courier Details'} navigation={this.props.navigation} />
+                <HeaderLoginModule viewName={'Submit Review'} navigation={this.props.navigation} />
 
                 <View>
-                    {/* <View style={[styles.topBlackView, {flex:0.3}] }>
+                    {/* <View style={[styles.topBlackView] }>
 
                         <View style={{ flex: 0.2, marginLeft:'5%' , marginTop:'5%'}}>
                             <Image source={{ uri:"https://bootdey.com/img/Content/avatar/avatar6.png" }} style={{
@@ -97,17 +97,55 @@ export default class CourierDetail extends Component {
                         </View>
                     </View>
                     */}
+                    <View style={{ flexDirection: 'column', justifyContent: 'space-around'}}>
+
+                    
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={commonStyle.textTitleSubmitReview}>Package Name: </Text>
+                        <Text style={commonStyle.textDescriptionDetail}>2 Event Booklets </Text>
+                    </View>
+
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={commonStyle.textTitleSubmitReview}>Delivery Id: </Text>
+                        <Text style={commonStyle.textDescriptionDetail}>2 Event Booklets </Text>
+                    </View>
+
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={commonStyle.textTitleSubmitReview}>From Location: </Text>
+                        <Text style={commonStyle.textDescriptionDetail}>279, Ago Palace View, Lagas Niegieria  </Text>
+                    </View>
+
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={commonStyle.textTitleSubmitReview}>To Location: </Text>
+                        <Text style={commonStyle.textDescriptionDetail}>Beshop howells memorial grammer school Bariga</Text>
+                    </View>
+
+                    <Text style={commonStyle.textTitleSubmitReview}> Give Ratiing</Text>
+                    <View style={{ width: 20, width: '30%' }}>
+                        <StarRating
+                            // style={{width:30, height:20}}
+                            disabled={false}
+                            maxStars={5}
+                            rating={3}
+                            starSize={20}
+                            fullStarColor={'rgb(247, 205,74)'}
+                        // selectedStar={(rating) => this.onStarRatingPress(rating)}
+                        />
+                    </View>
+                    <Text style={commonStyle.textSubtitleSubmitReview}> Comment</Text>
                    
-                    <Text style={[commonStyle.textBoldDetail, {marginTop:'5%'}]}> Review</Text>
-                    <View style={styles.viewSingleLine}/>
-                    <FlatList
-                       
-                        data={this.arrayData}
-                        renderItem={this.renderItem}
-                        keyExtractor={(item, index) => index.toString()}
-                    />
-                   
-                  
+                        <View style={styles.viewAddImage} />
+                    
+                    </View>
+                    <View style={styles.viewBottomButtons}>
+                       <TouchableOpacity style={[styles.buttonNotSelected]}>
+                            <Text style={commonStyle.textNotSelected}>Cancel</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={[styles.buttonSelected]} >
+                            <Text style={commonStyle.textSelected}>Submit</Text>
+                        </TouchableOpacity>
+</View>
                 </View>
             </SafeAreaView>
         )

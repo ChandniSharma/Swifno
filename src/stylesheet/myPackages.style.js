@@ -4,6 +4,9 @@ export default {
     container: {
         flex: 1,
     },
+    topBlackView:{
+        backgroundColor: 'rgb(0,0,0)', 
+    },
     buttonSegment: {
         flex: 0.5,
         height: '100%',

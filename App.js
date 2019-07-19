@@ -30,7 +30,8 @@ import {createStackNavigator, createAppContainer, createDrawerNavigator, DrawerI
 import MyPackageDetail from './src/views/MyPackages/MyPackageDetail';
 import MySettings from './src/views/MySettings';
 import CourierDetail from './src/views/CourierDetails';
-
+import SubmitReview from './src/views/SubmitReview';
+//import ViewFeedback from './src/views/ViewFeedback';
 // import { importDeclaration } from '@babel/types';
 //import MapViewGoogle from './src/views/common/MapViewGoogle';
 
@@ -73,11 +74,13 @@ const LoginNavigator = createStackNavigator({
   MyPackages :{screen:MyPackages},
   MyPackageDetail:{screen:MyPackageDetail},
   MySettings:{screen:MySettings},
-  CourierDetail:{screen:CourierDetail}
+  CourierDetail:{screen:CourierDetail},
+  SubmitReview:{screen:SubmitReview},
+  //ViewFeedback:{screen:ViewFeedback} 
 
  // MapViewGoogle:{screen:MapViewGoogle}
 },{
-  initialRouteName: 'CourierDetail',
+  initialRouteName: 'SubmitReview',
   //initialRouteName: 'DrawerNavigator',
   gesturesEnabled: false,
   headerMode: 'none',

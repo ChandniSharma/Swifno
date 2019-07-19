@@ -13,6 +13,7 @@ import * as CONST from '../../constants/Constant';
 import MyPackageCell from './MyPackageCell';
 import commonStyle from '../../stylesheet/common.style';
 import StarRating from 'react-native-star-rating';
+import HeaderLoginModule from '../common/HeaderLoginModule'
 
 export default class MyPackageDetail extends Component {
     constructor(props) {
@@ -107,9 +108,11 @@ export default class MyPackageDetail extends Component {
     render() {
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
+               
+                <HeaderLoginModule viewName={'My Package Details'} navigation={this.props.navigation} />
 
                 <View style={styles.container}>
-                    {this.state.isDeliveryScheduled ? <View style={[styles.deliveryView, { backgroundColor: 'rgb(0,0,0)', marginTop: '5%' }]}>
+                    {this.state.isDeliveryScheduled ? <View style={styles.topBlackView}>
                         <View style={{ flexDirection: 'row' }}>
                             <View style={{ flexDirection: 'row', flex: 0.8 }}>
                                 <Text style={commonStyle.locationName}> Package Name: </Text>
@@ -139,7 +142,7 @@ export default class MyPackageDetail extends Component {
                     </View> : <View />}
 
                     {this.state.isArrivedToVendor && !this.state.isPaid ?
-                        <View style={[styles.deliveryView, { backgroundColor: 'rgb(0,0,0)', marginTop: '5%' }]}>
+                        <View style={styles.topBlackView}>
                             <View style={[styles.viewRow, , { marginTop: '2%' }]}>
                                 <View style={{ flexDirection: 'row', flex: 0.7 }}>
                                     <Text style={commonStyle.locationName}>Package Name: </Text>
@@ -191,7 +194,7 @@ export default class MyPackageDetail extends Component {
                         </View> : <View />}
 
                     {this.state.isPaid ?
-                        <View style={[styles.deliveryView, { backgroundColor: 'rgb(0,0,0)', marginTop: '5%' }]}>
+                        <View style={styles.topBlackView}>
                             <View style={[styles.viewRow, , { marginTop: '2%' }]}>
                                 <View style={{ flexDirection: 'row', flex: 0.7 }}>
                                     <Text style={commonStyle.locationName}>Package Name: </Text>
