@@ -66,7 +66,7 @@ export default class CourierDetail extends Component {
                 <HeaderLoginModule viewName={'Courier Details'} navigation={this.props.navigation} />
 
                 <View>
-                    {/* <View style={[styles.topBlackView, {flex:0.3}] }>
+                    <View style={styles.topBlackView }>
 
                         <View style={{ flex: 0.2, marginLeft:'5%' , marginTop:'5%'}}>
                             <Image source={{ uri:"https://bootdey.com/img/Content/avatar/avatar6.png" }} style={{
@@ -96,18 +96,15 @@ export default class CourierDetail extends Component {
                             </View>
                         </View>
                     </View>
-                    */}
                    
                     <Text style={[commonStyle.textBoldDetail, {marginTop:'5%'}]}> Review</Text>
                     <View style={styles.viewSingleLine}/>
                     <FlatList
-                       
                         data={this.arrayData}
                         renderItem={this.renderItem}
                         keyExtractor={(item, index) => index.toString()}
                     />
                    
-                  
                 </View>
             </SafeAreaView>
         )

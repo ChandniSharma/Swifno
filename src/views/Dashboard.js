@@ -194,7 +194,9 @@ export default class Dashboard extends Component {
                         keyExtractor={(item, index) => index.toString()}
                     />
 
-                    <IconAntDesign name="pluscircle" style={{ fontSize: 40, alignSelf: 'flex-end', right: '2%', flex: 0.1 }} />
+                    <IconAntDesign name="pluscircle" style={{ fontSize: 40, alignSelf: 'flex-end', right: '2%', flex: 0.1 }} onPress={()=>this.props.navigation.navigate('NewRequestPickupLocation')}/>
+
+                    
 
                 </View>
             </SafeAreaView>

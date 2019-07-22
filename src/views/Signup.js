@@ -67,6 +67,7 @@ export default class Signup extends Component {
                                         charLimit={30}
                                     />
                                 </View>
+                                
                                 <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: '2%' }}>
                                     <IconMaterialCommunity name="email" style={styles.icon} />
                                     <Input
