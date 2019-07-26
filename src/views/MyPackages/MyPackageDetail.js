@@ -19,8 +19,8 @@ export default class MyPackageDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isDeliveryScheduled: false,
-            isArrivedToVendor: true,
+            isDeliveryScheduled: true,
+            isArrivedToVendor: false,
             isPaid: false,
             isDeliveryDetail: false,
             isCancelRequest: true,
@@ -234,7 +234,7 @@ export default class MyPackageDetail extends Component {
                                     <TouchableOpacity style={styles.buttonPaid}>
                                         <Text style={commonStyle.locationName}> Paid </Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity style={styles.buttonRequestPickup}>
+                                    <TouchableOpacity style={styles.buttonRequestPickup} onPress={()=> this.props.navigation.navigate('TrackPackage')}>
                                         <Text style={commonStyle.textRequestPickup}> Track Package </Text>
                                     </TouchableOpacity>
                                 </View>
@@ -360,7 +360,7 @@ export default class MyPackageDetail extends Component {
                                         </TouchableOpacity>
                                     </View>
                                 </View> : <View style={styles.buttonBigSelected}>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={()=> this.props.navigation.navigate('ReviewRefundRequest')}>
                                         <Text numberOfLines={2} color={'white'} style={styles.textSelected}>Review Refund Request</Text>
                                     </TouchableOpacity>
                                 </View>

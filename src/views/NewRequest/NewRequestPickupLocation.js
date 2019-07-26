@@ -5,6 +5,8 @@ import commonStyle from '../../stylesheet/common.style';
 import HeaderMenuAndBell from '../common/HeaderMenuAndBell';
 import { SafeAreaView } from 'react-navigation';
 import { Picker } from 'react-native-picker-dropdown'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export default class NewRequestPickupLocation extends Component {
     constructor(props) {
@@ -26,53 +28,63 @@ export default class NewRequestPickupLocation extends Component {
 
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
 
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 1,backgroundColor:'yellow' }}>
 
                     <HeaderMenuAndBell viewName={'New Request'} isShowLeftButton={true} isShowRightButton={false} navigation={this.props.navigation} />
-                    {/* dot view */}
-                    <View style={styles.viewDots} />
-                    <View style={styles.topHeadingView}>
-                        <Text style={styles.textHeading}>Enter Pickup Location</Text>
-                    </View>
 
-                    <View style={{ marginTop: '5%' }}>
-                        <Picker
-                            selectedValue={this.state.state}
-                            onValueChange={this.onValueChange}
-                            mode="dialog"
-                            style={styles.picker}
-                        >
-                            <Picker.Item label="Madhya Pradesh" value="MP" />
-                            <Picker.Item label="Rajasthan" value="RJ" />
-                            <Picker.Item label="Gujrat" value="GJ" />
-                            <Picker.Item label="Chhatisgarh" value="CH" />
-                        </Picker>
-                    </View>
+                    <KeyboardAwareScrollView style={[styles.container, {backgroundColor:'green'} ]}>
+                        <View style={{ width:'100%', height:'100%',marginBottom:'2%'}}>
 
-                    <TextInput
-                        style={styles.textInputNotSelected}
-                        placeholder='Enter Area'
-                    />
+                            {/* dot view */}
+                            <View style={[styles.viewDots, { flex: 0.1 }]} />
 
-                    <TextInput
-                        style={styles.textInputNotSelected}
-                        placeholder='Enter Address'
-                    />
-                    <View style={styles.mapView}>
-                        <Image source={require('../../assets/Images/dropoff_location.png')} style={styles.mapImage} />
+                            <View style={{ flex: 0.4 }}>
 
-                    </View>
+                                <View style={[styles.topHeadingView]}>
+                                    <Text style={styles.textHeading}>Enter Pickup Location</Text>
+                                </View>
 
-                    <View style={styles.viewBottomButtons}>
-                        <TouchableOpacity style={[styles.buttonNotSelected]} onPress={() => this.props.navigation.navigate('DrawerNavigator')}>
-                            <Text style={commonStyle.textNotSelected}>Back</Text>
-                        </TouchableOpacity>
+                                <View style={{ marginTop: '5%' }}>
+                                    <Picker
+                                        selectedValue={this.state.state}
+                                        onValueChange={this.onValueChange}
+                                        mode="dialog"
+                                        style={styles.picker}
+                                    >
+                                        <Picker.Item label="Madhya Pradesh" value="MP" />
+                                        <Picker.Item label="Rajasthan" value="RJ" />
+                                        <Picker.Item label="Gujrat" value="GJ" />
+                                        <Picker.Item label="Chhatisgarh" value="CH" />
+                                    </Picker>
+                                </View>
 
-                        <TouchableOpacity style={[styles.buttonSelected]} onPress={() => this.props.navigation.navigate('NewRequestDropoffLocation')}>
-                            <Text style={commonStyle.textSelected}>Next</Text>
-                        </TouchableOpacity>
-                    </View>
+                                <TextInput
+                                    style={styles.textInputNotSelected}
+                                    placeholder='Enter Area'
+                                />
 
+                                <TextInput
+                                    style={styles.textInputNotSelected}
+                                    placeholder='Enter Address'
+                                />
+                            </View>
+
+                            <View style={[styles.mapView]}>
+                                <Image source={require('../../assets/Images/dropoff_location.png')} style={styles.mapImage} />
+                            </View>
+
+
+                            <View style={[styles.viewBottomButtons, {flex:0.3}]}>
+                                <TouchableOpacity style={[styles.buttonNotSelected]} onPress={() => this.props.navigation.navigate('DrawerNavigator')}>
+                                    <Text style={commonStyle.textNotSelected}>Back</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={[styles.buttonSelected]} onPress={() => this.props.navigation.navigate('NewRequestDropoffLocation')}>
+                                    <Text style={commonStyle.textSelected}>Next</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </KeyboardAwareScrollView>
                 </View>
             </SafeAreaView>)
     }

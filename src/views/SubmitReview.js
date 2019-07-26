@@ -142,7 +142,7 @@ export default class SubmitReview extends Component {
                             <Text style={commonStyle.textNotSelected}>Cancel</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.buttonSelected]} >
+                        <TouchableOpacity style={[styles.buttonSelected]} onPress={()=> this.props.navigation.navigate('ViewFeedback')}>
                             <Text style={commonStyle.textSelected}>Submit</Text>
                         </TouchableOpacity>
 </View>

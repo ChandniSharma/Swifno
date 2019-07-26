@@ -142,7 +142,7 @@ export default class MySettings extends Component {
 
                                 </View>
                                 <View style={styles.buttonSelected}>
-                                    <TouchableOpacity style={[styles.signupButton]} onPress={() => this.props.navigation.navigate('Login')}>
+                                    <TouchableOpacity style={[styles.signupButton]} onPress={() => this.props.navigation.navigate('ChangePasswordContainer')}>
                                         <Text style={styles.signupText}>Change Password</Text>
                                     </TouchableOpacity>
                                 </View>

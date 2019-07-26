@@ -107,6 +107,7 @@ export default {
     rememberText: {
    // marginLeft:'2%',
      fontSize:16,
+     height:20,
    //  marginTop:'2%'
 
     },

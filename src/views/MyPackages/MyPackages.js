@@ -68,7 +68,7 @@ export default class MyPackages extends Component {
         console.log(" Item is ", item.item);
 
         return (
-            <MyPackageCell item={item} index={index} />
+            <MyPackageCell item={item} index={index} navigation={this.props.navigation}/>
         );
     }
     render() {

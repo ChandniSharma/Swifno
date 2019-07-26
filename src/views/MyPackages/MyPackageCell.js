@@ -20,9 +20,9 @@ export default class MyPackageCell extends Component {
 
         return (
             <View style={styles.viewOuter}>
-                <View style={styles.viewInner}>
-                    <View>
-                        <View>
+                <View style={[styles.viewInner ]}>
+                    <View style={{ marginLeft:'2%',backgroundColor:'pink'}}>
+                        <View style={{justifyContent:'space-around' }}>
                             <Text style={commonStyles.textTitlePackageCell}>My Package</Text>
                             <View style={{ flexDirection: 'row' }}>
                                 <View style={{ flexDirection: 'row' }}>
@@ -56,15 +56,15 @@ export default class MyPackageCell extends Component {
                         </View>
                     </View>
                     <View style={styles.viewSingleLineCell}/>
-                    <View style={{ flexDirection: 'row'}} >
+                    <View style={{ flexDirection: 'row', marginLeft:'2%', backgroundColor:'orange'}} >
 
                         {/* icon and button  */}
-                        <View >
+                        <TouchableOpacity onPress={()=> this.props.navigation.navigate('MyPackageDetail')}>
                                 <View style={styles.viewIconAndText}>
                                     <IconAntDesign name="eye" style={styles.iconStyle} />
                                     <Text> View Details  </Text>
                                 </View>
-                        </View>
+                        </TouchableOpacity>
 
                         <View>
                                 <View style={styles.viewIconAndText}>

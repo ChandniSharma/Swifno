@@ -68,8 +68,72 @@ const DrawerNavigator = new createDrawerNavigator(
     Dashboard: {
       screen: Dashboard, navigationOptions: {
         header: null
-      }
+      },
     },
+      NewRequestPickupLocation: {
+        screen: NewRequestPickupLocation, navigationOptions: {
+          header: null
+        },
+      },
+      MyPackages: {
+        screen: MyPackages, navigationOptions: {
+          header: null
+        },
+      },
+
+      PaymentHistory: {
+        screen: PaymentHistory, navigationOptions: {
+          header: null
+        },
+      },
+
+        MySettings: {
+          screen: MySettings, navigationOptions: {
+            header: null
+          }
+    },
+    CourierDetail: {
+      screen: CourierDetail, navigationOptions: {
+        header: null
+      }
+},
+
+SubmitReview: {
+  screen: SubmitReview, navigationOptions: {
+    header: null
+  }
+},
+
+ViewFeedback: {
+  screen: ViewFeedback, navigationOptions: {
+    header: null
+  }
+},
+
+NewRequestSummary: {
+  screen: NewRequestSummary, navigationOptions: {
+    header: null
+  }
+},
+
+PaymentHistory: {
+  screen: PaymentHistory, navigationOptions: {
+    header: null
+  }
+},
+
+TrackPackage: {
+  screen: TrackPackage, navigationOptions: {
+    header: null
+  }
+},
+
+NewRequestPackageDetail: {
+  screen: NewRequestPackageDetail, navigationOptions: {
+    header: null
+  }
+},
+
   },
   {
     contentComponent: SideMenu
@@ -100,8 +164,8 @@ const LoginNavigator = createStackNavigator({
 
   // MapViewGoogle:{screen:MapViewGoogle}
 }, {
-   // initialRouteName: 'NewRequestSummary',
-    initialRouteName: 'DrawerNavigator',
+   initialRouteName: 'NewRequestPickupLocation',
+   // initialRouteName: 'CourierDetail',
     gesturesEnabled: false,
     headerMode: 'none',
   }

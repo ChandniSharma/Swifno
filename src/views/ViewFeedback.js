@@ -151,7 +151,7 @@ export default class ViewFeedback extends Component {
                         </TouchableOpacity>
                     </View> : */}
                         <View style={styles.viewButtonSelectedCenter}>
-                            <TouchableOpacity style={[styles.buttonSelectedCenter]} >
+                            <TouchableOpacity style={[styles.buttonSelectedCenter]} onPress={()=> this.props.navigation.navigate('DrawerNavigator')}>
                                 <Text style={commonStyle.textSelected}>Back</Text>
                             </TouchableOpacity>
                         </View>

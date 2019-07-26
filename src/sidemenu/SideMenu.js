@@ -18,8 +18,9 @@ class SideMenu extends Component {
         // const navigateAction = NavigationActions.navigate({
         //     routeName: route,
         // });
-       // this.props.navigation.navigate(route);
         this.props.navigation.closeDrawer()
+        this.props.navigation.navigate(route);
+       
     };
 
     constructor(props){
@@ -83,7 +84,7 @@ console.log(" in side menu ");
                             </View>
                         </TouchableOpacity>
                         <View style={styles.viewSingleLine}/>
-                        <TouchableOpacity onPress={this.navigateToScreen('Dashboard')}>
+                        <TouchableOpacity onPress={this.navigateToScreen('NewRequestPickupLocation')}>
                             <View style={styles.navItemStyle}>
                                 <IconFontAwesome5 style={styles.icon} name="truck"  />
                                 <Text style={styles.text}>
@@ -92,7 +93,7 @@ console.log(" in side menu ");
                             </View>
                         </TouchableOpacity>
                         <View style={styles.viewSingleLine}/>
-                        <TouchableOpacity onPress={this.navigateToScreen('Dashboard')}>
+                        <TouchableOpacity onPress={this.navigateToScreen('MyPackages')}>
                             <View style={styles.navItemStyle}>
                                 <IconSimpleLineIcons style={styles.icon} name="bag"  />
                                 <Text style={styles.text}>
@@ -101,7 +102,7 @@ console.log(" in side menu ");
                             </View>
                         </TouchableOpacity>
                         <View style={styles.viewSingleLine}/>
-                        <TouchableOpacity onPress={this.navigateToScreen('Dashboard')}>
+                        <TouchableOpacity onPress={this.navigateToScreen('PaymentHistory')}>
                             <View style={styles.navItemStyle}>
                                 <IconMaterialIcons style={styles.icon} name="payment"  />
                                 <Text style={styles.text}>
@@ -110,7 +111,7 @@ console.log(" in side menu ");
                             </View>
                         </TouchableOpacity>
                         <View style={styles.viewSingleLine}/>
-                        <TouchableOpacity onPress={this.navigateToScreen('Dashboard')}>
+                        <TouchableOpacity onPress={this.navigateToScreen('MySettings')}>
                             <View style={styles.navItemStyle}>
                                 <IconAntDesign style={styles.icon} name="setting"  />
 

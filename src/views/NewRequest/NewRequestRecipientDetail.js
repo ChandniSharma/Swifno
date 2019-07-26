@@ -71,7 +71,7 @@ export default class NewRequestRecipientDetail extends Component {
                             <Text style={commonStyle.textNotSelected}>Back</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.buttonSelected]}  onPress={() => this.props.navigation.navigate('DrawerNavigator')} >
+                        <TouchableOpacity style={[styles.buttonSelected]}  onPress={() => this.props.navigation.navigate('MyPackages')} >
                             <Text style={commonStyle.textSelected}>Next</Text>
                         </TouchableOpacity>
                     </View>

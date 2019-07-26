@@ -1,3 +1,6 @@
+import { Dimensions } from 'react-native';
+const deviceHeight = Dimensions.get('window').height;
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export default {
     container: {
@@ -5,7 +8,8 @@ export default {
     },
     topHeadingView: {
         backgroundColor: 'rgb(246, 205, 74)',
-        height: 50,
+        // height: 50,
+        height: hp('7%'),
         width: '90%',
         alignSelf: 'center',
         justifyContent: 'center'
@@ -20,7 +24,7 @@ export default {
         borderColor: 'rgb(246, 205, 74)',
         borderWidth: 1,
         width: '90%',
-        height: 40,
+        height: hp('7%'),
         alignSelf: 'center',
         justifyContent: 'center'
     },
@@ -41,7 +45,7 @@ export default {
         borderColor: 'lightgray',
         borderWidth: 1,
         width: '90%',
-        height: 40,
+        height: hp('7%'),
         alignSelf: 'center',
         marginTop: '2%',
         paddingLeft: 5,
@@ -50,7 +54,7 @@ export default {
         borderColor: 'rgb(246, 205, 74)',
         borderWidth: 1,
         width: '90%',
-        height: 40,
+        height: hp('7%'),
         alignSelf: 'center',
         marginTop: '2%'
     },
@@ -85,11 +89,19 @@ export default {
         flex: 0.45,
         backgroundColor: 'black',
     },
+    viewBottom: {
+        height: hp('30%'),
+        bottom: '5%',
+        backgroundColor: 'white',
+        position: 'absolute',
+        width: wp('100%')
+    },
     viewBottomButtons: {
         flexDirection: 'row',
         alignSelf: 'center',
         justifyContent: 'space-between',
-        width: '90%',
+        width: wp('90%'),
+        bottom: '0%',
         marginTop: '5%'
     },
     mapImage: {
@@ -98,13 +110,14 @@ export default {
     },
     mapView: {
         width: '90%',
-        height: 200,
+        height: hp('35%'),
         marginTop: '5%',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        marginBottom: '5%'
     },
     mapSummary: {
-        width: '100%',
-        height: '65%',
+        width: wp('100%'),
+        height: hp('100%'),
 
     },
 
@@ -207,13 +220,62 @@ export default {
         height: 30,
         margin: '1%'
     },
-    viewBoxYellow: {
-        backgroundColor: 'rgb(246, 205, 74)',
-        width: 30,
-        height: 30,
-        marginRight: '2%',
-        marginTop: '2%',
+    buttonBoxYellow: {
+        // backgroundColor: 'rgb(246, 205, 74)',
+        // width: wp('3%'),
+        // height: hp('3%'),
+        // marginRight: '2%',
+        // marginTop: '5%',
+        width: '100%',
+        height: '100%',
+        // alignSelf:'center',
         justifyContent: 'center',
         alignItems: 'center',
     },
+    viewBoxYellow: {
+        backgroundColor: 'rgb(246, 205, 74)',
+        width: wp('5%'),
+        height: hp('5%'),
+        marginRight: '2%',
+        marginTop: '1%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    viewYellowBoxSummary: {
+        width: wp('5%'),
+        height: hp('4%'),
+        marginLeft: wp('93%'),
+        backgroundColor: 'rgb(246, 205, 74)',
+        marginBottom: '2%',
+        marginTop: '1%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    viewLocations: {
+        padding: 15,
+        backgroundColor: 'white',
+        borderBottomColor: 'lightgray',
+        borderBottomWidth: 0.5,
+        // borderBottomColor: 'lightgray',
+        //borderWidth:0.5,
+        // shadowColor: 'lightGray',
+        // shadowOpacity: 0.1,
+        // shadowRadius: 1.0,
+        // elevation: 1,
+        // borderColor: 'rgba(0, 0,0, 0)'
+
+      
+    },
+
+    // oldLocationView:{
+    //     padding: 15,
+    //     backgroundColor: 'white',
+    //     borderBottomColor: 'lightgray',
+    //     borderWidth: 0.4,
+    //     shadowColor: 'lightGray',
+    //     shadowOpacity: 0.4,
+    //     shadowRadius: 1.5,
+    //     elevation: 3,
+    //     borderColor: 'rgba(0, 0,0, 0)'
+    // }
 }

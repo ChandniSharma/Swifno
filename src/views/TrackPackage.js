@@ -21,6 +21,12 @@ export default class TrackPackage extends Component {
           }
     }
 
+    componentDidMount(){
+        setTimeout(() => {
+           this.props.navigation.navigate('CourierDetail')
+        }, 100);
+    }
+
     render() {
         const state = this.state;
         return (

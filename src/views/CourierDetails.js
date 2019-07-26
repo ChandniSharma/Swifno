@@ -18,12 +18,15 @@ export default class CourierDetail extends Component {
         { 'userPhoto': 'https://bootdey.com/img/Content/avatar/avatar6.png', 'name': 'Ram', 'ratingCount': 3, 'status': 'On Time', 'date': '15-09-2017' }
         ];
     }
+
+    
+
     renderItem = (item, index) => {
         console.log(" Item is =========", item.item);
 
         return (
             <View style={{ marginLeft: '2%', marginRight: '2%' }}>
-                <TouchableOpacity style={{ flexDirection: 'row' }}>
+                <TouchableOpacity style={{ flexDirection: 'row' }} onPress={()=> this.props.navigation.navigate('SubmitReview')}>
 
                     <View style={{ flexDirection: 'row', fontSize: 15, justifyContent: 'space-evenly', flex: 1 }}>
                         <View style={{ flex: 0.2 }}>

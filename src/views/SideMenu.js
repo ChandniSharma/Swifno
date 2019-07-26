@@ -7,6 +7,7 @@ import styles from './sidemenu.style'
 
 class SideMenu extends Component {
     navigateToScreen = (route) => () => {
+        
         console.log('route',route)
         const navigateAction = NavigationActions.navigate({
             routeName: route,
