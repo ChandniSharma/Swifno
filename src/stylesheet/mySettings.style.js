@@ -33,7 +33,7 @@ export default {
     textDontHaveAccount: {
         color: 'gray',
         fontFamily: 'Montserrat-Regular',
-         fontWeight:'200',
+         //fontWeight:200,
         fontSize: 12,
         marginRight: '1%',
         marginTop:'1%'
@@ -46,9 +46,33 @@ export default {
         fontSize: 40,
         color: 'black',
         fontFamily: 'Montserrat-Regular',
-         fontWeight:'100',
+         //fontWeight:100,
     },
-
+    buttonNotSelected: {
+        // borderRadius: 5,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0)',
+        shadowOffset: {
+            width: .4,
+            height: .11
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        backgroundColor: 'white',
+        borderColor: 'lightgray',
+        borderWidth: 1,
+        // flex:0.3
+         // paddingLeft: 10,
+        // paddingRight: 10,
+        // width: "auto",
+        // marginRight:10,
+        // alignSelf: 'center',
+        // marginLeft: '2%',
+        //alignSelf:'flex-end',
+       
+    },
     inputStyle: {
         marginLeft: '5%',
         marginRight: '5%',
@@ -64,7 +88,7 @@ export default {
         shadowRadius: 1,
         borderRadius: 8,
         fontFamily: 'Montserrat-Regular',
-        fontWeight: '300',
+        //fontWeight: 300,
         fontSize: 18,
         color: '#262626',
         paddingTop: 21,
@@ -146,7 +170,7 @@ export default {
     signupText: {
         fontSize: 16,
         color: 'red',
-        fontWeight: '500',
+        //fontWeight: 500,
        
        
     },
@@ -232,6 +256,7 @@ export default {
         color: 'white',
         fontSize: 18,
     },
+
     buttonCenter: {
         borderRadius: 22,
         height: 55,
@@ -269,8 +294,15 @@ export default {
     textButtonTitle: {
         fontSize: 16,
         color: 'white',
-        fontWeight: '500',
+        //fontWeight: 500,
 
+    },
+    viewSingleLine: {
+        marginTop: '3%',
+        width: '100%',
+        height: '2%',
+        backgroundColor: 'lightgray',
+        marginBottom: '3%'
     },
     viewShareButtons: {
         flexDirection: 'row',
@@ -305,6 +337,36 @@ export default {
         bottom: 1,
         flex: 1,
         flexDirection: 'row'
-    }
+    },
+    buttonBigSelected: {
+        borderRadius: 5,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        borderColor: 'black',
+        borderWidth: 1,
+        width:'50%',
+        backgroundColor: 'black',
+        alignSelf:'center',
+        // marginTop:'5%'
+    },
+    buttonBigNotSelected: {
+        borderRadius: 5,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        borderColor: 'black',
+        borderWidth: 1,
+        width:'50%',
+        backgroundColor: 'white',
+        alignSelf:'center',
+        // marginTop:'5%'
+    },
 
 }

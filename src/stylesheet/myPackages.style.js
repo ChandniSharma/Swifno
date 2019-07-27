@@ -1,4 +1,5 @@
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export default {
     container: {
@@ -6,6 +7,22 @@ export default {
     },
     topBlackView:{
         backgroundColor: 'rgb(0,0,0)', 
+        borderRadius:6,
+        width:'95%',
+        alignSelf:'center',
+        marginTop:'2.5%',
+        marginBottom:'2.5%'
+    },
+    mapImage: {
+        width: '100%',
+        height: '100%',
+    },
+    mapView: {
+        width: '90%',
+        height: hp('30%'),
+       
+        alignSelf: 'center',
+        marginBottom: '2%'
     },
     buttonSegment: {
         flex: 0.5,
@@ -32,6 +49,14 @@ export default {
         height: '0.2%',
         backgroundColor: 'lightgray',
         marginBottom: '2%'
+    },
+
+    viewSingleLineBidsInReview:{
+        marginTop:'3%',
+        width: '100%',
+        height: '0.5%',
+        backgroundColor: 'lightgray',
+        marginBottom: '3%'
     },
 
     viewSingleLineLeft: {
@@ -62,7 +87,7 @@ export default {
     },
     viewSingleLineCell:{
         width: '100%',
-        height: '0.5%',
+        height: '0.3%',
         backgroundColor: 'lightgray',
         marginBottom: '2%',
         marginTop:'2%'
@@ -279,7 +304,8 @@ export default {
   },
   iconStyle:{
     fontSize:15,
-    paddingTop:2
+    paddingTop:2,
+    color:'black'
   },
   buttonMakePayment:{
     borderRadius: 10,
@@ -302,7 +328,7 @@ export default {
     justifyContent: 'center',
     paddingLeft: 5,
     paddingRight: 5,
-    marginRight:'2%',
+    marginRight:'5%',
   },
   viewRow:{
     flexDirection: 'row', 
@@ -335,7 +361,9 @@ export default {
     marginTop:'1%',
     alignSelf: 'center', 
     justifyContent: 'space-between',
-     width:'90%' 
+     width:'90%',
+     height:'40%',
+   
   },
   viewBox:{
       backgroundColor:'rgb(233, 232, 229)',

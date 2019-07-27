@@ -37,10 +37,11 @@ export default class ReviewRefundRequest extends Component {
     render() {
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                <HeaderLoginModule viewName={'Track Package'} navigation={this.props.navigation} />
+                <HeaderLoginModule viewName={'Review Refund Request'} navigation={this.props.navigation} />
 
                 <View style={styles.container}>
-                    <View style={[styles.topBlackView, {justifyContent:'space-between'} ]}>
+                    <View style={[styles.topBlackView ]}>
+                        <View style={{margin:'2%', justifyContent:'space-between', marginBottom:'7%'}}>
                         <View style={{ flexDirection: 'row' }}>
                             <Text style={commonStyle.locationName}> Package Name: </Text>
                             <Text style={commonStyle.locationName}>req439</Text>
@@ -61,11 +62,11 @@ export default class ReviewRefundRequest extends Component {
                             <Text style={commonStyle.locationName}>1012.00</Text>
                         </View>
 
-                        <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row', paddingBottom:'2%' }}>
                             <Text style={commonStyle.locationName}> Reund Reason: </Text>
                             <Text style={commonStyle.locationName}>Open</Text>
                         </View>
-
+                        </View>
                     </View>
 
                     <GiftedChat

@@ -21,11 +21,7 @@ export default class TrackPackage extends Component {
           }
     }
 
-    componentDidMount(){
-        setTimeout(() => {
-           this.props.navigation.navigate('CourierDetail')
-        }, 100);
-    }
+  
 
     render() {
         const state = this.state;
@@ -36,6 +32,7 @@ export default class TrackPackage extends Component {
 
                 <View style={styles.container}>
                     <View style={styles.topBlackView}>
+                        <View style={{marginLeft:'2%', marginTop:'2%', marginBottom:'2%', justifyContent:'space-between'}}>
                         <View style={{ flexDirection: 'row' }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <Text style={commonStyle.locationName}>2Event Booklets</Text>
@@ -52,11 +49,11 @@ export default class TrackPackage extends Component {
                             <Text style={commonStyle.locationName}>Maiduguri-Central, Borne, Maiduguri, Nigeria</Text>
                         </View>
 
-                        <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row', paddingBottom:'3%' }}>
                             <Text style={commonStyle.locationName}> To: </Text>
                             <Text style={commonStyle.locationName}>Mayo-Belwa, Adamawa, Nigerian Prison Service, Vol, Nigeria</Text>
                         </View>
-
+</View>
                     </View>
 
                     <View style={styleTable.container}>
@@ -68,7 +65,9 @@ export default class TrackPackage extends Component {
                             </TableWrapper>
                         </Table>
                     </View>
-
+                    <View style={styles.mapView}>
+                                <Image source={require('../assets/Images/new_request_summary.png')} style={styles.mapImage} />
+                            </View>
 
 
                 </View>

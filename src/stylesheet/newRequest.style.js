@@ -38,7 +38,7 @@ export default {
         height: 40,
         alignSelf: 'center',
         justifyContent: 'center',
-        marginTop: '5%'
+        
     },
 
     textInputNotSelected: {
@@ -125,8 +125,11 @@ export default {
         marginTop: '5%',
         marginBottom: '5%',
     },
+    iconCheckBox: {
+        fontSize: 30
+    },
     textRecipient: {
-        marginLeft: '5%',
+        marginLeft: '9%',
         marginTop: '5%',
         color: '#262626',
     },
@@ -150,27 +153,26 @@ export default {
         marginTop: '1%'
 
     },
+    viewSingleHalfLine: {
+        //marginTop:'1%',
+        width: '47%',
+        height: 1,
+        backgroundColor: 'lightgray',
+        marginTop: '1%',
+        marginBottom:'1%'
+
+    },
     rememberView: {
         flexDirection: 'row',
         flex: 1,
         marginTop: '5%',
-        marginBottom: '5%',
+        // marginBottom: '5%',
         marginLeft: '5%',
         marginRight: '5%',
         height: 30,
         //  backgroundColor:'pink',
     },
-    rememberView: {
-        flexDirection: 'row',
-        flex: 1,
-        marginTop: '5%',
-
-        marginLeft: '5%',
-        marginRight: '5%',
-        height: 30,
-        //  backgroundColor:'pink',
-
-    },
+   
     ViewTickmark: {
         // marginRight: '-3%',
         alignItems: 'center',

@@ -28,11 +28,11 @@ export default class NewRequestPickupLocation extends Component {
 
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
 
-                <View style={{ flex: 1,backgroundColor:'yellow' }}>
+                <View style={{ flex: 1 }}>
 
                     <HeaderMenuAndBell viewName={'New Request'} isShowLeftButton={true} isShowRightButton={false} navigation={this.props.navigation} />
 
-                    <KeyboardAwareScrollView style={[styles.container, {backgroundColor:'green'} ]}>
+                    <KeyboardAwareScrollView style={[styles.container,  ]}>
                         <View style={{ width:'100%', height:'100%',marginBottom:'2%'}}>
 
                             {/* dot view */}
@@ -75,7 +75,7 @@ export default class NewRequestPickupLocation extends Component {
 
 
                             <View style={[styles.viewBottomButtons, {flex:0.3}]}>
-                                <TouchableOpacity style={[styles.buttonNotSelected]} onPress={() => this.props.navigation.navigate('DrawerNavigator')}>
+                                <TouchableOpacity style={[styles.buttonNotSelected]} onPress={() =>  this.props.navigation.goBack()}>
                                     <Text style={commonStyle.textNotSelected}>Back</Text>
                                 </TouchableOpacity>
 

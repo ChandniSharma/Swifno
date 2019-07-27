@@ -8,6 +8,8 @@ export default class HeaderLoginModule extends Component {
     onPressBack = () => {
 
         this.props.navigation.goBack();
+        //this.props.navigation.navigate('DrawerNavigator');
+
     }
     render() {
 

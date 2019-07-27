@@ -32,7 +32,7 @@ export default class ChangePasswordContainer extends React.PureComponent {
       alert(constants.kChangePasswordSuccess)
     }
     _cancel = () =>{
-        this.props.navigation.goBack();
+        this.props.navigation.navigate('MySettings');
     }
 
 handleChange =(name, value) =>{
@@ -47,6 +47,7 @@ handleChange =(name, value) =>{
                 fetching={fetching}
                 submit = {this._submit}
                 handleChange = {this.handleChange}
+                navigation={this.props.navigation}
             />
 
         )

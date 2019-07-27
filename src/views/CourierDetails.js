@@ -38,10 +38,10 @@ export default class CourierDetail extends Component {
                         <View style={{ flex: 0.8, justifyContent: 'space-evenly'  }}>
 
                             <View style={{ flexDirection: 'row', width:'100%'}}>
-                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.2 }]}>
+                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.75 }]}>
                                     {item.item.name}
                                 </Text>
-                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.8, right: '2%' }]}>{item.item.date}</Text>
+                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.25, }]}>{item.item.date}</Text>
                             </View>
                                 <View style={{ width: 20, width: '30%' }}>
                                     <StarRating
@@ -54,6 +54,7 @@ export default class CourierDetail extends Component {
                                     // selectedStar={(rating) => this.onStarRatingPress(rating)}
                                     />
                                 </View>
+                                <Text style={commonStyle.textDescriptionDetail}>Great </Text>
                         </View>
 
                     </View>
@@ -79,7 +80,7 @@ export default class CourierDetail extends Component {
 
                         <View style={{ flex: 0.8, marginLeft:'2%' , marginTop:'5%'}}>
 
-                                <Text style={[commonStyle.textName, {marginTop:'5%'}]}>
+                                <Text style={[commonStyle.textTitleCorier, {marginTop:'5%'}]}>
                                    Danny Oita
                                 </Text>
                                 
@@ -100,7 +101,7 @@ export default class CourierDetail extends Component {
                         </View>
                     </View>
                    
-                    <Text style={[commonStyle.textBoldDetail, {marginTop:'5%'}]}> Review</Text>
+                    <Text style={[commonStyle.textBoldDetail, {marginTop:'5%', marginLeft:'5%'}]}>Review</Text>
                     <View style={styles.viewSingleLine}/>
                     <FlatList
                         data={this.arrayData}

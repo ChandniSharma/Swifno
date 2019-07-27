@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-navigation';
 import commonStyle from '../stylesheet/common.style';
 import HeaderLoginModule from './common/HeaderLoginModule'
 
-export default class TrackPackage extends Component {
+export default class RefundRequest extends Component {
     constructor(props) {
         super(props);
 

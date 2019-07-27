@@ -26,12 +26,12 @@ export default {
     textPriceDashboard: {
         color: '#000000',
         fontSize: 13,
-        fontWeight: '700'
+       // fontWeight: 700
     },
     textPriceDetail: {
         color: 'white',
         fontSize: 13,
-        fontWeight: '700'
+      //  fontWeight: 700
     },
     textDescriptionDashboard: {
         color: '#262626',
@@ -53,7 +53,6 @@ export default {
 
     textRequestPickup: {
         color: 'black',
-
     },
     textNotSelected: {
         color: 'black',
@@ -96,13 +95,24 @@ export default {
         shadowRadius: 1,
         borderRadius: 8,
         fontFamily: 'Montserrat-Regular',
-        fontWeight: 300,
+      //  fontWeight: 300,
         fontSize: 12,
         color: '#262626',
         paddingTop: 21,
         paddingBottom: 20,
         paddingLeft: 30,
         paddingRight: 30,
+    },
+
+    /* My Packages   */
+    textButtonCell:{
+        color: '#000000',
+        fontSize: 13,
+    },
+
+    textDescriptionCell: {
+        color: '#262626',
+        fontSize: 13,
     },
 
     /* PackageDetail text  */
@@ -121,6 +131,7 @@ export default {
     textDescriptionDetail: {
         color: '#262626',
         fontSize: 13,
+      
     },
     textDecorationDetail: {
         textDecorationLine: 'line-through',
@@ -138,7 +149,7 @@ export default {
     },
     textBoldDetail: {
         color: 'black',
-        fontSize: 13,
+        fontSize: 14,
         fontWeight: 'bold',
     },
 
@@ -159,15 +170,31 @@ export default {
         marginTop:'1%'
     },
 
+    textTitleCorier:{
+        color: 'white',
+        fontSize: 14,
+        fontWeight: 'bold',
+    
+    },
+
     // Submit Review
     textTitleSubmitReview:{
         color: 'black',
         fontSize: 14,
-        fontWeight: 700,
+        fontWeight: 'bold',
+    
     },
     textSubtitleSubmitReview:{
         color: '#262626',
         fontSize: 13,
+
     }, 
+
+    textDescriptionDetailSubmitReview: {
+        color: '#262626',
+        fontSize: 13,
+        flexWrap: 'wrap',
+        flex: 1,
+    },
 
 }

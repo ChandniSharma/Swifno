@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput, Switch } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import styles from '../stylesheet/signup.style'
+import styles from '../stylesheet/mySettings.style';
 import commonStyles from '../stylesheet/common.style';
 import * as Animatable from 'react-native-animatable';
 import Input from './common/Input';
@@ -21,8 +21,8 @@ export default class MySettings extends Component {
             lastName: '',
             phoneNumber: '',
             uploadPicture: '',
-            isBidReceived:true,
-            isBidStatus: true, 
+            isBidReceived: true,
+            isBidStatus: true,
         }
     }
 
@@ -44,16 +44,16 @@ export default class MySettings extends Component {
     render() {
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                    <HeaderMenuAndBell viewName={'My Settings'} navigation={this.props.navigation}  />
+                <HeaderLoginModule viewName={'My Settings'} navigation={this.props.navigation} />
 
                 <KeyboardAwareScrollView style={styles.container}>
-                    <View style={{ flex: 1, marginBottom: '2%' }}>
-                        <View style={{ backgroundColor: 'white', flex: 1 }}>
+                    <View style={{ flex: 1, marginBottom: '2%', marginTop: '5%' }}>
+                        <View style={{ flex: 1 }}>
 
-                            <Text>Profile Details</Text>
-                            <View style={{ flexDirection: 'row', flex:0.3 }}>
-                                <Text>Merchant Key:</Text>
-                                <Text style={{textDecorationLine: 'underline'}}> 7fcl56ytrjkluop56</Text>
+                            <Text style={[commonStyles.textTitleSubmitReview, { marginLeft: '5%', fontSize: 15, marginBottom: '5%', }]}>Profile Details</Text>
+                            <View style={{ flexDirection: 'row', flex: 0.3, }}>
+                                <Text style={[commonStyles.textDescriptionDetail, { marginLeft: '5%' }]}>Merchant Key:</Text>
+                                <Text style={{ textDecorationLine: 'underline' }}> 7fcl56ytrjkluop56</Text>
                             </View>
 
 
@@ -103,20 +103,27 @@ export default class MySettings extends Component {
                                         value={this.state.userName}
                                         charLimit={30}
                                     />
-                                    <View>
-                                        <TouchableOpacity>
-                                            <Text> Browse</Text>
+
+                                   
+
+                                        <TouchableOpacity style={[styles.buttonNotSelected]}>
+                                            <Text>Browse</Text>
                                         </TouchableOpacity>
-                                    </View>
+
+                                   
                                 </View>
-                                <Image source={{uri:'https://bootdey.com/img/Content/avatar/avatar6.png'}} style={{ width: 60, height: 60, margin:'2%'}} />
+                                {/* <Image source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar6.png' }} style={{ width: 60, height: 60, marginLeft: '12%' }} /> */}
 
                             </View>
-                            <View style={{flex:0.3}}>
+                            <View style={styles.viewSingleLine}/>
+
+                            <Text style={[commonStyles.textTitleSubmitReview, { marginLeft: '5%', fontSize: 15, marginBottom: '5%', }]}>Notifications</Text>
+
+                            <View style={{ flex: 0.3, marginLeft:'5%' }}>
 
                                 <View style={{ flexDirection: 'row' }}>
-                                    <Text>Bid Received</Text>
-                                    <View>
+                                    <Text style={[commonStyles.textDescriptionDetail, {flex:0.8}]}>Bid Received</Text>
+                                    <View style={{flex:0.2}}>
                                         <Switch
                                         //  onValueChange = {props.toggleSwitch1}
                                         //  value = {props.switch1Value}
@@ -126,8 +133,8 @@ export default class MySettings extends Component {
                                 </View>
 
                                 <View style={{ flexDirection: 'row' }}>
-                                    <Text>Bid Status</Text>
-                                    <View>
+                                    <Text style={[commonStyles.textDescriptionDetail, {flex:0.8}]}>Bid Status</Text>
+                                    <View style={{flex:0.2}}>
                                         <Switch
                                         //  onValueChange = {props.toggleSwitch1}
                                         //  value = {props.switch1Value}
@@ -135,15 +142,16 @@ export default class MySettings extends Component {
                                     </View>
                                 </View>
 
-                                <View style={styles.buttonNotSelected}>
-                                    <TouchableOpacity style={[styles.signupButton]}>
-                                        <Text style={styles.textSelected}>Submit</Text>
+                                <View style={styles.buttonBigNotSelected}>
+                                    <TouchableOpacity >
+                                        <Text style={commonStyles.textNotSelected}>Submit</Text>
                                     </TouchableOpacity>
 
                                 </View>
-                                <View style={styles.buttonSelected}>
-                                    <TouchableOpacity style={[styles.signupButton]} onPress={() => this.props.navigation.navigate('ChangePasswordContainer')}>
-                                        <Text style={styles.signupText}>Change Password</Text>
+                                <View style={{marginTop:'5%'}} />
+                                <View style={[styles.buttonBigSelected]}>
+                                    <TouchableOpacity  onPress={() => this.props.navigation.navigate('ChangePasswordContainer')}>
+                                        <Text style={commonStyles.textSelected}>Change Password</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

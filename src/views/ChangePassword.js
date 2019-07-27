@@ -38,7 +38,7 @@ export default class ChangePassword extends Component {
         const {_submit, data, errors, handleChange} = this.props;
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-                                <HeaderLoginModule viewName={'Forgot Password'} navigation = {this.props.navigation} />
+                                <HeaderLoginModule viewName={'Change Password'} navigation = {this.props.navigation} />
 
                 <KeyboardAwareScrollView style={{flex:1}}>
                     {/* here is the key image */}

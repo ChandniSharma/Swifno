@@ -49,6 +49,31 @@ export default {
          fontWeight:'100',
     },
 
+     buttonNotSelected: {
+        borderRadius: 5,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0)',
+        shadowOffset: {
+            width: .4,
+            height: .11
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        backgroundColor: 'white',
+        borderColor: 'lightgray',
+        borderWidth: 1,
+        flex:0.3
+         // paddingLeft: 10,
+        // paddingRight: 10,
+        // width: "auto",
+        // marginRight:10,
+        // alignSelf: 'center',
+        // marginLeft: '2%',
+        //alignSelf:'flex-end',
+       
+    },
     inputStyle: {
         marginLeft: '5%',
         marginRight: '5%',

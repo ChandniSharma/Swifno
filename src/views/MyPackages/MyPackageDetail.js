@@ -14,15 +14,16 @@ import MyPackageCell from './MyPackageCell';
 import commonStyle from '../../stylesheet/common.style';
 import StarRating from 'react-native-star-rating';
 import HeaderLoginModule from '../common/HeaderLoginModule'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export default class MyPackageDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isDeliveryScheduled: true,
-            isArrivedToVendor: false,
+            isDeliveryScheduled: false,
+            isArrivedToVendor: true,
             isPaid: false,
-            isDeliveryDetail: false,
+            isDeliveryDetail: true,
             isCancelRequest: true,
             isDuplicateRequest: false,
             isRefundRequest: false,
@@ -56,14 +57,14 @@ export default class MyPackageDetail extends Component {
                         <View style={{ flex: 0.8 }}>
 
                             <View style={{ flexDirection: 'row', flex: 1 }}>
-                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.2, alignSelf: 'flex-start' }]}>
+                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.6, alignSelf: 'flex-start' }]}>
                                     {item.item.name}
                                 </Text>
-                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.8, alignSelf: 'flex-end', right: '2%' }]}>Click to view Details</Text>
+                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.4 , fontSize: 11}]}>Click to view Details</Text>
                             </View>
 
                             <View style={{ flexDirection: 'row', width: '100%' }}>
-                                <View style={{ width: 20, width: '30%' }}>
+                                <View style={{ width: 20, width: '30%', }}>
                                     <StarRating
                                         // style={{width:30, height:20}}
                                         disabled={false}
@@ -74,32 +75,33 @@ export default class MyPackageDetail extends Component {
                                     // selectedStar={(rating) => this.onStarRatingPress(rating)}
                                     />
                                 </View>
-
-                                <Text style={commonStyle.statusTextInDetail}>{item.item.status}</Text>
+                                <View style={{ width: '47%' }} />
+                                <Text style={[commonStyle.statusTextInDetail, { width: '23%' }]}>{item.item.status}</Text>
 
                             </View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Text style={commonStyle.textDescriptionDetail}>Bid Amount: </Text>
-                                <Text style={commonStyle.textDecorationDetail}>N</Text>
-                                <Text style={commonStyle.textBoldDetail}> {item.item.bidAmount}</Text>
-                            </View>
+                            <View style={{ flexDirection: 'row', flex: 1 }}>
 
+                                <View style={{ flex: 0.6, }}>
+                                    <View style={{ flexDirection: 'row', }}>
+                                        <Text style={commonStyle.textDescriptionDetail}>Bid Amount: </Text>
+                                        <Text style={commonStyle.textDecorationDetail}>N</Text>
+                                        <Text style={commonStyle.textBoldDetail}> {item.item.bidAmount}</Text>
+                                    </View>
+                                    <Text style={[commonStyle.textDescriptionDashboard]}>
+                                        {item.item.date}
+                                    </Text>
+                                </View>
 
-                            <View style={{ flexDirection: 'row' }}>
-
-                                <Text style={commonStyle.textDescriptionDashboard}>
-                                    {item.item.date}
-                                </Text>
-                                <TouchableOpacity style={styles.buttonNotSelected}>
+                                <TouchableOpacity style={[styles.buttonNotSelected, { flex: 0.4, height: 35, width: 20 }]}>
                                     <Text>Change</Text>
                                 </TouchableOpacity>
-
                             </View>
+
                         </View>
 
                     </View>
                 </TouchableOpacity>
-                <View style={styles.viewSingleLineCell} />
+                <View style={styles.viewSingleLineBidsInReview} />
 
             </View>
         );
@@ -108,7 +110,7 @@ export default class MyPackageDetail extends Component {
     render() {
         return (
             <SafeAreaView forceInset={{ top: 'never', bottom: 'never' }} style={styles.container}>
-               
+
                 <HeaderLoginModule viewName={'My Package Details'} navigation={this.props.navigation} />
 
                 <View style={styles.container}>
@@ -142,7 +144,7 @@ export default class MyPackageDetail extends Component {
                     </View> : <View />}
 
                     {this.state.isArrivedToVendor && !this.state.isPaid ?
-                        <View style={styles.topBlackView}>
+                        <View style={[styles.topBlackView, {justifyContent: 'space-between',}]}>
                             <View style={[styles.viewRow, , { marginTop: '2%' }]}>
                                 <View style={{ flexDirection: 'row', flex: 0.7 }}>
                                     <Text style={commonStyle.locationName}>Package Name: </Text>
@@ -176,7 +178,7 @@ export default class MyPackageDetail extends Component {
                                 </View>
                             </View>
 
-                            <View style={[styles.viewRow, { marginBottom: '2%' }]}>
+                            <View style={[styles.viewRow, { marginBottom: '2%', paddingBottom:'2%' }]}>
                                 <View style={{ flexDirection: 'row', flex: 0.43 }}>
                                     <Text style={commonStyle.locationName}>Status: </Text>
                                     <Text style={commonStyle.locationName}>Color Selected</Text>
@@ -234,13 +236,15 @@ export default class MyPackageDetail extends Component {
                                     <TouchableOpacity style={styles.buttonPaid}>
                                         <Text style={commonStyle.locationName}> Paid </Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity style={styles.buttonRequestPickup} onPress={()=> this.props.navigation.navigate('TrackPackage')}>
+                                    <TouchableOpacity style={styles.buttonRequestPickup} onPress={() => this.props.navigation.navigate('TrackPackage')}>
                                         <Text style={commonStyle.textRequestPickup}> Track Package </Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
 
                         </View> : <View />}
+
+                        <View style={[styles.viewSingleLineCell]} />
 
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 44 }}>
                         <TouchableOpacity onPress={() => this.getDeliveryDetail()} style={styles.buttonSegment}>
@@ -252,6 +256,8 @@ export default class MyPackageDetail extends Component {
                         </TouchableOpacity>
                     </View>
 
+                  
+
                     <View style={{ flexDirection: 'row', width: '100%', height: '0.5%', flex: 0.009 }}>
                         {this.state.isDeliveryDetail ? <Animatable.View style={styles.viewSingleLineLeft} /> : <View style={styles.viewSingleLineEmpty} />}
                         {!this.state.isDeliveryDetail ? <Animatable.View style={styles.viewSingleLineRight} /> : null}
@@ -262,111 +268,115 @@ export default class MyPackageDetail extends Component {
 
                     {/* Recepient Detail */}
                     {this.state.isDeliveryDetail ?
-                        <View style={{ flex: 1 }}>
-                            <View style={{ marginLeft: '2%', marginBottom: '2%', marginTop: '1%' }}>
-                                <Text style={commonStyle.textTitleRecepientCell}>Recepient Details</Text>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Recepient Name:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>User1 </Text>
+ <KeyboardAwareScrollView style={{ flex: 1, marginBottom:'2%' }}>
+                        <View style={{ width:'100%', height:'100%', backgroundColor:'pink '}}>
+                           
+                                <View style={{ marginLeft: '2%', marginBottom: '2%', marginTop: '1%' }}>
+                                    <Text style={commonStyle.textTitleRecepientCell}>Recepient Details</Text>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Recepient Name:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> User1 </Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Phone:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> +9191987654321 </Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Email:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> xyz@gmaikcom</Text>
+                                    </View>
                                 </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Phone:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>+9191987654321 </Text>
-                                </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={styles.textRecepientDetail}>Email:</Text>
-                                    <Text style={styles.textRecepientDetail}>xyz@gmaikcom</Text>
-                                </View>
-                            </View>
-                            <View style={[styles.viewSingleLineCell]} />
+                                <View style={[styles.viewSingleLineCell]} />
 
 
-                            <View style={{ marginLeft: '2%', marginBottom: '2%' }}>
-                                <Text style={commonStyle.textTitleRecepientCell}>Package Details</Text>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Package Group:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>Package 1</Text>
-                                </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Category:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>Category1</Text>
-                                </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Package Name:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>Package1</Text>
-                                </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={styles.textRecepientDetail}>Package Size:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>400</Text>
-                                </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Delivery Duration:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>30 Min</Text>
-                                </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Pickup Time:</Text>
-                                    <Text style={commonStyle.textRecepientDetail}>1:30</Text>
-                                </View>
-                                <View style={styles.viewPackageDetail}>
-                                    <Text style={commonStyle.textRecepientDetail}>Item Value:</Text>
-                                    <Text style={commonStyle.textDecorationDetail}> N</Text>
+                                <View style={{ marginLeft: '2%', marginBottom: '2%' }}>
+                                    <Text style={commonStyle.textTitleRecepientCell}>Package Details</Text>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Package Group:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> Package 1</Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Category:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> Category1</Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Package Name:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> Package1</Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Package Size:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> 400</Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Delivery Duration:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> 30 Min</Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Pickup Time:</Text>
+                                        <Text style={commonStyle.textRecepientDetail}> 1:30</Text>
+                                    </View>
+                                    <View style={styles.viewPackageDetail}>
+                                        <Text style={commonStyle.textRecepientDetail}>Item Value:</Text>
+                                        <Text style={commonStyle.textDecorationDetail}> N</Text>
 
-                                    <Text style={commonStyle.textBoldDetail}>560</Text>
-                                </View>
-
-                                {/* View boxes  */}
-                                <View style={styles.viewPackageDetail}>
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                </View>
-                            </View>
-                            <View style={[styles.viewSingleLineCell]} />
-
-                            <View style={{ marginLeft: '2%', marginBottom: '2%' }}>
-                                <Text style={commonStyle.textTitleRecepientCell}>Additional Details:</Text>
-                                <Text style={commonStyle.textDescriptionDetail}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </Text>
-                            </View>
-                            {!this.state.isArrivedToVendor && !this.state.isPaid ? <View style={styles.viewSingleLineCell} /> : <View />}
-
-                            {!this.state.isRefundRequest ?
-                                <View style={[styles.viewBottomButtons]}>
-                                    <View style={this.state.isCancelRequest ? styles.buttonSelected : styles.buttonNotSelected}>
-                                        <TouchableOpacity >
-                                            <View style={{ flexDirection: 'row' }}>
-                                                <IconAntDesign name='close' color={this.state.isCancelRequest ? 'white' : 'black'} style={{ fontSize: 14 }} />
-                                                <Text numberOfLines={2} style={this.state.isCancelRequest ? styles.textSelected : styles.textNotSelected}>Cancel{'\n'}Request</Text>
-                                            </View>
-                                        </TouchableOpacity>
+                                        <Text style={commonStyle.textBoldDetail}>560</Text>
                                     </View>
 
-                                    <View style={this.state.isDuplicateRequest ? styles.buttonSelected : styles.buttonNotSelected}>
-                                        <TouchableOpacity>
-                                            <View style={{ flexDirection: 'row' }}>
-                                                <IconAntDesign name='copy1' style={{ fontSize: 14 }} />
-                                                <Text numberOfLines={2} color={this.state.isDuplicateRequest ? 'white' : 'black'} style={this.state.isDuplicateRequest ? styles.textSelected : styles.textNotSelected}>Duplicate{'\n'}Request</Text>
-                                            </View>
-                                        </TouchableOpacity>
+                                    {/* View boxes  */}
+                                    <View style={styles.viewPackageDetail}>
+                                        <View style={styles.viewBox} />
+                                        <View style={styles.viewBox} />
+                                        <View style={styles.viewBox} />
+                                        <View style={styles.viewBox} />
+                                        <View style={styles.viewBox} />
                                     </View>
-
-                                    <View style={this.state.isRefundRequest ? styles.buttonSelected : styles.buttonNotSelected}>
-                                        <TouchableOpacity onPress={() => this.setState({ isRefundRequest: true })}>
-                                            <View style={{ flexDirection: 'row' }} >
-                                                <IconFontAwesome name='money' style={{ fontSize: 14 }} />
-                                                <Text numberOfLines={2} color={this.state.isRefundRequest ? 'white' : 'black'} style={this.state.isRefundRequest ? styles.textSelected : styles.textNotSelected}> Request{'\n'}Refund</Text>
-                                            </View>
-                                        </TouchableOpacity>
-                                    </View>
-                                </View> : <View style={styles.buttonBigSelected}>
-                                    <TouchableOpacity onPress={()=> this.props.navigation.navigate('ReviewRefundRequest')}>
-                                        <Text numberOfLines={2} color={'white'} style={styles.textSelected}>Review Refund Request</Text>
-                                    </TouchableOpacity>
                                 </View>
-                            }
+                                <View style={[styles.viewSingleLineCell]} />
 
-                        </View> :
+                                <View style={{ marginLeft: '2%', marginBottom: '2%' }}>
+                                    <Text style={commonStyle.textTitleRecepientCell}>Additional Details:</Text>
+                                    <Text style={commonStyle.textDescriptionDetail}> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </Text>
+                                </View>
+                                {!this.state.isArrivedToVendor && !this.state.isPaid ? <View style={styles.viewSingleLineCell} /> : <View />}
+
+                                {!this.state.isRefundRequest ?
+                                    <View style={[styles.viewBottomButtons]}>
+                                        <View style={this.state.isCancelRequest ? styles.buttonSelected : styles.buttonNotSelected}>
+                                            <TouchableOpacity >
+                                                <View style={{ flexDirection: 'row' }}>
+                                                    <IconAntDesign name='close' color={this.state.isCancelRequest ? 'white' : 'black'} style={{ fontSize: 14 }} />
+                                                    <Text numberOfLines={2} style={this.state.isCancelRequest ? styles.textSelected : styles.textNotSelected}>Cancel{'\n'}Request</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+
+                                        <View style={this.state.isDuplicateRequest ? styles.buttonSelected : styles.buttonNotSelected}>
+                                            <TouchableOpacity>
+                                                <View style={{ flexDirection: 'row' }}>
+                                                    <IconAntDesign name='copy1' style={{ fontSize: 14 }} />
+                                                    <Text numberOfLines={2} color={this.state.isDuplicateRequest ? 'white' : 'black'} style={this.state.isDuplicateRequest ? styles.textSelected : styles.textNotSelected}>Duplicate{'\n'}Request</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+
+                                        <View style={this.state.isRefundRequest ? styles.buttonSelected : styles.buttonNotSelected}>
+                                            <TouchableOpacity onPress={() => this.setState({ isRefundRequest: true })}>
+                                                <View style={{ flexDirection: 'row' }} >
+                                                    <IconFontAwesome name='money' style={{ fontSize: 14 }} />
+                                                    <Text numberOfLines={2} color={this.state.isRefundRequest ? 'white' : 'black'} style={this.state.isRefundRequest ? styles.textSelected : styles.textNotSelected}> Request{'\n'}Refund</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View> : <View style={styles.buttonBigSelected}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ReviewRefundRequest')}>
+                                            <Text numberOfLines={2} color={'white'} style={commonStyle.textSelected}>Review Refund Request</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                }
+                          
+                        </View>
+                        </KeyboardAwareScrollView>
+                        :
                         <View style={{ flex: 1 }}>
                             <FlatList
                                 data={this.arrayBidsInReview}

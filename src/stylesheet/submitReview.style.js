@@ -69,9 +69,25 @@ export default {
     },
     viewBottomButtons:{
         flexDirection: 'row', 
-        marginTop:'1%',
+        marginTop:'5%',
         alignSelf: 'center', 
         justifyContent: 'space-between',
          width:'90%' 
       },
+      buttonBigSelected: {
+        borderRadius: 5,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: 'rgba(0,0,0,0.12)',
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        borderColor: 'black',
+        borderWidth: 1,
+        width:'40%',
+        backgroundColor: 'black',
+        alignSelf:'center',
+        marginTop:'5%'
+    },
+
 }

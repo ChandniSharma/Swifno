@@ -21,64 +21,64 @@ export default class MyPackageCell extends Component {
         return (
             <View style={styles.viewOuter}>
                 <View style={[styles.viewInner ]}>
-                    <View style={{ marginLeft:'2%',backgroundColor:'pink'}}>
-                        <View style={{justifyContent:'space-around' }}>
+                    <View style={{ marginLeft:'2%'}}>
+                        <View style={{justifyContent:'space-between', padding:'2%' }}>
                             <Text style={commonStyles.textTitlePackageCell}>My Package</Text>
                             <View style={{ flexDirection: 'row' }}>
                                 <View style={{ flexDirection: 'row' }}>
-                                    <Text style={commonStyles.textDescriptionDashboard}>From:</Text>
-                                    <Text style={commonStyles.textDescriptionDashboard}>Location1</Text>
+                                    <Text style={commonStyles.textDescriptionCell}>From:</Text>
+                                    <Text style={commonStyles.textDescriptionCell}> Location1</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row' }}>
-                                    <Text style={commonStyles.textDescriptionDashboard}>  To:</Text>
-                                    <Text style={commonStyles.textDescriptionDashboard}>Location2</Text>
+                                    <Text style={commonStyles.textDescriptionCell}>  To:</Text>
+                                    <Text style={commonStyles.textDescriptionCell}> Location2</Text>
                                 </View>
                             </View>
 
                             <View style={{ flexDirection: 'row' }}>
-                                <Text style={commonStyles.textDescriptionDashboard}>Schdeuled Date:</Text>
-                                <Text style={commonStyles.textDescriptionDashboard}>23 Nov 2006</Text>
+                                <Text style={commonStyles.textDescriptionCell}>Schdeuled Date:</Text>
+                                <Text style={commonStyles.textDescriptionCell}> 23 Nov 2006</Text>
                             </View>
 
                             <View style={{ flexDirection: 'row' }}>
-                                <Text style={commonStyles.textDescriptionDashboard}>Status:</Text>
-                                <Text style={commonStyles.textDescriptionDashboard}>Awarded</Text>
-                                <Text style={commonStyles.textBold}>(</Text>
+                                <Text style={commonStyles.textDescriptionCell}>Status:</Text>
+                                <Text style={commonStyles.textDescriptionCell}> Awarded</Text>
+                                <Text style={commonStyles.textBold}> (</Text>
                                     <Text style={commonStyles.textDecoration}>N</Text>
                                     <Text style={commonStyles.textBold}>34.00)</Text>
 
                             </View>
 
                             <View style={{ flexDirection: 'row' }}>
-                                <Text style={commonStyles.textDescriptionDashboard}>Operator:</Text>
-                                <Text style={commonStyles.textDescriptionDashboard}>Operator 1</Text>
+                                <Text style={commonStyles.textDescriptionCell}>Operator:</Text>
+                                <Text style={commonStyles.textDescriptionCell}> Operator 1</Text>
                             </View>
                         </View>
                     </View>
                     <View style={styles.viewSingleLineCell}/>
-                    <View style={{ flexDirection: 'row', marginLeft:'2%', backgroundColor:'orange'}} >
+                    <View style={{ flexDirection: 'row', marginLeft:'2%', padding:'2%'}} >
 
                         {/* icon and button  */}
                         <TouchableOpacity onPress={()=> this.props.navigation.navigate('MyPackageDetail')}>
                                 <View style={styles.viewIconAndText}>
                                     <IconAntDesign name="eye" style={styles.iconStyle} />
-                                    <Text> View Details  </Text>
+                                    <Text style={commonStyles.textButtonCell}> View Details  </Text>
                                 </View>
                         </TouchableOpacity>
 
-                        <View>
+                        <TouchableOpacity onPress={()=> this.props.navigation.navigate('TrackPackage')}>
                                 <View style={styles.viewIconAndText}>
                                     <IconEntypo name="location-pin" style={styles.iconStyle} />
-                                    <Text>Track Package  </Text>
+                                    <Text style={commonStyles.textButtonCell}>Track Package  </Text>
                                 </View>
-                        </View>
+                        </TouchableOpacity>
 
-                        <View>
+                        <TouchableOpacity onPress={()=> this.props.navigation.navigate('SubmitReview')}>
                                 <View style={styles.viewIconAndText}>
                                     <IconMaterialIcons name="message" style={styles.iconStyle} />
-                                    <Text> Give Feedback</Text>
+                                    <Text style={commonStyles.textButtonCell}> Give Feedback</Text>
                                 </View>
-                        </View>
+                        </TouchableOpacity>
 
                     </View>
                 </View>

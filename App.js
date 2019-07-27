@@ -40,7 +40,7 @@ import ReviewRefundRequest from './src/views/ReviewRefundRequest';
 import NewRequestDropoffLocation from './src/views/NewRequest/NewRequestDropoffLocation';
 import NewRequestPickupLocation from './src/views/NewRequest/NewRequestPickupLocation';
 import NewRequestRecipientDetail from './src/views/NewRequest/NewRequestRecipientDetail';
-
+import RefundRequest from './src/views/RefundRequest';
 
 // import { importDeclaration } from '@babel/types';
 //import MapViewGoogle from './src/views/common/MapViewGoogle';
@@ -70,69 +70,81 @@ const DrawerNavigator = new createDrawerNavigator(
         header: null
       },
     },
-      NewRequestPickupLocation: {
-        screen: NewRequestPickupLocation, navigationOptions: {
-          header: null
-        },
+    NewRequestPickupLocation: {
+      screen: NewRequestPickupLocation, navigationOptions: {
+        header: null
       },
-      MyPackages: {
-        screen: MyPackages, navigationOptions: {
-          header: null
-        },
+    },
+    NewRequestDropoffLocation: {
+      screen: NewRequestDropoffLocation, navigationOptions: {
+        header: null
       },
+    },
+    NewRequestSummary: {
+      screen: NewRequestSummary, navigationOptions: {
+        header: null
+      },
+    },
 
-      PaymentHistory: {
-        screen: PaymentHistory, navigationOptions: {
-          header: null
-        },
+    MyPackages: {
+      screen: MyPackages, navigationOptions: {
+        header: null
       },
+    },
 
-        MySettings: {
-          screen: MySettings, navigationOptions: {
-            header: null
-          }
+    MySettings: {
+      screen: MySettings, navigationOptions: {
+        header: null
+      }
     },
     CourierDetail: {
       screen: CourierDetail, navigationOptions: {
         header: null
       }
-},
+    },
 
-SubmitReview: {
-  screen: SubmitReview, navigationOptions: {
-    header: null
-  }
-},
+    SubmitReview: {
+      screen: SubmitReview, navigationOptions: {
+        header: null
+      }
+    },
 
-ViewFeedback: {
-  screen: ViewFeedback, navigationOptions: {
-    header: null
-  }
-},
+    ViewFeedback: {
+      screen: ViewFeedback, navigationOptions: {
+        header: null
+      }
+    },
 
-NewRequestSummary: {
-  screen: NewRequestSummary, navigationOptions: {
-    header: null
-  }
-},
+    NewRequestSummary: {
+      screen: NewRequestSummary, navigationOptions: {
+        header: null
+      }
+    },
 
-PaymentHistory: {
-  screen: PaymentHistory, navigationOptions: {
-    header: null
-  }
-},
+    PaymentHistory: {
+      screen: PaymentHistory, navigationOptions: {
+        header: null
+      }
+    },
 
-TrackPackage: {
-  screen: TrackPackage, navigationOptions: {
-    header: null
-  }
-},
+    TrackPackage: {
+      screen: TrackPackage, navigationOptions: {
+        header: null
+      }
+    },
 
-NewRequestPackageDetail: {
-  screen: NewRequestPackageDetail, navigationOptions: {
-    header: null
-  }
-},
+    NewRequestPackageDetail: {
+      screen: NewRequestPackageDetail, navigationOptions: {
+        header: null
+      }
+    },
+
+    RefundRequest: {
+      screen: RefundRequest, navigationOptions: {
+        header: null
+      }
+    },
+
 
   },
   {
@@ -161,11 +173,11 @@ const LoginNavigator = createStackNavigator({
   NewRequestDropoffLocation: { screen: NewRequestDropoffLocation },
   NewRequestPickupLocation: { screen: NewRequestPickupLocation },
   NewRequestRecipientDetail: { screen: NewRequestRecipientDetail },
-
+  RefundRequest : { screen: RefundRequest }
   // MapViewGoogle:{screen:MapViewGoogle}
 }, {
-   initialRouteName: 'NewRequestPickupLocation',
-   // initialRouteName: 'CourierDetail',
+    initialRouteName: 'DrawerNavigator',
+    // initialRouteName: 'CourierDetail',
     gesturesEnabled: false,
     headerMode: 'none',
   }

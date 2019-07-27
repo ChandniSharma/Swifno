@@ -11,6 +11,7 @@ import HeaderMenuAndBell from '../common/HeaderMenuAndBell';
 import Input from '../common/Input';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import commonStyles from '../../stylesheet/common.style';
 
 
 export default class NewRequestPackageDetail extends Component {
@@ -88,11 +89,25 @@ export default class NewRequestPackageDetail extends Component {
                             </Picker>
                         </View>
 
-                        <View style={styles.pickerViewBottomRow}>
+                        {/* <View style={styles.pickerViewBottomRow}>
                             <TextInput
+                                label={'Password'}      
                                 placeholder='Package Name/Description'
                             />
+                        </View> */}
+                        <View style={{ flexDirection: 'row', marginBottom: '2%', justifyContent: 'center' }}>
+                            {/* <IconMaterialIcons name="lock-open" style={styles.icon} />
+                                     */}
+                            <Input
+                                label={'Package Name/Description'}
+                                style={commonStyles.inputStyle}
+                                placeholder={'Package Name/Description'}
+                            //  secureTextEntry={true}
+                            // onChangeText={val => handleChange('password', val)}
+                            //  value={data.password}
+                            />
                         </View>
+
 
                         <View style={styles.pickerViewBottomRow}>
                             <Picker
@@ -107,23 +122,28 @@ export default class NewRequestPackageDetail extends Component {
                                 <Picker.Item label="Chhatisgarh" value="CH" />
                             </Picker>
                         </View>
-                        <Text style={styles.textRecipient}>Pickup Time Period</Text>
+                        <Text style={[commonStyle.textTitle, {marginLeft: '8%', marginTop:'5%'},]}>Pickup Time Period</Text>
 
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: '5%' }}>
                             <TouchableOpacity onPress={this.showDateTimePicker}>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                    <Text >Start Time</Text>
-                                    <IconAntDesign name='clockcircleo' style={{ fontSize: 14 }} />
+                                <View style={{ flexDirection: 'row', color: 'red' }}>
+                                    <Text style={{ width: 100 }}>Start Time</Text>
+                                    <IconAntDesign style={{ width: 5 }} name='clockcircleo' style={{ fontSize: 14 }} />
                                 </View>
                             </TouchableOpacity>
 
                             <TouchableOpacity onPress={this.showDateTimePicker}>
                                 <View style={{ flexDirection: 'row' }}>
-                                    <Text>End Time</Text>
-                                    <IconAntDesign name='clockcircleo' style={{ fontSize: 14 }} />
+                                    <Text style={{ width: 100 }} >End Time</Text>
+                                    <IconAntDesign style={{ width: 5 }} name='clockcircleo' style={{ fontSize: 14 }} />
                                 </View>
                             </TouchableOpacity>
                         </View>
+                        <View style={{ flexDirection: 'row' , justifyContent:'space-between', width:'90%', alignSelf:'center' }}>
+                            <View style={styles.viewSingleHalfLine} />
+                            <View style={styles.viewSingleHalfLine} />
+                        </View>
+
                         <DateTimePicker
                             mode="time"
                             isVisible={this.state.isDateTimePickerVisible}
@@ -151,21 +171,21 @@ export default class NewRequestPackageDetail extends Component {
                             />
                         </View>
 
-                         {/* View boxes  */}
-                         <View style={styles.viewPackageDetail}>
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                    <View style={styles.viewBox} />
-                                </View>
+                        {/* View boxes  */}
+                        <View style={styles.viewPackageDetail}>
+                            <View style={styles.viewBox} />
+                            <View style={styles.viewBox} />
+                            <View style={styles.viewBox} />
+                            <View style={styles.viewBox} />
+                            <View style={styles.viewBox} />
+                        </View>
 
                         <View style={styles.viewBottomButtons}>
-                            <TouchableOpacity style={[styles.buttonNotSelected]}  onPress={() => this.props.navigation.navigate('NewRequestDropoffLocation')}>
+                            <TouchableOpacity style={[styles.buttonNotSelected]} onPress={() => this.props.navigation.navigate('NewRequestDropoffLocation')}>
                                 <Text style={commonStyle.textNotSelected}>Back</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={[styles.buttonSelected]}  onPress={() => this.props.navigation.navigate('NewRequestSummary')}>
+                            <TouchableOpacity style={[styles.buttonSelected]} onPress={() => this.props.navigation.navigate('NewRequestSummary')}>
                                 <Text style={commonStyle.textSelected}>Next</Text>
                             </TouchableOpacity>
                         </View>

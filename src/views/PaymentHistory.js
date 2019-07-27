@@ -35,18 +35,18 @@ export default class PaymentHistory extends Component {
                             elevation: 3,
                             borderColor: 'rgba(0, 0,0, 0)'
                         }}>
-                            <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'row', paddingBottom:'1%' }}>
                                 <Text style={{
                                     fontWeight: '700',
                                     color: '#000000',
                                     fontSize: 14,
                                     flex: 8,
-                                    fontWeight: "bold"
+                                    fontWeight: "bold",
                                 }}>Ifeanyi Nwangwu</Text>
-                                <Text>Edit</Text>
+                                <Text>22-09-2017</Text>
                             </View>
 
-                            <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'row', paddingBottom:'1%' }}>
                                 <Text style={{
                                     color: '#262626',
                                     fontSize: 13,
@@ -59,12 +59,12 @@ export default class PaymentHistory extends Component {
                                     flex: 1
                                 }}> Paid</Text>
                             </View>
-                            <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'row', paddingBottom:'1%' }}>
                                 <Text style={{
-                                    fontWeight: '700',
+                                  
                                     color: '#000000',
                                     fontSize: 13,
-                                    flex: 8,
+                                    
                                     fontWeight: "bold"
                                 }}>Delivery Id:</Text>
                                 <Text style={{
@@ -72,12 +72,12 @@ export default class PaymentHistory extends Component {
                                     fontSize: 13,
                                 }}> reg433</Text>
                             </View>
-                            <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'row', paddingBottom:'1%' }}>
                                 <Text style={{
-                                    fontWeight: '700',
+                                  
                                     color: '#000000',
                                     fontSize: 13,
-                                    flex: 8,
+                                   
                                     fontWeight: "bold"
                                 }}>Reference No:</Text>
                                 <Text style={{
@@ -85,9 +85,9 @@ export default class PaymentHistory extends Component {
                                     fontSize: 13,
                                 }}> 000317031006</Text>
                             </View>
-                            <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'row', paddingBottom:'1%' }}>
                                 <Text style={{
-                                    fontWeight: '700',
+                                 
                                     color: '#000000',
                                     fontSize: 13,
                                     flex: 8,
