@@ -176,7 +176,7 @@ const LoginNavigator = createStackNavigator({
   RefundRequest : { screen: RefundRequest }
   // MapViewGoogle:{screen:MapViewGoogle}
 }, {
-    initialRouteName: 'DrawerNavigator',
+    initialRouteName: 'Tutorial',
     // initialRouteName: 'CourierDetail',
     gesturesEnabled: false,
     headerMode: 'none',

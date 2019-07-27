@@ -45,7 +45,7 @@ export default class MyPackageDetail extends Component {
 
         return (
             <View style={{ marginLeft: '2%', marginRight: '2%' }}>
-                <TouchableOpacity style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'row' }}>
 
                     <View style={{ flexDirection: 'row', fontSize: 15, justifyContent: 'space-evenly', flex: 1 }}>
                         <View style={{ flex: 0.2 }}>
@@ -60,7 +60,10 @@ export default class MyPackageDetail extends Component {
                                 <Text style={[commonStyle.textDescriptionDetail, { flex: 0.6, alignSelf: 'flex-start' }]}>
                                     {item.item.name}
                                 </Text>
-                                <Text style={[commonStyle.textDescriptionDetail, { flex: 0.4 , fontSize: 11}]}>Click to view Details</Text>
+                                <TouchableOpacity style={{flex: 0.4}} onPress={()=> this.props.navigation.navigate('CourierDetail')}>
+                                <Text style={[commonStyle.textDescriptionDetail, {fontSize: 11}]}>Click to view Details</Text>
+                                </TouchableOpacity>
+                               
                             </View>
 
                             <View style={{ flexDirection: 'row', width: '100%' }}>
@@ -100,7 +103,7 @@ export default class MyPackageDetail extends Component {
                         </View>
 
                     </View>
-                </TouchableOpacity>
+                </View>
                 <View style={styles.viewSingleLineBidsInReview} />
 
             </View>
@@ -368,7 +371,7 @@ export default class MyPackageDetail extends Component {
                                             </TouchableOpacity>
                                         </View>
                                     </View> : <View style={styles.buttonBigSelected}>
-                                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ReviewRefundRequest')}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate('RefundRequest')}>
                                             <Text numberOfLines={2} color={'white'} style={commonStyle.textSelected}>Review Refund Request</Text>
                                         </TouchableOpacity>
                                     </View>

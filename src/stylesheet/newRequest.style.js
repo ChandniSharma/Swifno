@@ -113,12 +113,11 @@ export default {
         height: hp('35%'),
         marginTop: '5%',
         alignSelf: 'center',
-        marginBottom: '5%'
+        // marginBottom: '5%'
     },
     mapSummary: {
         width: wp('100%'),
         height: hp('100%'),
-
     },
 
     viewDots: {
